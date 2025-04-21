@@ -1,0 +1,69 @@
+# =============== #
+# Unity Generated #
+# =============== #
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Crashlytics generated file
+crashlytics-build.properties
+
+# ============ #
+# OS Specific  #
+# ============ #
+
+# Windows
+Thumbs.db
+[Dd]esktop.ini
+
+# macOS
+.DS_Store
+
+# ============ #
+# IDE Specific #
+# ============ #
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# VS
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Auto-generated VS/JetBrains cache
+.vs/
+
+# ======================= #
+# Unity Asset Store Tools #
+# ======================= #
+/Assets/AssetStoreTools*
+
+# =================== #
+# Other Optional Excludes #
+# =================== #
+# Uncomment if you use Collaborate
+# /Assets/UnityCollaborateCache/
+
+# Uncomment if you want to ignore builds from Addressable Assets
+# /Assets/AddressableAssetsData/*/*.bin
+
+# Ignore project-specific settings
+ProjectSettings/EditorBuildSettings.asset
+ProjectSettings/ProjectVersion.txt

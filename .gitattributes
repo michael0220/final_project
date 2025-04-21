@@ -1,0 +1,38 @@
+# 對所有文字檔使用 LF 作為行尾符號（跨平台友善）
+* text=auto eol=lf
+
+# 對 Unity 的 YAML 檔案特別指定文字格式（比如 .meta 檔）
+*.cs     text
+*.shader text
+*.cginc  text
+*.compute text
+*.txt    text
+*.asmdef text
+*.json   text
+*.xml    text
+*.uxml   text
+*.uss    text
+*.yaml   text
+*.yml    text
+*.meta   text
+*.unity  text
+*.prefab text
+*.mat    text
+*.anim   text
+*.controller text
+
+# 二進位檔案（不做換行轉換）
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.psd    binary
+*.fbx    binary
+*.mp3    binary
+*.ogg    binary
+*.wav    binary
+*.mp4    binary
+*.mov    binary
+*.dll    binary
+*.exe    binary
+*.zip    binary
+*.unitypackage binary
