@@ -12,14 +12,14 @@ public class hero2 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        arrowPrefab.SetActive(true);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.X)){
-            Instantiate(arrowPrefab, this.transform.position, Quaternion.identity);
+            GameObject newArrow = Instantiate(arrowPrefab, launchpoint.position, Quaternion.identity);
         }
     }
 }
