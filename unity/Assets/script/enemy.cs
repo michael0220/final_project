@@ -34,9 +34,6 @@ public class enemy : MonoBehaviour
         if(other.gameObject.tag == "hero"){
             iscollision = true;
         }
-        if(other.gameObject.tag == "arrow"){
-            iscollision = true;
-        }
     }
     void OnCollisionExit2D(Collision2D other) 
     {

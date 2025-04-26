@@ -12,7 +12,7 @@ public class arrow_controller : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(5.0f, 0); 
         }
-        
+
         GameObject hero = GameObject.FindGameObjectWithTag("hero");
         if (hero != null)
         {
@@ -38,8 +38,10 @@ public class arrow_controller : MonoBehaviour
             enemy enemyScript = collision.gameObject.GetComponent<enemy>();
             if(enemyScript != null){
                 enemyScript.hp -= 10;
+                GetComponent<Collider2D>().enabled = false;
+                Destroy(this.gameObject);
             }
-            Destroy(this.gameObject);
+            
         }
     }
 }
