@@ -5,7 +5,7 @@ public class hero2 : MonoBehaviour
     public GameObject arrowPrefab;
     public Transform launchpoint;
     public float lauchforce = 10f;
-    public float delaytime = 2.0f;
+    public float delaytime = 1.0f;
 
     public float timer = 0f;
 
@@ -18,8 +18,10 @@ public class hero2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.X)){
+        timer += Time.deltaTime;
+        if(timer>delaytime){
             GameObject newArrow = Instantiate(arrowPrefab, launchpoint.position, Quaternion.identity);
+            timer = 0;
         }
     }
 }

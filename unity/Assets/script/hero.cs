@@ -23,7 +23,7 @@ public class hero : MonoBehaviour
             speed = 0;
         }
     }
-    void OCollisionExit2D(Collision2D other)
+    void CollisionExit2D(Collision2D other)
     {
         speed = 0;
     }
