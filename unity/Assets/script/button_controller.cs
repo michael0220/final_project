@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class button_controller : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class button_controller : MonoBehaviour
     public GameObject hero2_prefab;
     public GameObject enemy_prefab;
 
-    private string current_create_type = "";
+    public string current_create_type = "";
 
     public void prepare_spawn_hero()
     {
@@ -47,7 +47,7 @@ public class button_controller : MonoBehaviour
             Instantiate(hero_prefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
         }
         else if(current_create_type=="hero2"){
-             Instantiate(hero2_prefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
+            Instantiate(hero2_prefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
         }
         else if(current_create_type=="enemy"){
             Instantiate(enemy_prefab, new Vector3(position.x, position.y, 0), Quaternion.identity);

@@ -337,19 +337,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 216687687}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: botton_controller, Assembly-CSharp
-        m_MethodName: prepare_spawn_hero2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &216687687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &256322109
 Transform:
   m_ObjectHideFlags: 0
@@ -626,19 +614,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 420519357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: botton_controller, Assembly-CSharp
-        m_MethodName: prepare_spawn_enemy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &420519357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2519,19 +2495,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1290138164}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: botton_controller, Assembly-CSharp
-        m_MethodName: spawn_at_position_2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1290138164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2652,19 +2616,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1297797099}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: botton_controller, Assembly-CSharp
-        m_MethodName: spawn_at_position_3
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1297797099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2984,6 +2936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1697601010}
+  - component: {fileID: 1697601011}
   m_Layer: 0
   m_Name: button_controller
   m_TagString: Untagged
@@ -2999,13 +2952,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697601008}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28136265, y: 1.217781, z: 2.1648471}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.28137207, y: 1.2177734, z: 2.1648471}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697601011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697601008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e7dd70d00e2034182d802489b473b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionButtonGroup: {fileID: 256322108}
+  hero_prefab: {fileID: 8264447675545867078, guid: 844eb95375ab3a44abcf1383caf93f61, type: 3}
+  hero2_prefab: {fileID: 1881277091314772080, guid: 38d8f45401432a34682d40f4190cf7a6, type: 3}
+  enemy_prefab: {fileID: 5984522946766452645, guid: 38026e18110a59542a545024cb9ddd10, type: 3}
 --- !u!1 &1811711044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3226,19 +3195,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1942941324}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: botton_controller, Assembly-CSharp
-        m_MethodName: spawn_at_position_4
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1942941324
 MonoBehaviour:
   m_ObjectHideFlags: 0
