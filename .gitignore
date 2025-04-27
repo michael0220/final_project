@@ -65,8 +65,7 @@ Thumbs.db
 # /Assets/AddressableAssetsData/*/*.bin
 
 # Ignore project-specific settings
-ProjectSettings/EditorBuildSettings.asset
-ProjectSettings/ProjectVersion.txt
+
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
