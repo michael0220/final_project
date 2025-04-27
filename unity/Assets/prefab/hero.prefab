@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3321967968855781410}
   - component: {fileID: 5629857756999914444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hp_bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7451165076645079808}
   - component: {fileID: 1630137951820948553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 896663677373197541}
   - component: {fileID: 8169807703217008847}
   - component: {fileID: 1276853248391772565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hero
   m_TagString: hero
   m_Icon: {fileID: 0}
@@ -351,4 +351,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4e7b0a5e0225640ade74e9acb6df84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0

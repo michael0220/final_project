@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8517633353978143735}
   - component: {fileID: 1784970325039140177}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemy-hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 5732554179088756411}
   - component: {fileID: 3216295847074130336}
   - component: {fileID: 9126180764834753940}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemy
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2000
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  max_hp: 150
+  max_hp: 300
   timer: 0
   hp_bar: {fileID: 9062976506205732873}
 --- !u!1 &9062976506205732873
@@ -278,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8035745078326629366}
   - component: {fileID: 2270595149305218931}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemy-hp-bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

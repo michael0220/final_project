@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class arrow_controller : MonoBehaviour
 { 
-    public float arrow_destroy;
+    public float arrow_destroy_time;
     Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,8 +28,8 @@ public class arrow_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        arrow_destroy += Time.deltaTime;
-        if(arrow_destroy>=3) Destroy(this.gameObject);
+        arrow_destroy_time += Time.deltaTime;
+        if(arrow_destroy_time>=3) Destroy(this.gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
