@@ -13,11 +13,11 @@ public class button_controller : MonoBehaviour
     Vector3[] spawnWorldPositions = new Vector3[16];
     void Start()
     {
-        //x軸:-5, -3, -1, 1
-        //y軸:2, 0, -2, -4
+        //x軸:-6, -4, -2, 0
+        //y軸:2, 0.2, -1.6, -3.4
         int index = 0;
-        for(int y=2;y>=-4;y-=2){
-            for(int x=-5;x<=1;x+=2){
+        for(float y=2f;y>=-3.5f;y-=1.8f){
+            for(int x=-6;x<=0;x+=2){
                 spawnWorldPositions[index++] = new Vector3(x, y, 0f);
             }
         }
