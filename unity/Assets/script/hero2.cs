@@ -5,7 +5,7 @@ public class hero2 : MonoBehaviour
     public GameObject arrowPrefab;
     public Transform launchpoint;
     public float lauchforce = 10f;
-    public float delaytime = 3.0f;
+    public float delaytime = 1.0f;
 
     public float timer = 0f;
 

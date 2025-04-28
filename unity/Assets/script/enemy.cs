@@ -50,6 +50,7 @@ public class enemy : MonoBehaviour
         if(other.gameObject.CompareTag("hero")){
             speed = 1.0f;
             isCollidingWithHero = false;
+            damageTimer = 0f;
         }
     }
 

@@ -8,6 +8,8 @@ public class hero : MonoBehaviour
     bool isCollidingWithEnemy = false;
     float damageTimer = 0f;
     float damageInterval = 1.5f;
+    float animate_timer = 0f;
+    float animate_interval = 0.5f;
 
     public int hp;
     public int max_hp = 400;
@@ -40,6 +42,7 @@ public class hero : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("enemy")){
             isCollidingWithEnemy = true;
+            GetComponent<Animator>().SetBool("attack", true);
         }
     }
     void OnCollisionExit2D(Collision2D collision)
@@ -47,6 +50,7 @@ public class hero : MonoBehaviour
         if(collision.gameObject.CompareTag("enemy")){
             isCollidingWithEnemy = false;
             damageTimer = 0f;
+            GetComponent<Animator>().SetBool("attack", false);
         }
     }
     void DealDamageToEnemy(){
