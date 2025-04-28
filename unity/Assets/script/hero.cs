@@ -11,7 +11,6 @@ public class hero : MonoBehaviour
     Collider2D heroCollider;
     void Start()
     {
-        this.gameObject.transform.position = new Vector3(-2.0f, -1.3f, 0);
         heroCollider = GetComponent<Collider2D>();
     }
 
