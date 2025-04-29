@@ -15,22 +15,28 @@ public class enemy : MonoBehaviour
     private float speed = 1.0f;
 
     Collider2D enemyCollider;
+    Animator anim;
+    Rigidbody2D rb;
+    bool isdead = false;
 
     void Start()
     {
         hp = 300;
         enemyCollider = GetComponent<Collider2D>();
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(isdead) return;
         this.gameObject.transform.position -= new Vector3(speed*Time.deltaTime, 0, 0);
         timer += Time.deltaTime;
-        if(hp<=0)
+        if(hp<=0 && !isdead)
         {
             hp=0;
-            Destroy(this.gameObject);
+            Dead();
         }
         if(isCollidingWithHero && damageTimer>=damageInterval){
             DealDamageToHero();
@@ -71,5 +77,17 @@ public class enemy : MonoBehaviour
                 }
             }
         }
+    }
+    void Dead(){
+        isdead = true;
+
+        rb.simulated = false;
+        enemyCollider.enabled = false;
+
+        anim.SetTrigger("dead");
+    }
+
+    public void Onenemy_deadAnimationEnd(){
+        Destroy(gameObject);
     }
 }
