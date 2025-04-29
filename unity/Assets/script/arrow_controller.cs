@@ -10,7 +10,7 @@ public class arrow_controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = new Vector2(5.0f, 0); 
+            rb.linearVelocity = new Vector2(6.0f, 0); 
         }
 
         GameObject hero = GameObject.FindGameObjectWithTag("hero");
@@ -37,7 +37,7 @@ public class arrow_controller : MonoBehaviour
         if(collision.gameObject.CompareTag("enemy")){
             enemy enemyScript = collision.gameObject.GetComponent<enemy>();
             if(enemyScript != null){
-                enemyScript.hp -= 10;
+                enemyScript.hp -= 30;
                 GetComponent<Collider2D>().enabled = false;
                 Destroy(this.gameObject);
             }
