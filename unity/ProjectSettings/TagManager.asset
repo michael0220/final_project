@@ -47,5 +47,8 @@ TagManager:
   - name: UI
     uniqueID: 472348397
     locked: 0
+  - name: hero_attack
+    uniqueID: 1755829017
+    locked: 0
   m_RenderingLayers:
   - Default

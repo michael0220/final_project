@@ -6,29 +6,33 @@ using UnityEngine;
 public class hero : MonoBehaviour
 {
     bool isCollidingWithEnemy = false;
+
     float damageTimer = 0f;
     float damageInterval = 1.5f;
-    float animate_timer = 0f;
-    float animate_interval = 0.5f;
 
     public int hp;
     public int max_hp = 400;
     public GameObject hp_bar;
 
     Collider2D heroCollider;
+    Rigidbody2D rb;
+    Animator anim;
+    bool isdead = false;
 
     void Start()
     {
         hp = 400;
         heroCollider = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(hp<=0){
+        if(hp<=0 && !isdead){
             hp=0;
-            Destroy(this.gameObject);
+            Dead();
         }
         if(isCollidingWithEnemy && damageTimer >= damageInterval){
             DealDamageToEnemy();
@@ -68,5 +72,17 @@ public class hero : MonoBehaviour
                 }
             }
         }
+    }
+    void Dead(){
+        isdead = true;
+
+        rb.simulated = false;
+        heroCollider.enabled = false;
+
+        anim.SetTrigger("dead");
+    }
+
+    public void Onhero_deadAnimationEnd(){
+        Destroy(gameObject);
     }
 }
