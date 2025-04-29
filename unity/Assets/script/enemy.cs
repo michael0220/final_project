@@ -44,6 +44,7 @@ public class enemy : MonoBehaviour
         if(other.gameObject.CompareTag("hero")){
             speed = 0f;
             isCollidingWithHero = true;
+            GetComponent<Animator>().SetBool("attack", true);
         }
     }
     void OnCollisionExit2D(Collision2D other){
@@ -51,6 +52,7 @@ public class enemy : MonoBehaviour
             speed = 1.0f;
             isCollidingWithHero = false;
             damageTimer = 0f;
+            GetComponent<Animator>().SetBool("attack", false);
         }
     }
 
