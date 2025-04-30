@@ -26,7 +26,7 @@ public class BondManager : MonoBehaviour
 
     void ApplyBonds()
     {
-        hero[] heroes = Object.FindObjectsByType<hero>(FindObjectsSortMode.None);
+        Hero[] heroes = Object.FindObjectsByType<Hero>(FindObjectsSortMode.None);
         hero2[] archers = Object.FindObjectsByType<hero2>(FindObjectsSortMode.None);
 
 
@@ -56,7 +56,7 @@ public class BondManager : MonoBehaviour
             message = "Bond Boost: Effects Doubled!";
         }
 
-        foreach (hero h in heroes)
+        foreach (Hero h in heroes)
         {
             h.max_hp = Mathf.RoundToInt(400 * heroHpMultiplier);
             h.hp = Mathf.RoundToInt(h.hp * heroHpMultiplier);
