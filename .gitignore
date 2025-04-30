@@ -54,7 +54,7 @@ Desktop.ini
 # Rider
 .idea/
 *.sln.iml
-
+/[Uu]serSettings/
 # ============ #
 # Unity Important Folders (必須上傳) #
 # ============ #
