@@ -1,18 +1,20 @@
 using UnityEngine;
 
 public class arrow_controller : MonoBehaviour
-{ 
-    public float arrow_destroy_time;
-    Rigidbody2D rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+{
+    public float arrow_destroy_time = 0f;
+    public int damage = 30;
+    private Rigidbody2D rb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = new Vector2(6.0f, 0); 
+            rb.linearVelocity = new Vector2(6.0f, 0); // 默認速度
         }
 
+        // 避免撞到 hero2
         GameObject hero = GameObject.FindGameObjectWithTag("hero");
         if (hero != null)
         {
@@ -25,23 +27,26 @@ public class arrow_controller : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         arrow_destroy_time += Time.deltaTime;
-        if(arrow_destroy_time>=3) Destroy(this.gameObject);
+        if (arrow_destroy_time >= 3f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("enemy")){
+        if (collision.gameObject.CompareTag("enemy"))
+        {
             enemy enemyScript = collision.gameObject.GetComponent<enemy>();
-            if(enemyScript != null){
-                enemyScript.hp -= 30;
+            if (enemyScript != null)
+            {
+                enemyScript.hp -= damage;
                 GetComponent<Collider2D>().enabled = false;
-                Destroy(this.gameObject);
+                Destroy(gameObject);
             }
-            
         }
     }
 }
