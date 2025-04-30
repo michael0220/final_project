@@ -37,23 +37,23 @@ public class BondManager : MonoBehaviour
         float archerRateMultiplier = 1.0f;
         string message = "";
 
-        if (heroCount > 3)
+        if (heroCount > 2)
         {
             heroHpMultiplier = 1.5f;
-            message += "Hero Bond Activated: HP x1.5\n";
+            message = "Hero Bond Activated: HP x1.5\n";
         }
 
-        if (archerCount > 3)
+        if (archerCount > 2)
         {
             archerRateMultiplier = 1.5f;
-            message += "Archer Bond Activated: Attack Speed x1.5\n";
+            message = "Archer Bond Activated: Attack Speed x1.5\n";
         }
 
-        if (heroCount > 2 && archerCount > 2)
+        if (heroCount > 3 && archerCount > 3)
         {
             heroHpMultiplier *= 2f;
             archerRateMultiplier *= 2f;
-            message += "Bond Boost: Effects Doubled!";
+            message = "Bond Boost: Effects Doubled!";
         }
 
         foreach (hero h in heroes)
