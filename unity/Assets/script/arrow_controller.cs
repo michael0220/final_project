@@ -32,7 +32,7 @@ public class arrow_controller : MonoBehaviour
         if(arrow_destroy_time>=3) Destroy(this.gameObject);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("enemy")){
             Enemy enemyScript = collision.gameObject.GetComponent<Enemy>();

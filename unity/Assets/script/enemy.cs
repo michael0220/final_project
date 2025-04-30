@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     float damageTimer = 0f;
     float speed = 1.0f;
     private Hero targetHero;
+    private hero2 targetHero2;
     bool isTriggerWithHero = false;
     Collider2D enemyCollider;
     Animator anim;
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour
             isTriggerWithHero = true;
             speed = 0f;
             targetHero = other.GetComponent<Hero>();
+            targetHero2 = other.GetComponent<hero2>();
             GetComponent<Animator>().SetBool("attack", true);
         }
     }
@@ -66,6 +68,9 @@ public class Enemy : MonoBehaviour
     void AttackHero(){
         if(targetHero!=null){
             targetHero.hp -= 20;
+        }
+        if(targetHero2!=null){
+            targetHero2.hp -= 20;
         }
     }
 
