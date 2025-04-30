@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public int hp;
     public int max_hp = 300;

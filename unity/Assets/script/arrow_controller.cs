@@ -30,7 +30,7 @@ public class arrow_controller : MonoBehaviour
     {
         if (other.CompareTag("enemy"))
         {
-            enemy enemyScript = other.GetComponent<enemy>();
+            Enemy enemyScript = other.GetComponent<Enemy>();
             if (enemyScript != null)
             {
                 enemyScript.hp -= damage;
