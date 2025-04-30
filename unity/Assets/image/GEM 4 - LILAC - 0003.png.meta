@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:unity/Assets/image/myAsset1/Sprites/GEM 4/LILAC/GEM 4 - LILAC - 0003.png.meta
 guid: fc3eafc1c48f4c842a9655f09f440425
 AssetOrigin:
   serializedVersion: 1
@@ -8,9 +7,6 @@ AssetOrigin:
   packageVersion: 1.1
   assetPath: Assets/karsiori/Sprites/GEM 4/LILAC/GEM 4 - LILAC - 0003.png
   uploadId: 670285
-=======
-guid: af73dc6511675034e9311a8be546a494
->>>>>>> a2ec4dc8e961dac7ce61b71c7021cb62109590d2:unity/Assets/image/GEM 4 - LILAC - 0003.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,19 +115,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
