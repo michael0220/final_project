@@ -17,7 +17,6 @@ public class hero2 : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log("Hero2 HP: " + hp);
         timer += Time.deltaTime;
 
         if (timer > delaytime)
@@ -36,6 +35,11 @@ public class hero2 : MonoBehaviour
         {
         float scale = Mathf.Clamp01((float)hp / max_hp); // 限制 0~1 避免負值
         hp_bar.transform.localScale = new Vector3(scale, 1, 1); // 只縮 X
+        }
+
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
