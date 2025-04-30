@@ -4,26 +4,16 @@ public class arrow_controller : MonoBehaviour
 {
     public float arrow_destroy_time = 0f;
     public int damage = 30;
-    private Rigidbody2D rb;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.linearVelocity = new Vector2(6.0f, 0); // 默認速度
-        }
-
-        // 避免撞到 hero2
         GameObject hero = GameObject.FindGameObjectWithTag("hero");
         if (hero != null)
         {
-            Collider2D heroCollider = hero.GetComponent<Collider2D>();
-            Collider2D arrowCollider = GetComponent<Collider2D>();
-            if (heroCollider != null && arrowCollider != null)
-            {
-                Physics2D.IgnoreCollision(heroCollider, arrowCollider);
-            }
+            Collider2D heroCol = hero.GetComponent<Collider2D>();
+            Collider2D arrowCol = GetComponent<Collider2D>();
+            if (heroCol && arrowCol)
+                Physics2D.IgnoreCollision(heroCol, arrowCol);
         }
     }
 
@@ -36,15 +26,14 @@ public class arrow_controller : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            enemy enemyScript = collision.gameObject.GetComponent<enemy>();
+            enemy enemyScript = other.GetComponent<enemy>();
             if (enemyScript != null)
             {
                 enemyScript.hp -= damage;
-                GetComponent<Collider2D>().enabled = false;
                 Destroy(gameObject);
             }
         }

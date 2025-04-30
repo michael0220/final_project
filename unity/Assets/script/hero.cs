@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class hero : MonoBehaviour
 {
-    bool isCollidingWithEnemy = false;
 
     float damageTimer = 0f;
     float damageInterval = 1.5f;
-
     public int hp;
     public int max_hp = 400;
     public GameObject hp_bar;
-
+    bool isTriggerWithEnemy = false;
+    private enemy targetEnemy;
     Collider2D heroCollider;
     Rigidbody2D rb;
     Animator anim;
@@ -30,49 +29,42 @@ public class hero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isTriggerWithEnemy){
+            damageTimer+=Time.deltaTime;
+            if(damageTimer>=damageInterval){
+                AttackEnemy();
+                damageTimer=0f;
+            }
+        }
         if(hp<=0 && !isdead){
             hp=0;
             Dead();
         }
-        if(isCollidingWithEnemy && damageTimer >= damageInterval){
-            DealDamageToEnemy();
-            damageTimer = 0f;
-        }
-        damageTimer += Time.deltaTime;
         hp_bar.transform.localScale = new Vector3((float)((float)hp/(float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
-
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("enemy")){
-            isCollidingWithEnemy = true;
+            isTriggerWithEnemy = true;
+            targetEnemy = collision.GetComponent<enemy>();
             GetComponent<Animator>().SetBool("attack", true);
         }
     }
-    void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("enemy")){
-            isCollidingWithEnemy = false;
+            isTriggerWithEnemy = false;
+            targetEnemy = null;
             damageTimer = 0f;
             GetComponent<Animator>().SetBool("attack", false);
         }
     }
-    void DealDamageToEnemy(){
-        if(!isCollidingWithEnemy) return;
-
-        ContactPoint2D[] contacts = new ContactPoint2D[10];
-        int contactsCount = heroCollider.GetContacts(contacts);
-
-        for(int i=0;i<contactsCount;i++){
-            GameObject enemyObj = contacts[i].collider != null ? contacts[i].collider.gameObject : null;
-            if(enemyObj != null && enemyObj.CompareTag("enemy")){
-                enemy enemyScript = enemyObj.GetComponent<enemy>();
-                if(enemyScript!=null){
-                    enemyScript.hp -= 20;
-                }
-            }
+    void AttackEnemy(){
+        if(targetEnemy!=null){
+            targetEnemy.hp -= 35;
         }
     }
+
     void Dead(){
         isdead = true;
 

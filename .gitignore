@@ -54,7 +54,8 @@ Desktop.ini
 # Rider
 .idea/
 *.sln.iml
-
+/[Uu]serSettings/
+unity/UserSettings/
 # ============ #
 # Unity Important Folders (必須上傳) #
 # ============ #
@@ -73,6 +74,7 @@ Desktop.ini
 .gradle/
 ExportedObj/
 .consulo/
+Library/
 
 # Android/iOS Builds
 *.apk

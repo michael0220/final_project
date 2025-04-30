@@ -3,48 +3,50 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public int hp;
-    public GameObject hp_bar;
     public int max_hp = 300;
-
-    bool isCollidingWithHero = false;
-    private float damageInterval = 0.8f;
-    private float damageTimer = 0f;
+    public GameObject hp_bar;
 
     private float speed = 1.0f;
-    private float timer = 0f;
+    private bool isdead = false;
+    private bool isTouchingHero = false;
+    private float damageInterval = 0.8f;
+    private float damageTimer = 0f;
+    private hero2 heroTarget;
 
-    Collider2D enemyCollider;
     Animator anim;
     Rigidbody2D rb;
-    bool isdead = false;
+    Collider2D col;
 
     void Start()
     {
         hp = max_hp;
-        enemyCollider = GetComponent<Collider2D>();
-        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         if (isdead) return;
 
-        transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
-
-        timer += Time.deltaTime;
-        damageTimer += Time.deltaTime;
-
-        if (hp <= 0 && !isdead)
+        if (!isTouchingHero)
         {
-            hp = 0;
+            transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+        }
+
+        if (hp <= 0)
+        {
             Dead();
         }
 
-        if (isCollidingWithHero && damageTimer >= damageInterval)
+        if (isTouchingHero && heroTarget != null)
         {
-            DealDamageToHero();
-            damageTimer = 0f;
+            damageTimer += Time.deltaTime;
+            if (damageTimer >= damageInterval)
+            {
+                heroTarget.hp -= 15;
+                damageTimer = 0f;
+            }
         }
 
         if (hp_bar != null)
@@ -53,45 +55,24 @@ public class enemy : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("hero"))
+        if (other.CompareTag("hero"))
         {
-            speed = 0f;
-            isCollidingWithHero = true;
+            isTouchingHero = true;
+            heroTarget = other.GetComponent<hero2>();
             anim.SetBool("attack", true);
         }
     }
 
-    void OnCollisionExit2D(Collision2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("hero"))
+        if (other.CompareTag("hero"))
         {
-            speed = 1.0f;
-            isCollidingWithHero = false;
+            isTouchingHero = false;
+            heroTarget = null;
             damageTimer = 0f;
             anim.SetBool("attack", false);
-        }
-    }
-
-    void DealDamageToHero()
-    {
-        if (!isCollidingWithHero) return;
-
-        ContactPoint2D[] contacts = new ContactPoint2D[10];
-        int contactsCount = enemyCollider.GetContacts(contacts);
-
-        for (int i = 0; i < contactsCount; i++)
-        {
-            GameObject heroObj = contacts[i].collider?.gameObject;
-            if (heroObj != null && heroObj.CompareTag("hero"))
-            {
-                hero heroScript = heroObj.GetComponent<hero>();
-                if (heroScript != null)
-                {
-                    heroScript.hp -= 15;
-                }
-            }
         }
     }
 
@@ -99,7 +80,7 @@ public class enemy : MonoBehaviour
     {
         isdead = true;
         rb.simulated = false;
-        enemyCollider.enabled = false;
+        col.enabled = false;
         anim.SetTrigger("dead");
     }
 
