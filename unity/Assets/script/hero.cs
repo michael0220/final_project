@@ -3,7 +3,7 @@ using UnityEditor.Analytics;
 using UnityEngine;
 
 
-public class hero : MonoBehaviour
+public class Hero : MonoBehaviour
 {
 
     float damageTimer = 0f;
@@ -12,7 +12,7 @@ public class hero : MonoBehaviour
     public int max_hp = 400;
     public GameObject hp_bar;
     bool isTriggerWithEnemy = false;
-    private enemy targetEnemy;
+    private Enemy targetEnemy;
     Collider2D heroCollider;
     Rigidbody2D rb;
     Animator anim;
@@ -46,7 +46,7 @@ public class hero : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("enemy")){
             isTriggerWithEnemy = true;
-            targetEnemy = collision.GetComponent<enemy>();
+            targetEnemy = collision.GetComponent<Enemy>();
             GetComponent<Animator>().SetBool("attack", true);
         }
     }

@@ -35,7 +35,7 @@ public class arrow_controller : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("enemy")){
-            enemy enemyScript = collision.gameObject.GetComponent<enemy>();
+            Enemy enemyScript = collision.gameObject.GetComponent<Enemy>();
             if(enemyScript != null){
                 enemyScript.hp -= 30;
                 GetComponent<Collider2D>().enabled = false;
