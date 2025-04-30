@@ -5,6 +5,9 @@ public class enemy : MonoBehaviour
     public int hp;
     public int max_hp = 300;
     public GameObject hp_bar;
+    public int damagePerHit = 50;
+
+    private Collider2D target;
 
     private float speed = 1.0f;
     private bool isdead = false;
@@ -39,13 +42,22 @@ public class enemy : MonoBehaviour
             Dead();
         }
 
-        if (isTouchingHero && heroTarget != null)
+        if (isTouchingHero && target != null)
         {
             damageTimer += Time.deltaTime;
             if (damageTimer >= damageInterval)
             {
-                heroTarget.hp -= 15;
-                damageTimer = 0f;
+                // 嘗試直接扣對方的 hp（無需知道類型，只要有 hp 欄位）
+                Component comp = target.GetComponent<MonoBehaviour>();
+                var hpField = comp.GetType().GetField("hp");
+
+                if (hpField != null)
+                {
+                    int currentHp = (int)hpField.GetValue(comp);
+                    hpField.SetValue(comp, currentHp - damagePerHit);
+                }
+
+                damageTimer = 0f;   
             }
         }
 
@@ -60,21 +72,23 @@ public class enemy : MonoBehaviour
         if (other.CompareTag("hero"))
         {
             isTouchingHero = true;
-            heroTarget = other.GetComponent<hero2>();
+            target = other;
             anim.SetBool("attack", true);
         }
     }
+
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("hero"))
         {
             isTouchingHero = false;
-            heroTarget = null;
+            target = null;
             damageTimer = 0f;
             anim.SetBool("attack", false);
         }
     }
+
 
     void Dead()
     {

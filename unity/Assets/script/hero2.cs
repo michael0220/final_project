@@ -8,10 +8,16 @@ public class hero2 : MonoBehaviour
     public float delaytime = 1.0f;
 
     private float timer = 0f;
-    public int hp;
+    public int hp=350;
     public int max_hp = 350;
+    public GameObject hp_bar;
+    void Start()
+    {
+        hp = max_hp;
+    }
     void Update()
     {
+        Debug.Log("Hero2 HP: " + hp);
         timer += Time.deltaTime;
 
         if (timer > delaytime)
@@ -25,6 +31,11 @@ public class hero2 : MonoBehaviour
             }
 
             timer = 0;
+        }
+        if (hp_bar != null)
+        {
+        float scale = Mathf.Clamp01((float)hp / max_hp); // 限制 0~1 避免負值
+        hp_bar.transform.localScale = new Vector3(scale, 1, 1); // 只縮 X
         }
     }
 }
