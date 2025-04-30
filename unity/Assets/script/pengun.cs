@@ -66,7 +66,7 @@ public class pengun_witch: MonoBehaviour
         for(int i=0;i<contactsCount;i++){
             GameObject enemyObj = contacts[i].collider != null ? contacts[i].collider.gameObject : null;
             if(enemyObj != null && enemyObj.CompareTag("enemy")){
-                enemy enemyScript = enemyObj.GetComponent<enemy>();
+                Enemy enemyScript = enemyObj.GetComponent<Enemy>();
                 if(enemyScript!=null){
                     enemyScript.hp -= 20;
                 }
