@@ -4300,6 +4300,7 @@ RectTransform:
   - {fileID: 256322109}
   - {fileID: 227801221}
   - {fileID: 899426025}
+  - {fileID: 1049019231}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6132,7 +6133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec18434ebd8a3c241bbfeeeb8e629f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyVal: 100
+  energyVal: 1000
   textOFcurrency: {fileID: 1864116790}
 --- !u!4 &1737938172
 Transform:
@@ -7072,3 +7073,4 @@ SceneRoots:
   - {fileID: 1141963928}
   - {fileID: 528533120}
   - {fileID: 1737938172}
+  - {fileID: 1513248878}
