@@ -11,8 +11,9 @@ public class Enemy : MonoBehaviour
     float damageTimer = 0f;
     float speed = 1.0f;
     private Hero targetHero;
+    private potato targetPotato;
+     bool isTriggerWithHero = false;
     private hero2 targetHero2;
-    bool isTriggerWithHero = false;
     Collider2D enemyCollider;
     Animator anim;
     Rigidbody2D rb;
@@ -51,6 +52,7 @@ public class Enemy : MonoBehaviour
             isTriggerWithHero = true;
             speed = 0f;
             targetHero = other.GetComponent<Hero>();
+            targetPotato = other.GetComponent<potato>();
             targetHero2 = other.GetComponent<hero2>();
             GetComponent<Animator>().SetBool("attack", true);
         }
@@ -69,9 +71,12 @@ public class Enemy : MonoBehaviour
         if(targetHero!=null){
             targetHero.hp -= 20;
         }
+        if(targetPotato!=null){
+            targetPotato.hp -= 20;
         if(targetHero2!=null){
             targetHero2.hp -= 20;
         }
+    }
     }
 
     void Dead(){
@@ -87,3 +92,4 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
