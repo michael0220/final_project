@@ -1,19 +1,21 @@
 using UnityEngine;
-using TMPro; 
+using TMPro;
 
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class BondManager : MonoBehaviour
 {
-    public TextMeshProUGUI bondText;  
+    public TextMeshProUGUI bondText;
     private float checkTimer = 0f;
     public float checkInterval = 1f;
 
     private string lastMessage = "";
+
     void Start()
-{
-    Debug.Log("BondText 連接狀態：" + (bondText != null ? "✅ 已連接" : "❌ 沒連接"));
-}
+    {
+        Debug.Log("BondText 連接狀態：" + (bondText != null ? "✅ 已連接" : "❌ 沒連接"));
+    }
+
     void Update()
     {
         checkTimer += Time.deltaTime;
@@ -28,7 +30,6 @@ public class BondManager : MonoBehaviour
     {
         hero[] heroes = Object.FindObjectsByType<hero>(FindObjectsSortMode.None);
         hero2[] archers = Object.FindObjectsByType<hero2>(FindObjectsSortMode.None);
-
 
         int heroCount = heroes.Length;
         int archerCount = archers.Length;
@@ -58,10 +59,14 @@ public class BondManager : MonoBehaviour
 
         foreach (hero h in heroes)
         {
-            h.max_hp = Mathf.RoundToInt(400 * heroHpMultiplier);
-            h.hp = Mathf.RoundToInt(h.hp * heroHpMultiplier);
-            if (h.hp > h.max_hp)
-                h.hp = h.max_hp;
+            int newMaxHp = Mathf.RoundToInt(400 * heroHpMultiplier);
+
+            if (h.max_hp != newMaxHp)
+            {
+                float hpPercent = (float)h.hp / h.max_hp;  // 先記住目前血量百分比
+                h.max_hp = newMaxHp;
+                h.hp = Mathf.RoundToInt(h.max_hp * hpPercent); // 調整為新 max_hp 的比例
+            }
         }
 
         foreach (hero2 h2 in archers)
@@ -94,4 +99,5 @@ public class BondManager : MonoBehaviour
         }
     }
 }
+
 
