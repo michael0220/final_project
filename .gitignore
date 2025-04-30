@@ -74,6 +74,7 @@ unity/UserSettings/
 .gradle/
 ExportedObj/
 .consulo/
+Library/
 
 # Android/iOS Builds
 *.apk
