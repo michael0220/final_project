@@ -111,19 +111,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -131,20 +118,20 @@ TextureImporter:
       name: hero_idle_0
       rect:
         serializedVersion: 2
-        x: 28
+        x: 27
         y: 0
-        width: 39
-        height: 45
+        width: 41
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 857d95faf52802d4ea43986d1ca6a1d6
-      internalID: 666032528
+      spriteID: ebabbbc5459a72b10800000000000000
+      internalID: 1956718742913923774
       vertices: []
       indices: 
       edges: []
@@ -153,20 +140,20 @@ TextureImporter:
       name: hero_idle_1
       rect:
         serializedVersion: 2
-        x: 124
+        x: 123
         y: 0
-        width: 39
-        height: 45
+        width: 41
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 123134476338d5e428e8c807cf40ad25
-      internalID: -1465318203
+      spriteID: 53b226b85a44b5b00800000000000000
+      internalID: 818323235096636213
       vertices: []
       indices: 
       edges: []
@@ -175,20 +162,20 @@ TextureImporter:
       name: hero_idle_2
       rect:
         serializedVersion: 2
-        x: 220
+        x: 219
         y: 0
-        width: 39
-        height: 45
+        width: 41
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0e2b589e70dccfd4da6134caf8944ee7
-      internalID: -536586607
+      spriteID: 8de93c79d5b834090800000000000000
+      internalID: -8051438474713915688
       vertices: []
       indices: 
       edges: []
@@ -197,20 +184,20 @@ TextureImporter:
       name: hero_idle_3
       rect:
         serializedVersion: 2
-        x: 316
+        x: 315
         y: 0
-        width: 39
-        height: 46
+        width: 41
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: aa15ea9e1cfb124458d68a3f913631e8
-      internalID: 941946627
+      spriteID: 1d6c66dac0d078150800000000000000
+      internalID: 5874678587028063953
       vertices: []
       indices: 
       edges: []
@@ -219,20 +206,20 @@ TextureImporter:
       name: hero_idle_4
       rect:
         serializedVersion: 2
-        x: 412
+        x: 411
         y: 0
-        width: 39
-        height: 46
+        width: 41
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1245e166078a64546972f3d95523368f
-      internalID: 2012131638
+      spriteID: bcf421d945f0c0590800000000000000
+      internalID: -7706768006250868789
       vertices: []
       indices: 
       edges: []
@@ -241,20 +228,20 @@ TextureImporter:
       name: hero_idle_5
       rect:
         serializedVersion: 2
-        x: 508
+        x: 507
         y: 0
-        width: 39
-        height: 47
+        width: 41
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a3555de2f62a8e44ab153515c1d2f5ea
-      internalID: 852827515
+      spriteID: 8a8e807e88e9f6640800000000000000
+      internalID: 5075449615898699944
       vertices: []
       indices: 
       edges: []
@@ -263,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b477a504df826fa44989e9dcb8c4a42f
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hero_idle_0: 666032528
-      hero_idle_1: -1465318203
-      hero_idle_2: -536586607
-      hero_idle_3: 941946627
-      hero_idle_4: 2012131638
-      hero_idle_5: 852827515
+      hero_idle_0: 1956718742913923774
+      hero_idle_1: 818323235096636213
+      hero_idle_2: -8051438474713915688
+      hero_idle_3: 5874678587028063953
+      hero_idle_4: -7706768006250868789
+      hero_idle_5: 5075449615898699944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

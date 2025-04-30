@@ -2,15 +2,15 @@ using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
 
-public class enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public int hp;
+    public float hp;
     public GameObject hp_bar;
     public int max_hp=300;
     private float damageInterval = 0.8f;
     float damageTimer = 0f;
     float speed = 1.0f;
-    private hero targetHero;
+    private Hero targetHero;
     bool isTriggerWithHero = false;
     Collider2D enemyCollider;
     Animator anim;
@@ -19,7 +19,7 @@ public class enemy : MonoBehaviour
 
     void Start()
     {
-        hp = 300;
+        hp = 300f;
         enemyCollider = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -49,7 +49,7 @@ public class enemy : MonoBehaviour
         if(other.gameObject.CompareTag("hero")){
             isTriggerWithHero = true;
             speed = 0f;
-            targetHero = other.GetComponent<hero>();
+            targetHero = other.GetComponent<Hero>();
             GetComponent<Animator>().SetBool("attack", true);
         }
     }
