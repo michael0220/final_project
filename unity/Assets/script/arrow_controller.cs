@@ -28,9 +28,9 @@ public class arrow_controller : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("enemy"))
+        if (collision.CompareTag("enemy"))
         {
-            Enemy enemyScript = other.GetComponent<Enemy>();
+            Enemy enemyScript = collision.GetComponent<Enemy>();
             if (enemyScript != null)
             {
                 enemyScript.hp -= damage;

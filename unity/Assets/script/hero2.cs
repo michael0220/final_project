@@ -18,7 +18,6 @@ public class hero2 : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log("Hero2 HP: " + hp);
         timer += Time.deltaTime;
 
         if (timer > delaytime)
