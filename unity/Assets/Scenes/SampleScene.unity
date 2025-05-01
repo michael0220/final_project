@@ -4682,7 +4682,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433630499}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
 --- !u!1001 &1447049720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4740,7 +4739,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36a9a463d4efe5149b54f17dda4737be, type: 3}
-=======
 --- !u!1 &1480467493
 GameObject:
   m_ObjectHideFlags: 0
@@ -4786,7 +4784,6 @@ Transform:
   - {fileID: 1734473548}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 5c19ed68d93d349f997c9c4e87999602dc3d4bcf
 --- !u!1 &1484688709
 GameObject:
   m_ObjectHideFlags: 0
@@ -7902,8 +7899,5 @@ SceneRoots:
   - {fileID: 528533120}
   - {fileID: 1737938172}
   - {fileID: 1513248878}
-<<<<<<< HEAD
   - {fileID: 1447049720}
-=======
   - {fileID: 1480467495}
->>>>>>> 5c19ed68d93d349f997c9c4e87999602dc3d4bcf
