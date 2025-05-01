@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow_destroy_time: 0
+  damage: 30
 --- !u!61 &3751569438605773175
 BoxCollider2D:
   m_ObjectHideFlags: 0

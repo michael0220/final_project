@@ -1,15 +1,19 @@
-using JetBrains.Annotations;
-using UnityEditor;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float hp;
+    public int hp;
+    public int max_hp = 300;
     public GameObject hp_bar;
-    public int max_hp=300;
+    public int damagePerHit = 50;
+
+    private Collider2D target;
+
+    private float speed = 1.0f;
+    private bool isdead = false;
+    private bool isTouchingHero = false;
     private float damageInterval = 0.8f;
     float damageTimer = 0f;
-    float speed = 1.0f;
     private Hero targetHero;
     private potato targetPotato;
      bool isTriggerWithHero = false;
@@ -17,34 +21,53 @@ public class Enemy : MonoBehaviour
     Collider2D enemyCollider;
     Animator anim;
     Rigidbody2D rb;
-    bool isdead = false;
+    Collider2D col;
 
     void Start()
     {
-        hp = 300f;
-        enemyCollider = GetComponent<Collider2D>();
-        anim = GetComponent<Animator>();
+        hp = max_hp;
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(isTriggerWithHero){
-            damageTimer += Time.deltaTime;
-            if(damageTimer>=damageInterval){
-                AttackHero();
-                damageTimer = 0f;
-            }
-        }
-        if(isdead) return;
-        this.gameObject.transform.position -= new Vector3(speed*Time.deltaTime, 0, 0);
-        if(hp<=0 && !isdead)
+        if (isdead) return;
+
+        if (!isTouchingHero)
         {
-            hp=0;
+            transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+        }
+
+        if (hp <= 0)
+        {
             Dead();
         }
-        hp_bar.transform.localScale = new Vector3((float)((float)hp/(float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
+
+        if (isTouchingHero && target != null)
+        {
+            damageTimer += Time.deltaTime;
+            if (damageTimer >= damageInterval)
+            {
+                // 嘗試直接扣對方的 hp（無需知道類型，只要有 hp 欄位）
+                Component comp = target.GetComponent<MonoBehaviour>();
+                var hpField = comp.GetType().GetField("hp");
+
+                if (hpField != null)
+                {
+                    int currentHp = (int)hpField.GetValue(comp);
+                    hpField.SetValue(comp, currentHp - damagePerHit);
+                }
+
+                damageTimer = 0f;   
+            }
+        }
+
+        if (hp_bar != null)
+        {
+            hp_bar.transform.localScale = new Vector3((float)hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other){
@@ -57,13 +80,16 @@ public class Enemy : MonoBehaviour
             GetComponent<Animator>().SetBool("attack", true);
         }
     }
-    void OnTriggerExit2D(Collider2D other){
-        if(other.gameObject.CompareTag("hero")){
-            isTriggerWithHero = false;
-            speed = 1.0f;
+
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("hero"))
+        {
+            isTouchingHero = false;
+            target = null;
             damageTimer = 0f;
-            targetHero = null;
-            GetComponent<Animator>().SetBool("attack", false);
+            anim.SetBool("attack", false);
         }
     }
 
@@ -79,16 +105,16 @@ public class Enemy : MonoBehaviour
     }
     }
 
-    void Dead(){
+    void Dead()
+    {
         isdead = true;
-
         rb.simulated = false;
-        enemyCollider.enabled = false;
-
+        col.enabled = false;
         anim.SetTrigger("dead");
     }
 
-    public void Onenemy_deadAnimationEnd(){
+    public void Onenemy_deadAnimationEnd()
+    {
         Destroy(gameObject);
     }
 }
