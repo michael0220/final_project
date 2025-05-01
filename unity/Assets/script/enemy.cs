@@ -7,16 +7,13 @@ public class Enemy : MonoBehaviour
     public GameObject hp_bar;
     public int damagePerHit = 50;
 
-    private Collider2D target;
-
     private float speed = 1.0f;
     private bool isdead = false;
-    private bool isTouchingHero = false;
+    bool isTriggerWithHero;
     private float damageInterval = 0.8f;
     float damageTimer = 0f;
     private Hero targetHero;
     private potato targetPotato;
-     bool isTriggerWithHero = false;
     private hero2 targetHero2;
     Collider2D enemyCollider;
     Animator anim;
@@ -34,40 +31,24 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if (isdead) return;
-
-        if (!isTouchingHero)
-        {
-            transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
-        }
+        transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
 
         if (hp <= 0)
         {
             Dead();
         }
 
-        if (isTouchingHero && target != null)
+        if (isTriggerWithHero)
         {
             damageTimer += Time.deltaTime;
             if (damageTimer >= damageInterval)
             {
-                // 嘗試直接扣對方的 hp（無需知道類型，只要有 hp 欄位）
-                Component comp = target.GetComponent<MonoBehaviour>();
-                var hpField = comp.GetType().GetField("hp");
-
-                if (hpField != null)
-                {
-                    int currentHp = (int)hpField.GetValue(comp);
-                    hpField.SetValue(comp, currentHp - damagePerHit);
-                }
-
+                AttackHero();
                 damageTimer = 0f;   
             }
         }
+        hp_bar.transform.localScale = new Vector3((float)hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
 
-        if (hp_bar != null)
-        {
-            hp_bar.transform.localScale = new Vector3((float)hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other){
@@ -86,10 +67,10 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("hero"))
         {
-            isTouchingHero = false;
-            target = null;
+            isTriggerWithHero = false;
             damageTimer = 0f;
             anim.SetBool("attack", false);
+            speed = 1.0f;
         }
     }
 
@@ -99,10 +80,10 @@ public class Enemy : MonoBehaviour
         }
         if(targetPotato!=null){
             targetPotato.hp -= 20;
+        }
         if(targetHero2!=null){
             targetHero2.hp -= 20;
         }
-    }
     }
 
     void Dead()
