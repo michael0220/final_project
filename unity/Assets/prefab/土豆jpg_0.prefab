@@ -188,7 +188,6 @@ GameObject:
   - component: {fileID: -8217910631283106114}
   - component: {fileID: -5633353959333314723}
   - component: {fileID: 6381655360918698919}
-  - component: {fileID: 3398838884808538708}
   m_Layer: 6
   m_Name: "\u571F\u8C46jpg_0"
   m_TagString: hero
@@ -356,25 +355,3 @@ MonoBehaviour:
   max_hp: 400
   hp_bar: {fileID: 778509362844954646}
   deadSprite: {fileID: 2264717187122239730, guid: 303735c6f2e773e4da7cc8bb7a60002f, type: 3}
---- !u!95 &3398838884808538708
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7148130124968681764}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 05efcd344bef3a24b9d4866325d744a6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0

@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     float damageTimer = 0f;
     private Hero targetHero;
     private potato targetPotato;
-     bool isTriggerWithHero = false;
     private hero2 targetHero2;
     Collider2D enemyCollider;
     Animator anim;
@@ -72,7 +71,6 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("hero")){
-            isTriggerWithHero = true;
             speed = 0f;
             targetHero = other.GetComponent<Hero>();
             targetPotato = other.GetComponent<potato>();

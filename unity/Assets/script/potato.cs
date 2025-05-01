@@ -58,7 +58,6 @@ public class potato : MonoBehaviour
         if (collision.CompareTag("enemy"))
         {
             isTakingDamage = true;
-            anim.SetBool("attack", false); // 不播放攻擊動畫
         }
     }
 
@@ -78,9 +77,6 @@ public class potato : MonoBehaviour
         isDead = true;
     rb.simulated = false;
     potatoCollider.enabled = false;
-
-    // 停止動畫
-    anim.enabled = false;
 
     // 換成死亡圖片
     if (deadSprite != null && sr != null)
