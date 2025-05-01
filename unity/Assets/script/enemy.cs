@@ -13,9 +13,12 @@ public class Enemy : MonoBehaviour
     private bool isdead = false;
     private bool isTouchingHero = false;
     private float damageInterval = 0.8f;
-    private float damageTimer = 0f;
-    private hero2 heroTarget;
-
+    float damageTimer = 0f;
+    private Hero targetHero;
+    private potato targetPotato;
+     bool isTriggerWithHero = false;
+    private hero2 targetHero2;
+    Collider2D enemyCollider;
     Animator anim;
     Rigidbody2D rb;
     Collider2D col;
@@ -67,13 +70,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("hero"))
-        {
-            isTouchingHero = true;
-            target = other;
-            anim.SetBool("attack", true);
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.CompareTag("hero")){
+            isTriggerWithHero = true;
+            speed = 0f;
+            targetHero = other.GetComponent<Hero>();
+            targetPotato = other.GetComponent<potato>();
+            targetHero2 = other.GetComponent<hero2>();
+            GetComponent<Animator>().SetBool("attack", true);
         }
     }
 
@@ -89,6 +93,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void AttackHero(){
+        if(targetHero!=null){
+            targetHero.hp -= 20;
+        }
+        if(targetPotato!=null){
+            targetPotato.hp -= 20;
+        if(targetHero2!=null){
+            targetHero2.hp -= 20;
+        }
+    }
+    }
 
     void Dead()
     {
@@ -103,3 +118,4 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 }
+

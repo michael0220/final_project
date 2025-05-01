@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class enemy_spawner : MonoBehaviour
 {
     public Transform[] spawnpoints;
+    public GameObject victoryPanel;
     public GameObject enemy;
+    private float timer=0f;
 
     void spawn_enemy(){
         int r = Random.Range(0, spawnpoints.Length);
@@ -12,6 +15,29 @@ public class enemy_spawner : MonoBehaviour
 
     void Start()
     {
-        //InvokeRepeating("spawn_enemy", 2, 7);
+        InvokeRepeating("spawn_enemy", 2, 7);
+    }
+
+    IEnumerator SpawnEnemy(){
+        for(int i=0;i<5;i++){
+            spawn_enemy();
+            yield return new WaitForSeconds(3);
+        }
+        yield return new WaitForSeconds(10);
+        for(int i=0;i<6;i++){
+            spawn_enemy();
+            yield return new WaitForSeconds(3);
+        }
+        yield return new WaitForSeconds(10);
+        for(int i=0;i<8;i++){
+            spawn_enemy();
+            yield return new WaitForSeconds(3);
+        }
+        Victory();
+    }
+
+    void Victory(){
+        Time.timeScale = 0f;
+        victoryPanel.SetActive(true);
     }
 }

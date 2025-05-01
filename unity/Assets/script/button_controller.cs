@@ -8,6 +8,7 @@ public class button_controller : MonoBehaviour
     public GameObject hero_prefab;
     public GameObject hero2_prefab;
     public GameObject enemy_prefab;
+    public GameObject potato_prefab;
     public string current_create_type = "";
 
     Vector3[] spawnWorldPositions = new Vector3[16];
@@ -29,6 +30,12 @@ public class button_controller : MonoBehaviour
     }
     
 
+    public void prepare_spawn_potato()
+    {
+        positionButtonGroup.SetActive(true);
+        current_create_type = "potato";
+        update_button_positions();
+    }
     public void prepare_spawn_hero()
     {
         positionButtonGroup.SetActive(true);
@@ -62,6 +69,9 @@ public class button_controller : MonoBehaviour
                 break;
             case "enemy":
                 prefabtospawn = enemy_prefab;
+                break;
+            case "potato":
+                prefabtospawn = potato_prefab;
                 break;
         }
 

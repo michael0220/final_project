@@ -3,17 +3,18 @@ using UnityEngine;
 public class hero2 : MonoBehaviour
 {
     public GameObject arrowPrefab;
+    public GameObject hp_bar;
     public Transform launchpoint;
     public float launchforce = 6f;
     public float delaytime = 1.0f;
+    public float hp;
+    public float max_hp=200f;
+    public float timer = 0f;
 
-    private float timer = 0f;
-    public int hp=350;
-    public int max_hp = 350;
-    public GameObject hp_bar;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
-        hp = max_hp;
+    {  
+        hp = 200f;
     }
     void Update()
     {
@@ -32,10 +33,10 @@ public class hero2 : MonoBehaviour
 
             timer = 0;
         }
-        if (hp_bar != null)
-        {
-        float scale = Mathf.Clamp01((float)hp / max_hp); // 限制 0~1 避免負值
-        hp_bar.transform.localScale = new Vector3(scale, 1, 1); // 只縮 X
+        if(hp<=0){
+            hp=0;
+            Destroy(this.gameObject);
         }
+        hp_bar.transform.localScale = new Vector3((float)((float)hp/(float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
 }
