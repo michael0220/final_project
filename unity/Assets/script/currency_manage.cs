@@ -29,4 +29,9 @@ public class currency_manage : MonoBehaviour
         energyVal-=point;
         UpdateEnergytext();
     }
+
+    public void AddEnergy(int point){
+        energyVal+=point;
+        UpdateEnergytext();
+    }
 } 
