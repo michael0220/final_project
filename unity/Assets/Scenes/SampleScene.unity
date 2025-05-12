@@ -7289,7 +7289,7 @@ MonoBehaviour:
   energyVal: 100
   textOFcurrency: {fileID: 1864116790}
   imageOFcurrency: {fileID: 1975042673}
-  produceTime: 2
+  produceTime: 10
   EnPrefab: {fileID: 7247973885177466729, guid: 04b6e135c4ebf5844a620806f17899f0, type: 3}
 --- !u!4 &1737938172
 Transform:

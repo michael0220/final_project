@@ -29,7 +29,9 @@ public class currency_manage : MonoBehaviour
     }
 
     private void Update(){
-        ProduceEn();
+        if(Energy.Ecount < 10){
+            ProduceEn();
+        }
     }
 
     private void UpdateEnergytext(){
@@ -67,4 +69,14 @@ public class currency_manage : MonoBehaviour
             go.GetComponent<Energy>().LinearTo(position);
         }
     }
+
+    //IEnumerator GenerateEnergyLoop(){
+    //    while(true){
+    //        Debug.Log("目前 Energy 數量：" + Energy.Encount);
+    //        if(Energy.Encount<10){
+    //            ProduceEn();
+    //        }
+    //        yield return new WaitForSeconds(1);
+    //    }
+    //}
 } 
