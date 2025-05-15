@@ -6,7 +6,6 @@ public class enemy_spawner : MonoBehaviour
     public Transform[] spawnpoints;
     public GameObject victoryPanel;
     public GameObject enemy;
-    private float timer=0f;
 
     void spawn_enemy(){
         int r = Random.Range(0, spawnpoints.Length);
@@ -15,7 +14,7 @@ public class enemy_spawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("spawn_enemy", 2, 7);
+        InvokeRepeating("spawn_enemy", 10, 7);
     }
 
     IEnumerator SpawnEnemy(){
