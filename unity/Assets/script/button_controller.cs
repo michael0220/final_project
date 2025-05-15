@@ -1,31 +1,32 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class button_controller : MonoBehaviour
 {
     public GameObject positionButtonGroup;
-    public Button[] positionbuttons;
     public GameObject hero_prefab;
     public GameObject hero2_prefab;
     public GameObject enemy_prefab;
     public GameObject potato_prefab;
     public string current_create_type = "";
 
-    Vector3[] spawnWorldPositions = new Vector3[16];
+    public Transform[] spawnPoints;
+    public GameObject buttonprefab;
+    public Transform buttonParent;
+    public List<Button> positionButtons = new List<Button>(); 
+
     void Start()
     {
-        //x軸:-6, -4, -2, 0
-        //y軸:2, 0.2, -1.6, -3.4
-        int index = 0;
-        for(float y=2f;y>=-3.5f;y-=1.8f){
-            for(int x=-6;x<=0;x+=2){
-                spawnWorldPositions[index++] = new Vector3(x, y, 0f);
-            }
-        }
+        positionButtonGroup.SetActive(false);
+        for(int i=0;i<spawnPoints.Length;i++){
+            int index = i;
+            GameObject button = Instantiate(buttonprefab, buttonParent);
+            Button btn = button.GetComponent<Button>();
 
-        for(int i=0;i<positionbuttons.Length;i++){
-            int captureIndex = i;
-            positionbuttons[i].onClick.AddListener(() => spawn_at_position(spawnWorldPositions[captureIndex]));
+            positionButtons.Add(btn);
+            btn.transform.position = Camera.main.WorldToScreenPoint(spawnPoints[index].position);
+            btn.onClick.AddListener(() => spawn_at_position(spawnPoints[index].position));
         }
     }
     
@@ -34,28 +35,19 @@ public class button_controller : MonoBehaviour
     {
         positionButtonGroup.SetActive(true);
         current_create_type = "potato";
-        update_button_positions();
     }
     public void prepare_spawn_hero()
     {
         positionButtonGroup.SetActive(true);
         current_create_type = "hero";
-        update_button_positions();
     }
     public void prepare_spawn_hero2(){
         positionButtonGroup.SetActive(true);
         current_create_type = "hero2";
-        update_button_positions();
     }
     public void prepare_spawn_enemy(){
         positionButtonGroup.SetActive(true);
         current_create_type = "enemy";
-        update_button_positions();
-    }
-    void update_button_positions(){
-        for(int i=0;i<positionbuttons.Length;i++){
-            positionbuttons[i].transform.position = Camera.main.WorldToScreenPoint(spawnWorldPositions[i]);
-        }
     }
     public void spawn_at_position(Vector3 position){
         GameObject prefabtospawn = null;
