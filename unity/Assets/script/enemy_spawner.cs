@@ -14,7 +14,7 @@ public class enemy_spawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("spawn_enemy", 2, 7);
+        InvokeRepeating("spawn_enemy", 10, 7);
     }
 
     IEnumerator SpawnEnemy(){
