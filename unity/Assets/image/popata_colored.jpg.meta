@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      popata_colored_0: -1257088791301283444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
