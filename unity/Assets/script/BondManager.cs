@@ -71,7 +71,7 @@ public class BondManager : MonoBehaviour
 
         foreach (hero2 h2 in archers)
         {
-            h2.delaytime = 1.0f / archerRateMultiplier;
+            h2.base_delaytime = 1.0f / archerRateMultiplier;
         }
 
         if (message != lastMessage)

@@ -21,7 +21,6 @@ public class Hero : MonoBehaviour
     private int actualdamage;
 
     public TextMeshProUGUI levelText;
-    public string heroTypename;
 
     void Start()
     {
