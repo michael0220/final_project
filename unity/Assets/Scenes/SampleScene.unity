@@ -5328,12 +5328,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionButtonGroup: {fileID: 1386337701}
-  positionbuttons: []
   hero_prefab: {fileID: 8264447675545867078, guid: 844eb95375ab3a44abcf1383caf93f61, type: 3}
   hero2_prefab: {fileID: 1053538604371235024, guid: f12e82a91a252884ba5c27b56d7c332f, type: 3}
   enemy_prefab: {fileID: 5984522946766452645, guid: 38026e18110a59542a545024cb9ddd10, type: 3}
   potato_prefab: {fileID: 7148130124968681764, guid: 36a9a463d4efe5149b54f17dda4737be, type: 3}
   current_create_type: 
+  spawnPoints:
+  - {fileID: 1762353875}
+  - {fileID: 922222575}
+  - {fileID: 2130038713}
+  - {fileID: 1696870336}
+  - {fileID: 1952807115}
+  - {fileID: 1613041134}
+  - {fileID: 1329237510}
+  - {fileID: 1830783473}
+  - {fileID: 1992056079}
+  - {fileID: 128258742}
+  - {fileID: 1823065548}
+  - {fileID: 1324001884}
+  - {fileID: 1322772457}
+  - {fileID: 587800007}
+  - {fileID: 1549785035}
+  - {fileID: 804649233}
+  - {fileID: 392121747}
+  - {fileID: 254677232}
+  - {fileID: 701190727}
+  - {fileID: 510971086}
+  - {fileID: 444615998}
+  - {fileID: 996389893}
+  - {fileID: 128325073}
+  - {fileID: 333640259}
+  - {fileID: 249951466}
+  - {fileID: 1212057833}
+  - {fileID: 1136328012}
+  - {fileID: 334617979}
+  - {fileID: 920524911}
+  - {fileID: 1570427575}
+  - {fileID: 1355815271}
+  - {fileID: 373717383}
+  - {fileID: 891012742}
+  - {fileID: 41023197}
+  - {fileID: 1631908491}
+  - {fileID: 134573944}
+  - {fileID: 640826875}
+  - {fileID: 1504140833}
+  - {fileID: 1053490250}
+  - {fileID: 627142405}
+  buttonprefab: {fileID: 4901249369700121689, guid: 5aa4d4c112ee3df4089eb49ac9295830, type: 3}
+  buttonParent: {fileID: 1386337702}
+  positionButtons: []
 --- !u!1 &1734473547
 GameObject:
   m_ObjectHideFlags: 0
