@@ -24,8 +24,13 @@ public class Card : MonoBehaviour
     [SerializeField]
     private int needEnergy = 50;
 
-    private void Update(){
-        switch(cardstate){
+    private void Start() {
+        transtoready();
+    }
+    private void Update()
+    {
+        switch (cardstate)
+        {
             case state.cooling:
                 coolingUpdate();
                 break;
