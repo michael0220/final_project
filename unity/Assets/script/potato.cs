@@ -35,7 +35,6 @@ public class potato : MonoBehaviour
             damageTimer += Time.deltaTime;
             if (damageTimer >= damageInterval)
             {
-                 // 攻擊數值固定寫死，實際可用 enemy 傳進來的
                 damageTimer = 0f;
             }
         }
@@ -45,8 +44,6 @@ public class potato : MonoBehaviour
             hp = 0;
             Dead();
         }
-
-        // 更新血條
         if (hp_bar != null)
         {
             hp_bar.transform.localScale = new Vector3((float)hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
