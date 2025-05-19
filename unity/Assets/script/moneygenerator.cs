@@ -6,11 +6,12 @@ public class moneygenerator : MonoBehaviour
 {
 
     public Button btn;
+    public GameObject menu;
     public float generateIntegral = 5f;
     public int generateEnergy = 10;
     public int unlockCost = 200;
     public TextMeshProUGUI unlockText;
-    public TextMeshProUGUI upgradeGenerator;
+    public TextMeshProUGUI unlockGenerator;
 
 
     public bool isunlock = false;
@@ -35,10 +36,20 @@ public class moneygenerator : MonoBehaviour
     {
         if (!isunlock && currency_manage.Instance.EnergyValue >= unlockCost)
         {
+            btn.onClick.RemoveAllListeners();
+            btn.onClick.AddListener(energy_menu);
             currency_manage.Instance.SubEnergy(unlockCost);
             isunlock = true;
-            unlockText.text = "+"+generateEnergy+"E/"+generateIntegral+"s";
-            upgradeGenerator.text = "Starcore Link";
+            unlockText.text = "+" + generateEnergy + "E/" + generateIntegral + "s";
+            unlockGenerator.text = "Starcore Link";
         }
+    }
+    void energy_menu()
+    {
+        if (isunlock)
+        {
+            menu.SetActive(true);
+        }
+        else return;
     }
 }
