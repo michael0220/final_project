@@ -84,8 +84,9 @@ public class Card : MonoBehaviour
         Darkmode.SetActive(true);
         Maskmode.gameObject.SetActive(true);
     }
-    public void OnClick(){
-        if(needEnergy > currency_manage.Instance.EnergyValue) return;
+    public void OnClick()
+    {
+        if (needEnergy > currency_manage.Instance.EnergyValue) return;
 
         currency_manage.Instance.SubEnergy(needEnergy);
 
