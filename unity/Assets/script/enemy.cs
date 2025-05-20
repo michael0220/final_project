@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public GameObject hp_bar;
     public int damagePerHit = 50;
 
-    private float speed = 1.0f;
+    private float speed = 0.8f;
     private bool isdead = false;
     bool isTriggerWithHero;
     private float damageInterval = 0.8f;

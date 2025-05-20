@@ -45,6 +45,29 @@ public class enemy3 : MonoBehaviour
         hpbar.transform.localScale = new Vector3((float)hp / maxhp, hpbar.transform.localScale.y, hpbar.transform.localScale.z);
     }
 
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.CompareTag("hero")){
+            istriggerwithhero = true;
+            walkspeed = 0f;
+            targetHero = other.GetComponent<Hero>();
+            targetpotato = other.GetComponent<potato>();
+            targetHero2 = other.GetComponent<hero2>();
+            GetComponent<Animator>().SetBool("attack", true);
+        }
+    }
+
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("hero"))
+        {
+            istriggerwithhero = false;
+            //damageTimer = 0f;
+            anim.SetBool("attack", false);
+            walkspeed = 1.0f;
+        }
+    }
+
     void AttackHero()
     {
         
