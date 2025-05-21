@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5263841723806065932}
   - component: {fileID: 3751569438605773175}
   m_Layer: 8
-  m_Name: arrow
+  m_Name: hero2_bullet
   m_TagString: arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,8 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb2f3c1470ce244383c0f4b2b18b38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basedDamage: 30
+  heroType: 1
   arrow_destroy_time: 0
-  damage: 30
 --- !u!61 &3751569438605773175
 BoxCollider2D:
   m_ObjectHideFlags: 0

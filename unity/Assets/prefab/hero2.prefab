@@ -107,17 +107,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d101f41348cb705418b1d0be90fb97cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  max_hp: 200
+  base_delaytime: 2
+  launchforce: 6
   heroType: 1
   arrowPrefab: {fileID: 7065880673130145992, guid: 4409b9413f6b0554c820b60137cd0413, type: 3}
   hands: {fileID: 2598599061397956740}
   gun: {fileID: 6296371864478535480}
   hp_bar: {fileID: 6166609675166969990}
   launchpoint: {fileID: 4704447750857755411}
-  launchforce: 6
-  base_delaytime: 3
-  actual_delaytime: 0
   hp: 0
-  max_hp: 200
   timer: 0
   levelText: {fileID: 5958647740066040460}
 --- !u!61 &-6110815338866745165
