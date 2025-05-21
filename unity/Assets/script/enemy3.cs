@@ -11,10 +11,8 @@ public class enemy3 : MonoBehaviour
     bool istriggerwithhero;
     //private float damagetime = 0.5f;
     //float damagetimer = 0f;
-    private Hero targetHero;
-    private hero2 targetHero2;
-    private potato targetpotato;
-    Collider2D Enemy2Colid;
+    private IDamageable targetHero;
+    Collider2D Enemy3Colid;
     Animator anim;
     Rigidbody2D rb;
     Collider2D colid;
@@ -49,9 +47,7 @@ public class enemy3 : MonoBehaviour
         if(other.gameObject.CompareTag("hero")){
             istriggerwithhero = true;
             walkspeed = 0f;
-            targetHero = other.GetComponent<Hero>();
-            targetpotato = other.GetComponent<potato>();
-            targetHero2 = other.GetComponent<hero2>();
+            targetHero = other.GetComponent<IDamageable>();
             GetComponent<Animator>().SetBool("attack", true);
         }
     }

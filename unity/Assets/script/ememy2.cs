@@ -11,9 +11,10 @@ public class ememy2 : MonoBehaviour
     bool istriggerwithhero;
     private float damagetime = 0.5f;
     float damagetimer = 0f;
-    private Hero targetHero;
-    private hero2 targetHero2;
-    private potato targetpotato;
+    private IDamageable targetHero;
+    //private Melee targetHero;
+    //private hero2 targetHero2;
+    //private potato targetpotato;
     Collider2D Enemy2Colid;
     Animator anim;
     Rigidbody2D rb;
@@ -57,9 +58,7 @@ public class ememy2 : MonoBehaviour
         {
             istriggerwithhero = true;
             walkspeed = 0;
-            targetHero = other.GetComponent<Hero>();
-            targetHero2 = other.GetComponent<hero2>();
-            targetpotato = other.GetComponent<potato>();
+            targetHero = other.GetComponent<IDamageable>();
             GetComponent<Animator>().SetBool("attack", true);
         }
     }
@@ -79,15 +78,7 @@ public class ememy2 : MonoBehaviour
     {
         if (targetHero != null)
         {
-            targetHero.hp -= 50;
-        }
-        if (targetHero2 != null)
-        {
-            targetHero2.hp -= 50;
-        }
-        if (targetpotato != null)
-        {
-            targetpotato.hp -= 50;
+            targetHero.takeDamage(damage);
         }
     }
 
