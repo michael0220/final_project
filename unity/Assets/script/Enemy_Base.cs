@@ -75,6 +75,7 @@ public class Enemy_Base : MonoBehaviour, IDamageable
         if (hp <= 0)
         {
             hp = 0;
+            hp_bar.transform.localScale = new Vector3(0, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
             Dead();
         }
     }
