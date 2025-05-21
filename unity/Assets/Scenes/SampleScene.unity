@@ -537,7 +537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Shop
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1097,14 +1097,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1697601011}
         m_TargetAssemblyTypeName: button_controller, Assembly-CSharp
-        m_MethodName: prepare_spawn_hero2
-        m_Mode: 1
+        m_MethodName: PreparetoSpawn
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: hero2
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 664088026}
@@ -2626,6 +2626,7 @@ MonoBehaviour:
   Lightmode: {fileID: 819270133}
   Darkmode: {fileID: 1817454323}
   Maskmode: {fileID: 1748360777}
+  createtype: potato
   cdtime: 2
   needEnergy: 125
 --- !u!1 &519420028
@@ -2988,14 +2989,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1697601011}
         m_TargetAssemblyTypeName: button_controller, Assembly-CSharp
-        m_MethodName: prepare_spawn_hero
-        m_Mode: 1
+        m_MethodName: PreparetoSpawn
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: hero1
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 899426026}
@@ -3495,6 +3496,7 @@ MonoBehaviour:
   Lightmode: {fileID: 216687684}
   Darkmode: {fileID: 1093339285}
   Maskmode: {fileID: 673006004}
+  createtype: hero2
   cdtime: 2
   needEnergy: 100
 --- !u!1 &673006002
@@ -4069,21 +4071,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 513603809}
-        m_TargetAssemblyTypeName: Card, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 1697601011}
+        m_TargetAssemblyTypeName: button_controller, Assembly-CSharp
+        m_MethodName: PreparetoSpawn
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: potato
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1697601011}
-        m_TargetAssemblyTypeName: button_controller, Assembly-CSharp
-        m_MethodName: prepare_spawn_potato
+      - m_Target: {fileID: 513603809}
+        m_TargetAssemblyTypeName: Card, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4475,6 +4477,7 @@ MonoBehaviour:
   Lightmode: {fileID: 594407711}
   Darkmode: {fileID: 780376409}
   Maskmode: {fileID: 1008757424}
+  createtype: hero1
   cdtime: 2
   needEnergy: 50
 --- !u!1 &920524910
@@ -4938,7 +4941,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   page1: {fileID: 1587757653}
   page2: {fileID: 1640561641}
-  menuOption: {fileID: 111201327}
 --- !u!1 &1037167103
 GameObject:
   m_ObjectHideFlags: 0
@@ -6666,7 +6668,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bondText: {fileID: 1049019232}
+  checkTimer: 0
   checkInterval: 1
+  lastMessage: 
 --- !u!4 &1513248878
 Transform:
   m_ObjectHideFlags: 0

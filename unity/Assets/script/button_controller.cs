@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class button_controller : MonoBehaviour
 {
+    public static button_controller Instance;
     public GameObject positionButtonGroup;
     public GameObject hero_prefab;
     public GameObject hero2_prefab;
@@ -29,31 +30,23 @@ public class button_controller : MonoBehaviour
             btn.onClick.AddListener(() => spawn_at_position(spawnPoints[index].position));
         }
     }
-    
+    void Awake()
+    {
+        Instance = this;
+    }
 
-    public void prepare_spawn_potato()
+    public void PreparetoSpawn(string createtype)
     {
         positionButtonGroup.SetActive(true);
-        current_create_type = "potato";
+        current_create_type = createtype;
     }
-    public void prepare_spawn_hero()
+    public void spawn_at_position(Vector3 position)
     {
-        positionButtonGroup.SetActive(true);
-        current_create_type = "hero";
-    }
-    public void prepare_spawn_hero2(){
-        positionButtonGroup.SetActive(true);
-        current_create_type = "hero2";
-    }
-    public void prepare_spawn_enemy(){
-        positionButtonGroup.SetActive(true);
-        current_create_type = "enemy";
-    }
-    public void spawn_at_position(Vector3 position){
         GameObject prefabtospawn = null;
 
-        switch(current_create_type){
-            case "hero":
+        switch (current_create_type)
+        {
+            case "hero1":
                 prefabtospawn = hero_prefab;
                 break;
             case "hero2":
@@ -67,8 +60,15 @@ public class button_controller : MonoBehaviour
                 break;
         }
 
-        if(prefabtospawn!=null){
+        if (prefabtospawn != null)
+        {
             Instantiate(prefabtospawn, position, Quaternion.identity);
+        }
+
+        if (Card.CurrentCard != null)
+        {
+            Card.CurrentCard.TriggerCooldown();
+            Card.CurrentCard = null;
         }
 
         positionButtonGroup.SetActive(false);
