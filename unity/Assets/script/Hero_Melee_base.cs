@@ -3,7 +3,7 @@ using UnityEditor.Analytics;
 using UnityEngine;
 using TMPro;
 
-public class Hero : MonoBehaviour, IDamageable
+public class Hero_Melee_base : MonoBehaviour, IDamageable
 {
     [SerializeField] private float max_hp = 400f;
     [SerializeField] private float basedamage = 35f;
@@ -51,7 +51,7 @@ public class Hero : MonoBehaviour, IDamageable
                 damageTimer = 0f;
             }
         }
-        
+
         hp_bar.transform.localScale = new Vector3((float)((float)hp / (float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
     void OnTriggerEnter2D(Collider2D collision)

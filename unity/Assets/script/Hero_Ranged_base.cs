@@ -3,7 +3,7 @@ using UnityEngine.XR;
 using TMPro;
 using Unity.VisualScripting;
 
-public class hero2 : MonoBehaviour, IDamageable
+public class Hero_Ranged_base : MonoBehaviour, IDamageable
 {
     [SerializeField] private float max_hp = 200f;
     [SerializeField] private float base_delaytime = 3.0f;

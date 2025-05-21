@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable
+public class Enemy_Base : MonoBehaviour, IDamageable
 {
     [SerializeField] private float max_hp = 300;
     [SerializeField] private float damageInterval = 0.8f;
