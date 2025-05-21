@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.XR;
 using TMPro;
+using Unity.VisualScripting;
 
-public class hero2 : MonoBehaviour
+public class hero2 : MonoBehaviour, IDamageable
 {
+    [SerializeField] private float max_hp = 200f;
+    [SerializeField] private float base_delaytime = 3.0f;
+    [SerializeField] private float launchforce = 6f;
     public HeroType heroType;
     public GameObject arrowPrefab;
     public GameObject hands, gun;
@@ -12,11 +16,8 @@ public class hero2 : MonoBehaviour
     Collider2D hero2Collider;
     Rigidbody2D rb;
     Animator anim;
-    public float launchforce = 6f;
-    public float base_delaytime = 3.0f;
     public float actual_delaytime;
     public float hp;
-    public float max_hp = 200f;
     public float timer = 0f;
     bool isdead = false;
 
@@ -43,7 +44,6 @@ public class hero2 : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
         if (timer > actual_delaytime)
         {
             GameObject newArrow = Instantiate(arrowPrefab, launchpoint.position, Quaternion.identity);
@@ -53,15 +53,18 @@ public class hero2 : MonoBehaviour
             {
                 rb.linearVelocity = transform.right * launchforce;
             }
-
             timer = 0;
         }
+        hp_bar.transform.localScale = new Vector3((float)((float)hp / (float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
+    }
+    public void takeDamage(float amount)
+    {
+        hp -= amount;
         if (hp <= 0 && !isdead)
         {
             hp = 0;
             Dead();
         }
-        hp_bar.transform.localScale = new Vector3((float)((float)hp / (float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
 
     public void Dead()

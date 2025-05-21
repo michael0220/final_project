@@ -3,22 +3,23 @@ using UnityEditor.Analytics;
 using UnityEngine;
 using TMPro;
 
-public class Hero : MonoBehaviour
+public class Hero : MonoBehaviour, IDamageable
 {
+    [SerializeField] private float max_hp = 400f;
+    [SerializeField] private float basedamage = 35f;
+    [SerializeField] private float damageInterval = 1.5f;
+
     public HeroType heroType;
     float damageTimer = 0f;
-    float damageInterval = 1.5f;
-    public int hp;
-    public int max_hp = 400;
+    private float hp;
     public GameObject hp_bar;
     bool isTriggerWithEnemy = false;
-    private Enemy targetEnemy;
+    private IDamageable targetEnemy;
     Collider2D heroCollider;
     Rigidbody2D rb;
     Animator anim;
     bool isdead = false;
-    public int basedamage = 35;
-    private int actualdamage;
+    private float actualdamage;
 
     public TextMeshProUGUI levelText;
 
@@ -36,7 +37,6 @@ public class Hero : MonoBehaviour
         hp = max_hp;
 
         upgradeLevelText();
-
     }
 
     // Update is called once per frame
@@ -51,11 +51,7 @@ public class Hero : MonoBehaviour
                 damageTimer = 0f;
             }
         }
-        if (hp <= 0 && !isdead)
-        {
-            hp = 0;
-            Dead();
-        }
+        
         hp_bar.transform.localScale = new Vector3((float)((float)hp / (float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -63,7 +59,7 @@ public class Hero : MonoBehaviour
         if (collision.gameObject.CompareTag("enemy"))
         {
             isTriggerWithEnemy = true;
-            targetEnemy = collision.GetComponent<Enemy>();
+            targetEnemy = collision.GetComponent<IDamageable>();
             GetComponent<Animator>().SetBool("attack", true);
         }
     }
@@ -81,17 +77,24 @@ public class Hero : MonoBehaviour
     {
         if (targetEnemy != null)
         {
-            targetEnemy.hp -= actualdamage;
+            targetEnemy.takeDamage(actualdamage);
+        }
+    }
+    public void takeDamage(float amount)
+    {
+        hp -= amount;
+        if (hp <= 0 && !isdead)
+        {
+            hp = 0;
+            Dead();
         }
     }
 
     void Dead()
     {
         isdead = true;
-
         rb.simulated = false;
         heroCollider.enabled = false;
-
         anim.SetTrigger("dead");
     }
 
