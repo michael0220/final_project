@@ -1,20 +1,18 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
-    public int hp;
-    public int max_hp = 300;
+    [SerializeField] private float max_hp = 300;
+    [SerializeField] private float damageInterval = 0.8f;
+    [SerializeField] private float damagePerHit = 50f;
+    [SerializeField] private float speed = 1.0f;
+    public float hp;
     public GameObject hp_bar;
-    public int damagePerHit = 50;
-
-    private float speed = 1.0f;
     private bool isdead = false;
     bool isTriggerWithHero;
-    private float damageInterval = 0.8f;
     float damageTimer = 0f;
-    private Hero targetHero;
-    private potato targetPotato;
-    private hero2 targetHero2;
+    private IDamageable targetHero;
     Collider2D enemyCollider;
     Animator anim;
     Rigidbody2D rb;
@@ -33,11 +31,6 @@ public class Enemy : MonoBehaviour
         if (isdead) return;
         transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
 
-        if (hp <= 0)
-        {
-            Dead();
-        }
-
         if (isTriggerWithHero)
         {
             damageTimer += Time.deltaTime;
@@ -48,16 +41,13 @@ public class Enemy : MonoBehaviour
             }
         }
         hp_bar.transform.localScale = new Vector3((float)hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
-
     }
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("hero")){
             isTriggerWithHero = true;
             speed = 0f;
-            targetHero = other.GetComponent<Hero>();
-            targetPotato = other.GetComponent<potato>();
-            targetHero2 = other.GetComponent<hero2>();
+            targetHero = other.GetComponent<IDamageable>();
             GetComponent<Animator>().SetBool("attack", true);
         }
     }
@@ -76,13 +66,16 @@ public class Enemy : MonoBehaviour
 
     void AttackHero(){
         if(targetHero!=null){
-            targetHero.hp -= 20;
+            targetHero.takeDamage(damagePerHit);
         }
-        if(targetPotato!=null){
-            targetPotato.hp -= 20;
-        }
-        if(targetHero2!=null){
-            targetHero2.hp -= 20;
+    }
+    public void takeDamage(float amount)
+    {
+        hp -= amount;
+        if (hp <= 0)
+        {
+            hp = 0;
+            Dead();
         }
     }
 

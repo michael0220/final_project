@@ -24,8 +24,13 @@ public class Card : MonoBehaviour
     [SerializeField]
     private int needEnergy = 50;
 
-    private void Update(){
-        switch(cardstate){
+    private void Start() {
+        transtoready();
+    }
+    private void Update()
+    {
+        switch (cardstate)
+        {
             case state.cooling:
                 coolingUpdate();
                 break;
@@ -79,8 +84,9 @@ public class Card : MonoBehaviour
         Darkmode.SetActive(true);
         Maskmode.gameObject.SetActive(true);
     }
-    public void OnClick(){
-        if(needEnergy > currency_manage.Instance.EnergyValue) return;
+    public void OnClick()
+    {
+        if (needEnergy > currency_manage.Instance.EnergyValue) return;
 
         currency_manage.Instance.SubEnergy(needEnergy);
 

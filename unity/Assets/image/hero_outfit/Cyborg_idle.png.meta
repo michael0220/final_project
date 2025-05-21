@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 12bfaed30044085428de2a3330359330
+guid: 5cf4a83f68066824b8973b4d724fc391
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1956718742913923774
-    second: hero_idle_0
+      213: -8019239915147560276
+    second: Cyborg_idle_0
   - first:
-      213: 818323235096636213
-    second: hero_idle_1
+      213: -6526221278753614019
+    second: Cyborg_idle_1
   - first:
-      213: -8051438474713915688
-    second: hero_idle_2
+      213: -1626806750166959302
+    second: Cyborg_idle_2
   - first:
-      213: 5874678587028063953
-    second: hero_idle_3
-  - first:
-      213: -7706768006250868789
-    second: hero_idle_4
-  - first:
-      213: 5075449615898699944
-    second: hero_idle_5
+      213: 7969078075045196988
+    second: Cyborg_idle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hero_idle_0
+      name: Cyborg_idle_0
       rect:
         serializedVersion: 2
-        x: 27
+        x: 2
         y: 0
-        width: 41
-        height: 46
+        width: 21
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ebabbbc5459a72b10800000000000000
-      internalID: 1956718742913923774
+      spriteID: caafef0f8cfe5b090800000000000000
+      internalID: -8019239915147560276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hero_idle_1
+      name: Cyborg_idle_1
       rect:
         serializedVersion: 2
-        x: 123
+        x: 50
         y: 0
-        width: 41
-        height: 46
+        width: 21
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53b226b85a44b5b00800000000000000
-      internalID: 818323235096636213
+      spriteID: d379b4a03543e65a0800000000000000
+      internalID: -6526221278753614019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hero_idle_2
+      name: Cyborg_idle_2
       rect:
         serializedVersion: 2
-        x: 219
+        x: 97
         y: 0
-        width: 41
-        height: 46
+        width: 22
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8de93c79d5b834090800000000000000
-      internalID: -8051438474713915688
+      spriteID: a3b371241eb6c69e0800000000000000
+      internalID: -1626806750166959302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hero_idle_3
+      name: Cyborg_idle_3
       rect:
         serializedVersion: 2
-        x: 315
+        x: 145
         y: 0
-        width: 41
-        height: 47
+        width: 22
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,52 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d6c66dac0d078150800000000000000
-      internalID: 5874678587028063953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hero_idle_4
-      rect:
-        serializedVersion: 2
-        x: 411
-        y: 0
-        width: 41
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bcf421d945f0c0590800000000000000
-      internalID: -7706768006250868789
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hero_idle_5
-      rect:
-        serializedVersion: 2
-        x: 507
-        y: 0
-        width: 41
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a8e807e88e9f6640800000000000000
-      internalID: 5075449615898699944
+      spriteID: cb43c6a894ad79e60800000000000000
+      internalID: 7969078075045196988
       vertices: []
       indices: 
       edges: []
@@ -272,13 +222,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      hero_idle_0: 1956718742913923774
-      hero_idle_1: 818323235096636213
-      hero_idle_2: -8051438474713915688
-      hero_idle_3: 5874678587028063953
-      hero_idle_4: -7706768006250868789
-      hero_idle_5: 5075449615898699944
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
