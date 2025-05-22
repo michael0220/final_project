@@ -6,30 +6,40 @@ public class enemy_spawner : MonoBehaviour
     public Transform[] spawnpoints;
     public GameObject victoryPanel;
     public GameObject enemy;
+    public GameObject enemy2;
 
-    void spawn_enemy(){
+    void spawn_enemy(GameObject enemyPrefab){
         int r = Random.Range(0, spawnpoints.Length);
-        GameObject new_enemy = Instantiate(enemy, spawnpoints[r].position, Quaternion.identity);
+        Instantiate(enemyPrefab, spawnpoints[r].position, Quaternion.identity);
     }
 
     void Start()
     {
-        InvokeRepeating("spawn_enemy", 10, 7);
+        StartCoroutine(SpawnEnemy());
+        //InvokeRepeating("spawn_enemy", 10, 7);
     }
 
     IEnumerator SpawnEnemy(){
         for(int i=0;i<5;i++){
-            spawn_enemy();
+            spawn_enemy(enemy);
             yield return new WaitForSeconds(3);
         }
         yield return new WaitForSeconds(10);
         for(int i=0;i<6;i++){
-            spawn_enemy();
+            spawn_enemy(enemy);
+            if (i < 3)
+            {
+                spawn_enemy(enemy2);
+            }
             yield return new WaitForSeconds(3);
         }
         yield return new WaitForSeconds(10);
         for(int i=0;i<8;i++){
-            spawn_enemy();
+            spawn_enemy(enemy);
+            if (i < 7)
+            {
+                spawn_enemy(enemy2);
+            }
             yield return new WaitForSeconds(3);
         }
         Victory();
