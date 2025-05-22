@@ -1,12 +1,19 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+public enum AttackType
+{
+    Melee,
+    OneShot
+}
 public class Enemy_Base : MonoBehaviour, IDamageable
 {
+    [SerializeField] private AttackType attype = AttackType.Melee;
     [SerializeField] private float max_hp = 300;
     [SerializeField] private float damageInterval = 0.8f;
     [SerializeField] private float damagePerHit = 50f;
     [SerializeField] private float speed = 1.0f;
+    private float currspeed;
     public float hp;
     public GameObject hp_bar;
     private bool isdead = false;
@@ -29,7 +36,7 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     void Update()
     {
         if (isdead) return;
-        transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+        transform.position -= new Vector3(currspeed * Time.deltaTime, 0, 0);
 
         if (isTriggerWithHero)
         {
@@ -48,10 +55,12 @@ public class Enemy_Base : MonoBehaviour, IDamageable
         hp_bar.transform.localScale = new Vector3((float)hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
 
-    void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.CompareTag("hero")){
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("hero"))
+        {
             isTriggerWithHero = true;
-            speed = 0f;
+            currspeed = 0f;
             targetHero = other.GetComponent<IDamageable>();
             GetComponent<Animator>().SetBool("attack", true);
         }
@@ -65,12 +74,14 @@ public class Enemy_Base : MonoBehaviour, IDamageable
             isTriggerWithHero = false;
             damageTimer = 0f;
             anim.SetBool("attack", false);
-            speed = 1.0f;
+            currspeed = speed;
         }
     }
 
-    void AttackHero(){
-        if(targetHero!=null){
+    void AttackHero()
+    {
+        if (targetHero != null)
+        {
             targetHero.takeDamage(damagePerHit);
         }
     }
