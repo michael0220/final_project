@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: -344721175292406236}
   - component: {fileID: 6974627099623689878}
   - component: {fileID: -3663777087994307924}
+  - component: {fileID: 1590737165224407998}
   m_Layer: 7
   m_Name: Enemy3
   m_TagString: enemy
@@ -355,7 +356,7 @@ MonoBehaviour:
   attype: 1
   max_hp: 300
   damageInterval: 0.8
-  damagePerHit: 50
+  damagePerHit: 0
   speed: 0.75
   hp: 0
   hp_bar: {fileID: 1950879934524299374}
@@ -369,7 +370,7 @@ Animator:
   m_GameObject: {fileID: 8621859685579082591}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7ba6b0b318cfc148b145eaaba0cefca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -381,3 +382,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1590737165224407998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8621859685579082591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d97bd917ba8ea43b1b820078bfc30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BallPrefab: {fileID: 1875242895569961522, guid: 6574866f2126ffc48b827eca66896831, type: 3}
