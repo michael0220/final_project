@@ -19,7 +19,7 @@ public class arrow_controller : MonoBehaviour
                 Physics2D.IgnoreCollision(heroCol, arrowCol);
         }
         int level = UpgradeManager.Instance.Getlevel(heroType);
-        actualDamage = basedDamage * (level - 1) * 1.5f;
+        actualDamage = basedDamage *(1+ (level - 1) * 1.5f);
 
     }
 

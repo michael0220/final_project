@@ -6668,13 +6668,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4892320b441aead4aac63d9ef186f88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   bondText: {fileID: 1049019232}
   checkTimer: 0
   checkInterval: 1
   lastMessage: 
-=======
->>>>>>> f0d55a80bae24702eb177dcdbc39e7a877a650d6
 --- !u!4 &1513248878
 Transform:
   m_ObjectHideFlags: 0
