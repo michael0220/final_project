@@ -11,7 +11,11 @@ public class ball_controller : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        rb.linearVelocity = Vector2.left * speed;
+    }
+    
+    void Update()
+    {
+        transform.position += Vector3.left * speed * Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D other)
