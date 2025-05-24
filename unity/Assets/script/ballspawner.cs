@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ballspawner : MonoBehaviour
 {
-    [SerializeField] private GameObject BallPrefab;
+    public GameObject BallPrefab;
 
     public void Spawnball()
     {
