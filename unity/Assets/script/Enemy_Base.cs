@@ -8,7 +8,7 @@ public enum AttackType
 }
 public class Enemy_Base : MonoBehaviour, IDamageable
 {
-    [SerializeField] private AttackType attype = AttackType.Melee;
+    [SerializeField] private AttackType attype;
     [SerializeField] private float max_hp = 300;
     [SerializeField] private float damageInterval = 0.8f;
     [SerializeField] private float damagePerHit = 50f;
@@ -21,7 +21,6 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     bool isTriggerWithHero;
     float damageTimer = 0f;
     private IDamageable targetHero;
-    Collider2D enemyCollider;
     Animator anim;
     Rigidbody2D rb;
     Collider2D col;
@@ -100,12 +99,6 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     public void takeDamage(float amount)
     {
         hp -= amount;
-        if (hp <= 0)
-        {
-            hp = 0;
-            hp_bar.transform.localScale = new Vector3(0, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
-            Dead();
-        }
     }
 
     void Dead()

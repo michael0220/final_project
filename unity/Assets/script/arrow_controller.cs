@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class arrow_controller : MonoBehaviour
 {
+    [SerializeField] float basedDamage;
+    private float actualDamage;
+    public HeroType heroType;
     public float arrow_destroy_time = 0f;
-    public float damage = 30f;
     private IDamageable targetEnemy;
 
     void Start()
@@ -16,6 +18,9 @@ public class arrow_controller : MonoBehaviour
             if (heroCol && arrowCol)
                 Physics2D.IgnoreCollision(heroCol, arrowCol);
         }
+        int level = UpgradeManager.Instance.Getlevel(heroType);
+        actualDamage = basedDamage *(1+ (level - 1) * 1.5f);
+
     }
 
     void Update()
@@ -37,7 +42,7 @@ public class arrow_controller : MonoBehaviour
     }
     void attackEnemy()
     {
-        targetEnemy.takeDamage(damage);
+        targetEnemy.takeDamage(actualDamage);
         Destroy(gameObject);
     }
 }

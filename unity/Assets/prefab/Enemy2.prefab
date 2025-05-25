@@ -378,7 +378,11 @@ MonoBehaviour:
   max_hp: 90
   damageInterval: 0.8
   damagePerHit: 50
+<<<<<<< HEAD
+  speed: 1.5
+=======
   speed: 0.8
+>>>>>>> c000efb9b8007101217a61a9ab7e50eddf1d2a8b
   hp: 0
   hp_bar: {fileID: 6345974328298070308}
   hasattacked: 0

@@ -1,16 +1,13 @@
 using UnityEngine;
-using TMPro;
 public class CloseHeroMenu : MonoBehaviour
 {
     public CanvasGroup page1, page2;
-    public TextMeshProUGUI menuOption;
     bool isClick;
     void Start()
     {
         SetCanvasGroup(page1, true);
         SetCanvasGroup(page2, false);
         isClick = false;
-        menuOption.text = "Close";
     }
     public void ShowPage1()
     {
@@ -29,13 +26,11 @@ public class CloseHeroMenu : MonoBehaviour
             SetCanvasGroup(page1, false);
             SetCanvasGroup(page2, false);
             isClick = true;
-            menuOption.text = "Open";
         }
         else
         {
             ShowPage1();
             isClick = false;
-            menuOption.text = "Close";
         }
     }
 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 689160220125081848}
   - component: {fileID: 7870070544081528839}
   m_Layer: 6
-  m_Name: hero2
+  m_Name: hero3
   m_TagString: hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -8157529274441160004, guid: 272bd10e740e1644ea915ac4470f9538, type: 3}
+  m_Sprite: {fileID: 8756212396988887943, guid: 153cf804f2a21494485316c83fb284ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   base_delaytime: 2
   launchforce: 6
   heroType: 1
-  arrowPrefab: {fileID: 7065880673130145992, guid: 4409b9413f6b0554c820b60137cd0413, type: 3}
+  arrowPrefab: {fileID: 7065880673130145992, guid: bd69ef44b7fc9cd4aaa848c8bb1b55a2, type: 3}
   hands: {fileID: 2598599061397956740}
   gun: {fileID: 6296371864478535480}
   hp_bar: {fileID: 6166609675166969990}
@@ -157,7 +157,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.17, y: 0.35}
+    oldSize: {x: 0.19, y: 0.35}
     newSize: {x: 0.24, y: 0.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -240,8 +240,8 @@ Transform:
   m_GameObject: {fileID: 2598599061397956740}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.042, y: -0.002, z: 0}
-  m_LocalScale: {x: 0.55073, y: 0.60178, z: 1}
+  m_LocalPosition: {x: -0.0453, y: 0.0169, z: 0}
+  m_LocalScale: {x: 0.67480946, y: 0.6493206, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4704447750857755411}
@@ -290,7 +290,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 8288426215254106694, guid: 80a4842a951c7c546b872c49a47c0b41, type: 3}
+  m_Sprite: {fileID: 8288426215254106694, guid: c91850544d08e4c4a876eacf1d9a795f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -562,8 +562,8 @@ Transform:
   m_GameObject: {fileID: 6296371864478535480}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 0, z: 0}
-  m_LocalScale: {x: 0.45843306, y: 0.3971702, z: 1}
+  m_LocalPosition: {x: 0.0433, y: 0.024, z: 0}
+  m_LocalScale: {x: 0.5186253, y: 0.3971702, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4704447750857755411}
@@ -612,7 +612,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -4060339134492186001, guid: b130c8a2ce7d629488b2063aa6a3c96c, type: 3}
+  m_Sprite: {fileID: -181485876952098698, guid: 67d563540d12e0b4ba3ab695a4ba8497, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -21,9 +21,11 @@ public class enemy_spawner : MonoBehaviour
     }
 
     IEnumerator SpawnEnemy(){
-        for(int i=0;i<5;i++){
+        yield return new WaitForSeconds(15);
+        for (int i = 0; i < 5; i++)
+        {
             spawn_enemy(enemy);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(5);
         }
         yield return new WaitForSeconds(10);
         for(int i=0;i<6;i++){

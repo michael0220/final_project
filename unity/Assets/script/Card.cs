@@ -12,10 +12,12 @@ enum state{
 public class Card : MonoBehaviour
 {
     private state cardstate = state.cooling;
+    public static Card CurrentCard;
     
     public GameObject Lightmode;
     public GameObject Darkmode;
     public Image Maskmode;
+    public string createtype;
 
     [SerializeField]
     private float cdtime = 2;
@@ -42,13 +44,20 @@ public class Card : MonoBehaviour
                 break;
         }
     }
+    public void TriggerCooldown()
+    {
+        transtocooling();
+        currency_manage.Instance.SubEnergy(needEnergy);
+    }
 
-    void coolingUpdate(){
+    public void coolingUpdate()
+    {
         cdtimer += Time.deltaTime;
 
-        Maskmode.fillAmount = (cdtime-cdtimer)/cdtime;
+        Maskmode.fillAmount = (cdtime - cdtimer) / cdtime;
 
-        if(cdtimer >= cdtime){
+        if (cdtimer >= cdtime)
+        {
             transtowaitingE();
         }
     }
@@ -88,8 +97,7 @@ public class Card : MonoBehaviour
     {
         if (needEnergy > currency_manage.Instance.EnergyValue) return;
 
-        currency_manage.Instance.SubEnergy(needEnergy);
-
-        transtocooling();
+        CurrentCard = this;
+        button_controller.Instance.PreparetoSpawn(createtype);
     }
 }

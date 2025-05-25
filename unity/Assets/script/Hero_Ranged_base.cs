@@ -16,7 +16,7 @@ public class Hero_Ranged_base : MonoBehaviour, IDamageable
     Collider2D hero2Collider;
     Rigidbody2D rb;
     Animator anim;
-    public float actual_delaytime;
+    float actual_delaytime;
     public float hp;
     public float timer = 0f;
     bool isdead = false;
@@ -32,9 +32,8 @@ public class Hero_Ranged_base : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
 
         int level = UpgradeManager.Instance.Getlevel(heroType);
-        if (level == 1) actual_delaytime = base_delaytime;
-        else if (level == 2) actual_delaytime = 2f;
-        else actual_delaytime = 1f;
+
+        actual_delaytime = base_delaytime - (level - 1) * 0.5f;
 
         max_hp += (level - 1) * 50;
         hp = max_hp;
@@ -55,16 +54,16 @@ public class Hero_Ranged_base : MonoBehaviour, IDamageable
             }
             timer = 0;
         }
-        hp_bar.transform.localScale = new Vector3((float)((float)hp / (float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
-    }
-    public void takeDamage(float amount)
-    {
-        hp -= amount;
         if (hp <= 0 && !isdead)
         {
             hp = 0;
             Dead();
         }
+        hp_bar.transform.localScale = new Vector3((float)((float)hp / (float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
+    }
+    public void takeDamage(float amount)
+    {
+        hp -= amount;
     }
 
     public void Dead()

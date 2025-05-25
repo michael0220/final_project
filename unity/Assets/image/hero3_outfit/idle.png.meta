@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 24853a080b72ca8468df165e789cd5c8
+guid: 153cf804f2a21494485316c83fb284ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8069619478552258361
-    second: slime1_0
+      213: -8157529274441160004
+    second: Idle2_0
+  - first:
+      213: -8699952960928323953
+    second: Idle2_1
+  - first:
+      213: -6162687973829295255
+    second: Idle2_2
+  - first:
+      213: 8756212396988887943
+    second: Idle2_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slime1_0
+      name: Idle2_0
       rect:
         serializedVersion: 2
         x: 5
         y: 0
-        width: 24
-        height: 23
+        width: 19
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9372eab392c0dff60800000000000000
-      internalID: 8069619478552258361
+      spriteID: cbaa5186852aace80800000000000000
+      internalID: -8157529274441160004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle2_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f86624950ee834780800000000000000
+      internalID: -8699952960928323953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle2_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 963455a60fbb97aa0800000000000000
+      internalID: -6162687973829295255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle2_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783f46c58c0548970800000000000000
+      internalID: 8756212396988887943
       vertices: []
       indices: 
       edges: []
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      slime1_0: 8069619478552258361
+      Idle2_0: -8157529274441160004
+      Idle2_1: -8699952960928323953
+      Idle2_2: -6162687973829295255
+      Idle2_3: 8756212396988887943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

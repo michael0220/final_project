@@ -51,7 +51,11 @@ public class Hero_Melee_base : MonoBehaviour, IDamageable
                 damageTimer = 0f;
             }
         }
-
+        if (hp <= 0 && !isdead)
+        {
+            hp = 0;
+            Dead();
+        }
         hp_bar.transform.localScale = new Vector3((float)((float)hp / (float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -83,11 +87,6 @@ public class Hero_Melee_base : MonoBehaviour, IDamageable
     public void takeDamage(float amount)
     {
         hp -= amount;
-        if (hp <= 0 && !isdead)
-        {
-            hp = 0;
-            Dead();
-        }
     }
 
     void Dead()
