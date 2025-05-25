@@ -11,7 +11,7 @@ public class Hero_Melee_base : MonoBehaviour, IDamageable
 
     public HeroType heroType;
     float damageTimer = 0f;
-    private float hp;
+    public float hp;
     public GameObject hp_bar;
     bool isTriggerWithEnemy = false;
     private IDamageable targetEnemy;

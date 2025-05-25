@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hero_Tank_base : MonoBehaviour, IDamageable
 {
     [SerializeField] private float max_hp = 400f;
-    private float hp;
+    public float hp;
     public GameObject hp_bar;
     private Collider2D potatoCollider;
     private Rigidbody2D rb;
