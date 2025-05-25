@@ -17,6 +17,7 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     public float hp;
     public GameObject hp_bar;
     private bool isdead = false;
+    public bool hasattacked = false;
     bool isTriggerWithHero;
     float damageTimer = 0f;
     private IDamageable targetHero;
@@ -50,23 +51,29 @@ public class Enemy_Base : MonoBehaviour, IDamageable
                     damageTimer = 0f;
                 }
             }
-            else if (attype == AttackType.OneShot)
-            {
-                AttackHero();
-                isTriggerWithHero = false;
-            }
         }
         hp_bar.transform.localScale = new Vector3((float)hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("hero"))
-        {
-            isTriggerWithHero = true;
-            currspeed = 0f;
+        if (other.gameObject.CompareTag("hero")) { 
             targetHero = other.GetComponent<IDamageable>();
-            GetComponent<Animator>().SetBool("attack", true);
+            currspeed = 0f;
+            if (attype == AttackType.Melee)
+            {
+                    isTriggerWithHero = true;
+                    GetComponent<Animator>().SetBool("attack", true);
+            }
+            else if (attype == AttackType.OneShot)
+            {
+                if (!hasattacked)
+                {
+                    isTriggerWithHero = true;
+                    GetComponent<Animator>().SetBool("attack", true);
+                    hasattacked = true;
+                }
+            }
         }
     }
 
@@ -79,6 +86,7 @@ public class Enemy_Base : MonoBehaviour, IDamageable
             damageTimer = 0f;
             anim.SetBool("attack", false);
             currspeed = speed;
+            hasattacked = false;
         }
     }
 
