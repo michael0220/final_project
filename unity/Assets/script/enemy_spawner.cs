@@ -34,6 +34,10 @@ public class enemy_spawner : MonoBehaviour
             {
                 spawn_enemy(enemy2);
             }
+            if (i < 2)
+            {
+                spawn_enemy(enemy3);
+            }
             yield return new WaitForSeconds(3);
         }
         yield return new WaitForSeconds(10);
@@ -43,7 +47,10 @@ public class enemy_spawner : MonoBehaviour
             {
                 spawn_enemy(enemy2);
             }
-            if (i == 4) spawn_enemy(enemy3);
+            if (i < 4)
+            {
+                spawn_enemy(enemy3);
+            }
             yield return new WaitForSeconds(3);
         }
         Victory();
