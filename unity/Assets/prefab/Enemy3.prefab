@@ -113,8 +113,8 @@ Transform:
   m_GameObject: {fileID: 2539418673187410643}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001, y: 0.193, z: 0}
-  m_LocalScale: {x: 0.7626496, y: 0.4048554, z: 0.92929}
+  m_LocalPosition: {x: -0.004, y: 0.169, z: 0}
+  m_LocalScale: {x: 0.6365836, y: 0.36489618, z: 0.92929}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2321768937690169659}
@@ -205,8 +205,8 @@ Transform:
   m_GameObject: {fileID: 8621859685579082591}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.67, y: 0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.9446, y: 0.291, z: 0}
+  m_LocalScale: {x: 3.2888434, y: 3.0087354, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7298254318288188040}
@@ -353,10 +353,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attype: 1
-  max_hp: 300
-  damageInterval: 0.8
-  damagePerHit: 50
-  speed: 0.75
+  max_hp: 150
+  damageInterval: 0.5
+  damagePerHit: 500
+  speed: 1.5
   hp: 0
   hp_bar: {fileID: 1950879934524299374}
 --- !u!95 &-3663777087994307924
