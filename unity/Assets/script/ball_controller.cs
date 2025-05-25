@@ -29,7 +29,12 @@ public class ball_controller : MonoBehaviour
             hasExploded = true;
             rb.linearVelocity = Vector2.zero;
             anim.SetTrigger("explode");
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+            IDamageable hero = other.GetComponent<IDamageable>();
+            if (hero != null)
+            {
+                hero.takeDamage(999);
+            }
         }
     }
 
