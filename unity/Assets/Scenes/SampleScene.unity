@@ -128,13 +128,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 32026715}
+  - component: {fileID: 32026716}
   m_Layer: 0
   m_Name: RecruitButtonGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &32026715
 Transform:
   m_ObjectHideFlags: 0
@@ -151,6 +152,18 @@ Transform:
   - {fileID: 414175865}
   m_Father: {fileID: 398113524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &32026716
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32026714}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &41023196
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +294,7 @@ GameObject:
   - component: {fileID: 80655169}
   - component: {fileID: 80655168}
   m_Layer: 5
-  m_Name: Energy_efficiency
+  m_Name: EnergyEffiText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,7 +316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.7, y: 10.3}
+  m_AnchoredPosition: {x: -11, y: 32}
   m_SizeDelta: {x: 248.8412, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &80655168
@@ -326,7 +339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: wwwwwwwwwwwwwwwwwwww
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -348,13 +361,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 2194
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1849,6 +1862,7 @@ GameObject:
   - component: {fileID: 398113527}
   - component: {fileID: 398113526}
   - component: {fileID: 398113525}
+  - component: {fileID: 398113529}
   m_Layer: 5
   m_Name: EnergyGeneratorMenuButton
   m_TagString: Untagged
@@ -1891,12 +1905,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btn: {fileID: 398113526}
-  menu: {fileID: 32026714}
+  UpgradeEffi: {fileID: 470690529}
+  menu: {fileID: 32026716}
   generateIntegral: 5
   generateEnergy: 10
   unlockCost: 200
   unlockText: {fileID: 1245860479}
   unlockGenerator: {fileID: 1734975122}
+  EffiLevel: {fileID: 80655168}
   isunlock: 0
 --- !u!114 &398113526
 MonoBehaviour:
@@ -1980,6 +1996,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398113523}
   m_CullTransparentMesh: 1
+--- !u!114 &398113529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398113523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5ba7e6b5038ff48adde7c979e35ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeBtn: {fileID: 606045472}
+  menu: {fileID: 32026716}
 --- !u!1 &414175864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,7 +2321,7 @@ GameObject:
   - component: {fileID: 470690530}
   - component: {fileID: 470690529}
   m_Layer: 5
-  m_Name: UpgradeEfficiency
+  m_Name: UpgradeEffiBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2313,7 +2343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 127, y: -0.8}
+  m_AnchoredPosition: {x: 130, y: 22}
   m_SizeDelta: {x: 43.8086, y: 39.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &470690529
@@ -3185,7 +3215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeBtn: {fileID: 606045472}
-  menu: {fileID: 32026714}
+  menu: {fileID: 32026716}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -7377,7 +7407,7 @@ MonoBehaviour:
   positionButtonGroup: {fileID: 1386337701}
   hero_prefab: {fileID: 8264447675545867078, guid: 844eb95375ab3a44abcf1383caf93f61, type: 3}
   hero2_prefab: {fileID: 1053538604371235024, guid: f12e82a91a252884ba5c27b56d7c332f, type: 3}
-  enemy_prefab: {fileID: 8621859685579082591, guid: 7b18f23953fa13a4aa4be9bac03a437a, type: 3}
+  enemy_prefab: {fileID: 8231990219551152879, guid: 19600c7f40aa9bc4396acbeb721df6f1, type: 3}
   potato_prefab: {fileID: 7148130124968681764, guid: 36a9a463d4efe5149b54f17dda4737be, type: 3}
   current_create_type: 
   spawnPoints:
