@@ -1,17 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
 public class moneygenerator : MonoBehaviour
 {
 
     public Button btn;
-    public GameObject menu;
+    public Button UpgradeEffi;
+    public CanvasGroup menu;
     public float generateIntegral = 5f;
     public int generateEnergy = 10;
     public int unlockCost = 200;
     public TextMeshProUGUI unlockText;
     public TextMeshProUGUI unlockGenerator;
+    public TextMeshProUGUI EffiLevel;
+    private int upgradeCost = 150;
+    private int currentLevel = 1;
+    private int maxLevel = 10;
 
 
     public bool isunlock = false;
@@ -19,6 +23,8 @@ public class moneygenerator : MonoBehaviour
     void Start()
     {
         btn.onClick.AddListener(Unlock);
+        UpgradeEffi.onClick.AddListener(upgrade);
+        SetCanvasGroup(menu, false);
     }
     void Update()
     {
@@ -28,9 +34,11 @@ public class moneygenerator : MonoBehaviour
             if (timer >= generateIntegral)
             {
                 timer = 0f;
-                currency_manage.Instance.AddEnergy(generateEnergy);
+                currency_manage.Instance.AddEnergy(generateEnergy * currentLevel);
             }
         }
+        EffiLevel.text = "Spend 150E to upgrade Generate Efficientcy. Level " + currentLevel + "/10";
+        unlockText.text = "+" + generateEnergy * currentLevel + "E/" + generateIntegral + "s";
     }
     void Unlock()
     {
@@ -40,7 +48,6 @@ public class moneygenerator : MonoBehaviour
             btn.onClick.AddListener(energy_menu);
             currency_manage.Instance.SubEnergy(unlockCost);
             isunlock = true;
-            unlockText.text = "+" + generateEnergy + "E/" + generateIntegral + "s";
             unlockGenerator.text = "Starcore Link";
         }
     }
@@ -48,8 +55,27 @@ public class moneygenerator : MonoBehaviour
     {
         if (isunlock)
         {
-            menu.SetActive(true);
+            SetCanvasGroup(menu, true);
         }
         else return;
+    }
+    void upgrade()
+    {
+        if (currency_manage.Instance.EnergyValue < upgradeCost) return;
+        else
+        {
+            if (currentLevel < maxLevel)
+            {
+                currency_manage.Instance.SubEnergy(upgradeCost);
+                currentLevel++;
+            }
+            else return;
+        }
+    }
+    void SetCanvasGroup(CanvasGroup group, bool visible)
+    {
+        group.alpha = visible ? 1 : 0;
+        group.blocksRaycasts = visible;
+        group.interactable = visible;
     }
 }
