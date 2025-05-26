@@ -7,9 +7,21 @@ public class hero4Skill : MonoBehaviour
     [SerializeField] private float SpikeDamage;
     [SerializeField] private float Interval;
     [SerializeField] private float speedEffect;
+    [SerializeField] private float deadtime;
+    private float timer=0f;
     private Dictionary<Collider2D, float> enemyTimers = new Dictionary<Collider2D, float>();
     private Dictionary<Enemy_Base, float> originalSpeeds = new Dictionary<Enemy_Base, float>();
-    
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= deadtime)
+        {
+            Destroy(gameObject);
+            timer = 0f;
+        }
+    }
+
+
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("enemy"))
