@@ -168,7 +168,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2492063137762351953, guid: 2fe72938100e982408cae3c54962a79d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -270,6 +270,7 @@ MonoBehaviour:
   damageInterval: 0.8
   damagePerHit: 50
   speed: 0.6
+  currspeed: 0
   hp: 0
   hp_bar: {fileID: 9062976506205732873}
   hasattacked: 0
