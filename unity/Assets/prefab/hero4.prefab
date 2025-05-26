@@ -178,3 +178,4 @@ MonoBehaviour:
   SpikeDamage: 10
   Interval: 0.8
   speedEffect: 0.5
+  deadtime: 20
