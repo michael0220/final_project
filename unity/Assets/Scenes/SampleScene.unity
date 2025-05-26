@@ -5721,7 +5721,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1203889018}
-  - component: {fileID: 1203889019}
   m_Layer: 0
   m_Name: BuyHero3
   m_TagString: Untagged
@@ -5745,24 +5744,6 @@ Transform:
   - {fileID: 1428588996}
   m_Father: {fileID: 1672514799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1203889019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203889017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f69b192ac3929094b858b20abd378f2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lightmode: {fileID: 0}
-  Darkmode: {fileID: 0}
-  Maskmode: {fileID: 0}
-  createtype: hero3
-  cdtime: 2
-  needEnergy: 150
 --- !u!1 &1212057832
 GameObject:
   m_ObjectHideFlags: 0
@@ -7729,7 +7710,8 @@ MonoBehaviour:
   hero_prefab: {fileID: 8264447675545867078, guid: 844eb95375ab3a44abcf1383caf93f61, type: 3}
   hero2_prefab: {fileID: 1053538604371235024, guid: f12e82a91a252884ba5c27b56d7c332f, type: 3}
   hero3_prefab: {fileID: 8231990219551152879, guid: 19600c7f40aa9bc4396acbeb721df6f1, type: 3}
-  enemy_prefab: {fileID: 5984522946766452645, guid: 38026e18110a59542a545024cb9ddd10, type: 3}
+  hero4_prefab: {fileID: 6698288954234008976, guid: 57120b6f27e291d4ebdd13307019fbc8, type: 3}
+  enemy_prefab: {fileID: 6698288954234008976, guid: 57120b6f27e291d4ebdd13307019fbc8, type: 3}
   potato_prefab: {fileID: 7148130124968681764, guid: 36a9a463d4efe5149b54f17dda4737be, type: 3}
   current_create_type: 
   spawnPoints:

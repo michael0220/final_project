@@ -9,6 +9,7 @@ public class button_controller : MonoBehaviour
     public GameObject hero_prefab;
     public GameObject hero2_prefab;
     public GameObject hero3_prefab;
+    public GameObject hero4_prefab;
     public GameObject enemy_prefab;
     public GameObject potato_prefab;
     public string current_create_type = "";
@@ -55,6 +56,9 @@ public class button_controller : MonoBehaviour
                 break;
             case "hero3":
                 prefabtospawn = hero3_prefab;
+                break;
+            case "hero4":
+                prefabtospawn = hero4_prefab;
                 break;
             case "enemy":
                 prefabtospawn = enemy_prefab;

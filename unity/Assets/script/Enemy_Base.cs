@@ -14,7 +14,7 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     [SerializeField] private float damageInterval = 0.8f;
     [SerializeField] private float damagePerHit = 50f;
     [SerializeField] public float speed = 1.0f;
-    private float currspeed;
+    [SerializeField] public float currspeed;
     public float hp;
     public GameObject hp_bar;
     private bool isdead = false;
@@ -125,7 +125,6 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     {
         StartCoroutine(FreezeEffect(FreezeDamage, Duration, Interval));
     }
-
     IEnumerator FreezeEffect(float FreezeDamage, float Duration, float Interval)
     {
         float originalSpeed = currspeed;
