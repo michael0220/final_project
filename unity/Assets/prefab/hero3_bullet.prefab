@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6554374342308080792}
   - component: {fileID: 6913442260447245417}
   - component: {fileID: 3001085385083410177}
+  - component: {fileID: 542678316696050818}
   m_Layer: 0
   m_Name: hero3_bullet
-  m_TagString: Untagged
+  m_TagString: arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,6 +176,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb2f3c1470ce244383c0f4b2b18b38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basedDamage: 15
+  basedDamage: 0
   heroType: 1
   arrow_destroy_time: 0
+--- !u!114 &542678316696050818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196433065092814720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905be90ec235f8c419a6afff1da4806e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freezeDamagePerTime: 20

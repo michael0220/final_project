@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2591972705383908379}
   - component: {fileID: 2488001986326647730}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6814667146319689023}
   - component: {fileID: 512422212114115939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 7481415211865589011}
   - component: {fileID: 301197604163885846}
   - component: {fileID: 8527277473693167914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9030303781790268768}
   - component: {fileID: 3363432144393785013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,9 +558,10 @@ GameObject:
   - component: {fileID: 5883034932034818543}
   - component: {fileID: 1468286287055955330}
   - component: {fileID: 4338116527425487551}
-  m_Layer: 0
+  - component: {fileID: 6794425733089826190}
+  m_Layer: 6
   m_Name: hero3
-  m_TagString: Untagged
+  m_TagString: hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -736,3 +737,25 @@ MonoBehaviour:
   hp: 0
   timer: 0
   levelText: {fileID: 8527277473693167914}
+--- !u!95 &6794425733089826190
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8231990219551152879}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20323aadc16688e4ab4d33627472fc50, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

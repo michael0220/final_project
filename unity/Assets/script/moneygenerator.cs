@@ -30,6 +30,7 @@ public class moneygenerator : MonoBehaviour
     {
         if (isunlock)
         {
+            unlockText.text = "+" + generateEnergy * currentLevel + "E/" + generateIntegral + "s";
             timer += Time.deltaTime;
             if (timer >= generateIntegral)
             {
@@ -38,7 +39,6 @@ public class moneygenerator : MonoBehaviour
             }
         }
         EffiLevel.text = "Spend 150E to upgrade Generate Efficientcy. Level " + currentLevel + "/10";
-        unlockText.text = "+" + generateEnergy * currentLevel + "E/" + generateIntegral + "s";
     }
     void Unlock()
     {
