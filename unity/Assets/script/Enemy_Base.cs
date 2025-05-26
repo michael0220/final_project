@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,8 +13,8 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     [SerializeField] private float max_hp = 300;
     [SerializeField] private float damageInterval = 0.8f;
     [SerializeField] private float damagePerHit = 50f;
-    [SerializeField] private float speed = 1.0f;
-    private float currspeed;
+    [SerializeField] public float speed = 1.0f;
+    [SerializeField] public float currspeed;
     public float hp;
     public GameObject hp_bar;
     private bool isdead = false;
@@ -61,13 +62,14 @@ public class Enemy_Base : MonoBehaviour, IDamageable
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("hero")) { 
+        if (other.gameObject.CompareTag("hero"))
+        {
             targetHero = other.GetComponent<IDamageable>();
             currspeed = 0f;
             if (attype == AttackType.Melee)
             {
-                    isTriggerWithHero = true;
-                    GetComponent<Animator>().SetBool("attack", true);
+                isTriggerWithHero = true;
+                GetComponent<Animator>().SetBool("attack", true);
             }
             else if (attype == AttackType.OneShot)
             {
@@ -117,6 +119,28 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     public void Onenemy_deadAnimationEnd()
     {
         Destroy(gameObject);
+    }
+
+    public void ApplyFreeze(float FreezeDamage, float Duration, float Interval)
+    {
+        StartCoroutine(FreezeEffect(FreezeDamage, Duration, Interval));
+    }
+    IEnumerator FreezeEffect(float FreezeDamage, float Duration, float Interval)
+    {
+        float originalSpeed = currspeed;
+        currspeed = originalSpeed * 0.2f;
+        Color originalColor = GetComponent<SpriteRenderer>().color;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        int count = Mathf.FloorToInt(Duration / Interval);
+
+        for (int i = 0; i < count; i++)
+        {
+            takeDamage(FreezeDamage);
+            sr.color = new Color(1f, 0.588f, 0.471f, 1f);
+            yield return new WaitForSeconds(0.5f);
+            sr.color = originalColor;
+        }
+        currspeed = originalSpeed;
     }
 }
 

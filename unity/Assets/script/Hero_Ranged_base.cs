@@ -79,7 +79,7 @@ public class Hero_Ranged_base : MonoBehaviour, IDamageable
         anim.SetTrigger("dead");
     }
 
-    public void Onhero2_deadAnimationEnd()
+    public void Onhero_deadAnimationEnd()
     {
         Destroy(gameObject);
     }

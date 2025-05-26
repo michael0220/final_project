@@ -115,7 +115,7 @@ MonoBehaviour:
   hands: {fileID: 2598599061397956740}
   gun: {fileID: 6296371864478535480}
   hp_bar: {fileID: 6166609675166969990}
-  launchpoint: {fileID: 4704447750857755411}
+  launchpoint: {fileID: 4213871647541805471}
   hp: 0
   timer: 0
   levelText: {fileID: 5958647740066040460}
