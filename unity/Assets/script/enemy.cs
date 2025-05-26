@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
@@ -81,4 +82,33 @@ public class Enemy : MonoBehaviour
     public void Onenemy_deadAnimationEnd(){
         Destroy(gameObject);
     }
+    public void Freeze(float duration, float damage)
+    {
+        if (isdead) return;
+        hp -= damage;
+        if (hp <= 0)
+        {
+            hp = 0;
+            Dead();
+            return;
+        }
+        StartCoroutine(FreezeCoroutine(duration));
+    }
+
+    IEnumerator FreezeCoroutine(float duration)
+    {
+        float originalSpeed = speed;
+        speed = 0f;
+
+        // 顏色變藍
+        GetComponent<SpriteRenderer>().color = Color.cyan;
+
+        yield return new WaitForSeconds(duration);
+
+        // 回復顏色與速度
+        GetComponent<SpriteRenderer>().color = Color.white;
+        speed = originalSpeed;
+    }
+
 }
+
