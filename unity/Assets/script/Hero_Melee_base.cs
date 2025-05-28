@@ -2,16 +2,15 @@ using Unity.VisualScripting;
 using UnityEditor.Analytics;
 using UnityEngine;
 using TMPro;
+using Unity.PlasticSCM.Editor.WebApi;
 
-public class Hero_Melee_base : MonoBehaviour, IDamageable
+public class Hero_Melee_base : Hero_Base
 {
-    [SerializeField] private float max_hp = 400f;
     [SerializeField] private float basedamage = 35f;
     [SerializeField] private float damageInterval = 1.5f;
 
     public HeroType heroType;
     float damageTimer = 0f;
-    public float hp;
     public GameObject hp_bar;
     bool isTriggerWithEnemy = false;
     private IDamageable targetEnemy;
@@ -25,7 +24,6 @@ public class Hero_Melee_base : MonoBehaviour, IDamageable
 
     void Start()
     {
-        hp = 400;
         heroCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -33,8 +31,8 @@ public class Hero_Melee_base : MonoBehaviour, IDamageable
         int level = UpgradeManager.Instance.Getlevel(heroType);
         actualdamage = basedamage + (level - 1) * 10;
 
-        max_hp += (level - 1) * 50;
-        hp = max_hp;
+        maxHp += (level - 1) * 50;
+        currHp = maxHp;
 
         upgradeLevelText();
     }
@@ -51,12 +49,16 @@ public class Hero_Melee_base : MonoBehaviour, IDamageable
                 damageTimer = 0f;
             }
         }
-        if (hp <= 0 && !isdead)
+        if (currHp >= maxHp)
         {
-            hp = 0;
+            currHp = maxHp;
+        }
+        if (currHp <= 0 && !isdead)
+        {
+            currHp = 0;
             Dead();
         }
-        hp_bar.transform.localScale = new Vector3((float)((float)hp / (float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
+        hp_bar.transform.localScale = new Vector3((float)(currHp / maxHp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -86,7 +88,7 @@ public class Hero_Melee_base : MonoBehaviour, IDamageable
     }
     public void takeDamage(float amount)
     {
-        hp -= amount;
+        currHp -= amount;
     }
 
     void Dead()
