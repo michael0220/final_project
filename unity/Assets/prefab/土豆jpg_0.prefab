@@ -254,7 +254,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1894632500500204973, guid: 9d17e00fcc019ab498a3294a68d3835c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -352,5 +352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_hp: 1000
+  hp: 0
   hp_bar: {fileID: 778509362844954646}
   deadSprite: {fileID: 2264717187122239730, guid: 303735c6f2e773e4da7cc8bb7a60002f, type: 3}
