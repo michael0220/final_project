@@ -1,74 +1,60 @@
 using Unity.VisualScripting;
 using UnityEditor.Analytics;
 using UnityEngine;
+using TMPro;
+using Unity.PlasticSCM.Editor.WebApi;
 
-public class Hero_Tank_base : MonoBehaviour, IDamageable
+public class Hero_Tank_base : Hero_Base
 {
-    [SerializeField] private float max_hp = 400f;
-    public float hp;
+
+    public HeroType heroType;
     public GameObject hp_bar;
-    private Collider2D potatoCollider;
-    private Rigidbody2D rb;
-    private Animator anim;
-    private bool isDead = false;
-    public Sprite deadSprite;
-    private SpriteRenderer sr;
+    Collider2D heroCollider;
+    Rigidbody2D rb;
+    Animator anim;
+    public TextMeshProUGUI levelText;
+
     void Start()
     {
-        hp = max_hp;
-        potatoCollider = GetComponent<Collider2D>();
+        heroCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
+
+        int level = UpgradeManager.Instance.Getlevel(heroType);
+
+        maxHp += (level - 1) * 50;
+        currHp = maxHp;
+
+        upgradeLevelText();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hp <= 0 && !isDead)
-        {
-            hp = 0;
-            Dead();
-        }
-        if (hp_bar != null)
-        {
-            hp_bar.transform.localScale = new Vector3((float)hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
-        }
+        UpdateHp();
+        hp_bar.transform.localScale = new Vector3((float)(currHp / maxHp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
-
     public void takeDamage(float amount)
     {
-        hp -= amount;
-        if (hp <= 0 && !isDead)
-        {
-            hp = 0;
-            Dead();
-        }
+        currHp -= amount;
     }
-    
 
-    void Dead()
+    protected override void Dead()
     {
-        isDead = true;
+        isdead = true;
         rb.simulated = false;
-        potatoCollider.enabled = false;
-
-        if (deadSprite != null && sr != null)
-        {
-            sr.sprite = deadSprite;
-            Destroy(hp_bar);
-        }
-
-        if (hp_bar != null)
-        {
-            Destroy(hp_bar);
-        }
-    
-        Invoke("DestroyPotato", 2f);
+        heroCollider.enabled = false;
+        anim.SetTrigger("dead");
     }
 
-    void DestroyPotato()
+    public void Onhero_deadAnimationEnd()
     {
         Destroy(gameObject);
+    }
+
+    void upgradeLevelText()
+    {
+        int level = UpgradeManager.Instance.Getlevel(heroType);
+        levelText.text = level.ToString();
     }
 }
