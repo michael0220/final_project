@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: 5c23a2095f56da3449be3692deb4caa5
+guid: bcb1eeae78cf46346935c214317b6316
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7530177133356341135
-    second: exhaust1_0
+      213: -1565119159505037313
+    second: boss_fly_2_0
   - first:
-      213: -6369944872650234262
-    second: exhaust1_1
+      213: -3329024856784293775
+    second: boss_fly_2_1
+  - first:
+      213: 8724782867369450385
+    second: boss_fly_2_2
+  - first:
+      213: -9214860544639664182
+    second: boss_fly_2_3
+  - first:
+      213: 6677274335680833887
+    second: boss_fly_2_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,62 +108,115 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: exhaust1_0
+      name: boss_fly_2_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 9
-        width: 22
-        height: 14
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 178a6863bcf6f7790800000000000000
-      internalID: -7530177133356341135
+      spriteID: ff75b82ba64974ae0800000000000000
+      internalID: -1565119159505037313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: exhaust1_1
+      name: boss_fly_2_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 11
-        width: 13
-        height: 12
+        x: 7
+        y: 66
+        width: 17
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a66acd243e86997a0800000000000000
-      internalID: -6369944872650234262
+      spriteID: 1703dead78decc1d0800000000000000
+      internalID: -3329024856784293775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_fly_2_2
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 46
+        width: 82
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b58ffbac7a41970800000000000000
+      internalID: 8724782867369450385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_fly_2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf7df5382d3e1080800000000000000
+      internalID: -9214860544639664182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_fly_2_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 52
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f59a61e61a17aac50800000000000000
+      internalID: 6677274335680833887
       vertices: []
       indices: 
       edges: []
@@ -163,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 129f59443a6a6aa439688f4dd4213d5b
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      exhaust1_0: -7530177133356341135
-      exhaust1_1: -6369944872650234262
+      boss_fly_2_0: -1565119159505037313
+      boss_fly_2_1: -3329024856784293775
+      boss_fly_2_2: 8724782867369450385
+      boss_fly_2_3: -9214860544639664182
+      boss_fly_2_4: 6677274335680833887
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

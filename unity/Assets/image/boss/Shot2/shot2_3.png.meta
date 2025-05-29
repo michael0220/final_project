@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 5c23a2095f56da3449be3692deb4caa5
+guid: 9cc4a80bfffb9d2489612cc8bb0ffe88
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7530177133356341135
-    second: exhaust1_0
+      213: -6901330640261692517
+    second: shot2_3_0
   - first:
-      213: -6369944872650234262
-    second: exhaust1_1
+      213: 3984581929332538590
+    second: shot2_3_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -99,30 +99,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: exhaust1_0
+      name: shot2_3_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 9
-        width: 22
-        height: 14
+        x: 13
+        y: 32
+        width: 13
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 178a6863bcf6f7790800000000000000
-      internalID: -7530177133356341135
+      spriteID: b93cea5f85c8930a0800000000000000
+      internalID: -6901330640261692517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: exhaust1_1
+      name: shot2_3_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 11
+        x: 13
+        y: 21
         width: 13
-        height: 12
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a66acd243e86997a0800000000000000
-      internalID: -6369944872650234262
+      spriteID: edc7e4c47241c4730800000000000000
+      internalID: 3984581929332538590
       vertices: []
       indices: 
       edges: []
@@ -172,9 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      exhaust1_0: -7530177133356341135
-      exhaust1_1: -6369944872650234262
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

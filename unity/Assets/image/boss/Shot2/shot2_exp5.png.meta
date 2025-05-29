@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 5c23a2095f56da3449be3692deb4caa5
+guid: a2ff911adddffa24e8aab930693e5570
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7530177133356341135
-    second: exhaust1_0
+      213: 1171621610848763223
+    second: shot2_exp5_0
   - first:
-      213: -6369944872650234262
-    second: exhaust1_1
+      213: -5563269322359272107
+    second: shot2_exp5_1
+  - first:
+      213: -2683839172129658328
+    second: shot2_exp5_2
+  - first:
+      213: 3048556547529886650
+    second: shot2_exp5_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -99,30 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: exhaust1_0
+      name: shot2_exp5_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 9
-        width: 22
-        height: 14
+        x: 33
+        y: 33
+        width: 16
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 178a6863bcf6f7790800000000000000
-      internalID: -7530177133356341135
+      spriteID: 75dbfc5c5af624010800000000000000
+      internalID: 1171621610848763223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: exhaust1_1
+      name: shot2_exp5_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 11
+        x: 34
+        y: 27
         width: 13
-        height: 12
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +146,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a66acd243e86997a0800000000000000
-      internalID: -6369944872650234262
+      spriteID: 55d82fad60c4bc2b0800000000000000
+      internalID: -5563269322359272107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shot2_exp5_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 19
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82aeee61e7611cad0800000000000000
+      internalID: -2683839172129658328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shot2_exp5_3
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 21
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abbc53d2706ae4a20800000000000000
+      internalID: 3048556547529886650
       vertices: []
       indices: 
       edges: []
@@ -172,9 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      exhaust1_0: -7530177133356341135
-      exhaust1_1: -6369944872650234262
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
