@@ -2771,12 +2771,12 @@ MonoBehaviour:
   enemy: {fileID: 5984522946766452645, guid: 38026e18110a59542a545024cb9ddd10, type: 3}
   enemy2: {fileID: 6709818064153581405, guid: 1551bc0aa0be8434594e8e3d08908017, type: 3}
   enemy3: {fileID: 8621859685579082591, guid: 7b18f23953fa13a4aa4be9bac03a437a, type: 3}
-  wavebar: {fileID: 0}
-  wavetext: {fileID: 0}
-  waveDisplay: {fileID: 0}
-  wave1Enemy: 0
-  Wave2Enemy: 0
-  Wave3Enemy: 0
+  wavebar: {fileID: 243870704}
+  wavetext: {fileID: 2108240548}
+  waveDisplay: {fileID: 198409716}
+  wave1Enemy: 5
+  Wave2Enemy: 6
+  Wave3Enemy: 8
 --- !u!4 &528533120
 Transform:
   m_ObjectHideFlags: 0

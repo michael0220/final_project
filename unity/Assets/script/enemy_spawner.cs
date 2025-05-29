@@ -35,6 +35,7 @@ public class enemy_spawner : MonoBehaviour
             spawn_enemy(enemy);
             yield return new WaitForSeconds(5);
         }
+        yield return new WaitUntil(()=>restEnemy<=0);
         waveDisplay.text = "Wave 2";
         SetTotalEnemy(Wave2Enemy);
         UpdateWaveText(restEnemy);
@@ -52,6 +53,7 @@ public class enemy_spawner : MonoBehaviour
             }
             yield return new WaitForSeconds(5);
         }
+        yield return new WaitUntil(()=>restEnemy<=0);
         waveDisplay.text = "Wave 3";
         SetTotalEnemy(Wave3Enemy);
         UpdateWaveText(restEnemy);
