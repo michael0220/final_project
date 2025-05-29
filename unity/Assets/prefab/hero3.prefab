@@ -725,7 +725,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d101f41348cb705418b1d0be90fb97cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_hp: 250
+  maxHp: 300
+  currHp: 0
+  isdead: 0
   base_delaytime: 4
   launchforce: 8
   heroType: 2
@@ -734,7 +736,6 @@ MonoBehaviour:
   gun: {fileID: 8126511654227967976}
   hp_bar: {fileID: 7132842920328109379}
   launchpoint: {fileID: 9030303781790268768}
-  hp: 0
   timer: 0
   levelText: {fileID: 8527277473693167914}
 --- !u!95 &6794425733089826190
