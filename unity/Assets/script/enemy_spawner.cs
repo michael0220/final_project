@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class enemy_spawner : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class enemy_spawner : MonoBehaviour
     public GameObject enemy;
     public GameObject enemy2;
     public GameObject enemy3;
+    public GameObject wavebar;
+    public TextMeshProUGUI wavetext, waveDisplay;
+
+    public int wave1Enemy, Wave2Enemy, Wave3Enemy;
+    int restEnemy, totalEnemy;
 
     void spawn_enemy(GameObject enemyPrefab){
         int r = Random.Range(0, spawnpoints.Length);
@@ -17,18 +23,24 @@ public class enemy_spawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnEnemy());
-        //InvokeRepeating("spawn_enemy", 10, 7);
     }
 
     IEnumerator SpawnEnemy(){
+        SetTotalEnemy(wave1Enemy);
+        UpdateWaveText(restEnemy);
+        waveDisplay.text = "Wave 1";
         yield return new WaitForSeconds(15);
-        for (int i = 0; i < 5; i++)
+        for (int i = wave1Enemy; i > 0; i--)
         {
             spawn_enemy(enemy);
             yield return new WaitForSeconds(5);
         }
+        waveDisplay.text = "Wave 2";
+        SetTotalEnemy(Wave2Enemy);
+        UpdateWaveText(restEnemy);
         yield return new WaitForSeconds(10);
-        for(int i=0;i<6;i++){
+        for (int i = Wave2Enemy; i > 0; i--)
+        {
             spawn_enemy(enemy);
             if (i < 3)
             {
@@ -38,10 +50,14 @@ public class enemy_spawner : MonoBehaviour
             {
                 spawn_enemy(enemy3);
             }
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(5);
         }
+        waveDisplay.text = "Wave 3";
+        SetTotalEnemy(Wave3Enemy);
+        UpdateWaveText(restEnemy);
         yield return new WaitForSeconds(10);
-        for(int i=0;i<8;i++){
+        for (int i = Wave3Enemy; i > 0; i--)
+        {
             spawn_enemy(enemy);
             if (i < 7)
             {
@@ -55,7 +71,25 @@ public class enemy_spawner : MonoBehaviour
         }
         Victory();
     }
+    public void SetTotalEnemy(int total)
+    {
+        totalEnemy = total;
+        restEnemy = total;
+        UpdateWaveText(total);
+    }
 
+    public void EnemyDead()
+    {
+        restEnemy -= 1;
+        UpdateWaveText(restEnemy);
+    }
+
+    public void UpdateWaveText(int restEnemy)
+    {
+        float ratio = (float)restEnemy / totalEnemy;
+        wavebar.transform.localScale = new Vector3(ratio, wavebar.transform.localScale.y, wavebar.transform.localScale.z);
+        wavetext.text = restEnemy + " / " + totalEnemy;
+    }
     void Victory(){
         Time.timeScale = 0f;
         victoryPanel.SetActive(true);
