@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
-public class hero4Skill : MonoBehaviour
+public class Spike : MonoBehaviour
 {
     [SerializeField] private float SpikeDamage;
     [SerializeField] private float Interval;

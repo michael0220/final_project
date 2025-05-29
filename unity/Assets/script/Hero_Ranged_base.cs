@@ -3,9 +3,8 @@ using UnityEngine.XR;
 using TMPro;
 using Unity.VisualScripting;
 
-public class Hero_Ranged_base : MonoBehaviour, IDamageable
+public class Hero_Ranged_base : Hero_Base, IDamageable
 {
-    [SerializeField] private float max_hp = 200f;
     [SerializeField] private float base_delaytime = 3.0f;
     [SerializeField] private float launchforce = 6f;
     public HeroType heroType;
@@ -17,16 +16,12 @@ public class Hero_Ranged_base : MonoBehaviour, IDamageable
     Rigidbody2D rb;
     Animator anim;
     float actual_delaytime;
-    public float hp;
     public float timer = 0f;
-    bool isdead = false;
-
     public TextMeshProUGUI levelText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        hp = 200f;
         hero2Collider = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -35,8 +30,8 @@ public class Hero_Ranged_base : MonoBehaviour, IDamageable
 
         actual_delaytime = base_delaytime - (level - 1) * 0.5f;
 
-        max_hp += (level - 1) * 50;
-        hp = max_hp;
+        maxHp += (level - 1) * 50;
+        currHp = maxHp;
 
         upgradeLevelText();
     }
@@ -54,19 +49,15 @@ public class Hero_Ranged_base : MonoBehaviour, IDamageable
             }
             timer = 0;
         }
-        if (hp <= 0 && !isdead)
-        {
-            hp = 0;
-            Dead();
-        }
-        hp_bar.transform.localScale = new Vector3((float)((float)hp / (float)max_hp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
+        UpdateHp();
+        hp_bar.transform.localScale = new Vector3((float)(currHp / maxHp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
     public void takeDamage(float amount)
     {
-        hp -= amount;
+        currHp -= amount;
     }
 
-    public void Dead()
+    protected override void Dead()
     {
         isdead = true;
 

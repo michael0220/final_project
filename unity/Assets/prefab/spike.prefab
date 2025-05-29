@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3493102354512790773}
   - component: {fileID: 7401301022727239170}
   m_Layer: 6
-  m_Name: hero4
+  m_Name: spike
   m_TagString: spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basedDamage: 0
-  heroType: 1
+  heroType: 2
   arrow_destroy_time: 0
 --- !u!114 &542678316696050818
 MonoBehaviour:
