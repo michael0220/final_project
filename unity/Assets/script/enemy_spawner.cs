@@ -4,6 +4,7 @@ using TMPro;
 
 public class enemy_spawner : MonoBehaviour
 {
+    public int ChooseLevel;
     public Transform[] spawnpoints;
     public GameObject victoryPanel;
     public GameObject enemy;
@@ -12,7 +13,7 @@ public class enemy_spawner : MonoBehaviour
     public GameObject wavebar;
     public TextMeshProUGUI wavetext, waveDisplay;
 
-    public int wave1Enemy, Wave2Enemy, Wave3Enemy;
+    public int wave1Enemy, Wave2Enemy, Wave3Enemy, Wave4Enemy;
     int restEnemy, totalEnemy;
 
     void spawn_enemy(GameObject enemyPrefab){
@@ -26,50 +27,115 @@ public class enemy_spawner : MonoBehaviour
     }
 
     IEnumerator SpawnEnemy(){
-        SetTotalEnemy(wave1Enemy);
-        UpdateWaveText(restEnemy);
-        waveDisplay.text = "Wave 1";
-        yield return new WaitForSeconds(15);
-        for (int i = wave1Enemy; i > 0; i--)
+        if (ChooseLevel == 1)
         {
-            spawn_enemy(enemy);
-            yield return new WaitForSeconds(5);
+            SetTotalEnemy(wave1Enemy);
+            UpdateWaveText(restEnemy);
+            waveDisplay.text = "Wave 1";
+            yield return new WaitForSeconds(15);
+            for (int i = wave1Enemy; i > 0; i--)
+            {
+                spawn_enemy(enemy);
+                yield return new WaitForSeconds(5);
+            }
+            yield return new WaitUntil(() => restEnemy <= 0);
+            waveDisplay.text = "Wave 2";
+            SetTotalEnemy(Wave2Enemy);
+            UpdateWaveText(restEnemy);
+            yield return new WaitForSeconds(10);
+            for (int i = Wave2Enemy; i > 0; i--)
+            {
+                spawn_enemy(enemy);
+                if (i < 3)
+                {
+                    spawn_enemy(enemy2);
+                }
+                if (i < 2)
+                {
+                    spawn_enemy(enemy3);
+                }
+                yield return new WaitForSeconds(5);
+            }
+            yield return new WaitUntil(() => restEnemy <= 0);
+            waveDisplay.text = "Wave 3";
+            SetTotalEnemy(Wave3Enemy);
+            UpdateWaveText(restEnemy);
+            yield return new WaitForSeconds(10);
+            for (int i = Wave3Enemy; i > 0; i--)
+            {
+                spawn_enemy(enemy);
+                if (i < 7)
+                {
+                    spawn_enemy(enemy2);
+                }
+                if (i < 4)
+                {
+                    spawn_enemy(enemy3);
+                }
+                yield return new WaitForSeconds(3);
+            }
         }
-        yield return new WaitUntil(()=>restEnemy<=0);
-        waveDisplay.text = "Wave 2";
-        SetTotalEnemy(Wave2Enemy);
-        UpdateWaveText(restEnemy);
-        yield return new WaitForSeconds(10);
-        for (int i = Wave2Enemy; i > 0; i--)
+        else if (ChooseLevel == 2)
         {
-            spawn_enemy(enemy);
-            if (i < 3)
+            SetTotalEnemy(wave1Enemy);
+            UpdateWaveText(restEnemy);
+            waveDisplay.text = "Wave 1";
+            yield return new WaitForSeconds(15);
+            for (int i = wave1Enemy; i > 0; i--)
             {
+                spawn_enemy(enemy);
+                yield return new WaitForSeconds(5);
+            }
+            yield return new WaitUntil(() => restEnemy <= 0);
+            waveDisplay.text = "Wave 2";
+            SetTotalEnemy(Wave2Enemy);
+            UpdateWaveText(restEnemy);
+            yield return new WaitForSeconds(10);
+            for (int i = Wave2Enemy; i > 0; i--)
+            {
+                spawn_enemy(enemy);
+                if (i == (Wave2Enemy - 2))
+                {
+                    spawn_enemy(enemy2);
+                }
+                if (i == (Wave2Enemy - 3))
+                {
+                    spawn_enemy(enemy2);
+                    spawn_enemy(enemy3);
+                }
+                yield return new WaitForSeconds(5);
+            }
+            yield return new WaitUntil(() => restEnemy <= 0);
+            waveDisplay.text = "Wave 3";
+            SetTotalEnemy(Wave3Enemy);
+            UpdateWaveText(restEnemy);
+            yield return new WaitForSeconds(10);
+            for (int i = Wave3Enemy; i > 0; i--)
+            {
+                spawn_enemy(enemy);
+                if (i == (Wave3Enemy - 2))
+                {
+                    for (int j = 0; j < 2; j++)
+                    {
+                        spawn_enemy(enemy3);
+                        spawn_enemy(enemy2);
+                        yield return new WaitForSeconds(3);
+                    }
+                }
+                yield return new WaitForSeconds(3);
+            }
+            yield return new WaitUntil(() => restEnemy <= 0);
+            waveDisplay.text = "Wave 4";
+            SetTotalEnemy(Wave4Enemy);
+            UpdateWaveText(restEnemy);
+            yield return new WaitForSeconds(10);
+            for (int i = Wave4Enemy; i > 0; i--)
+            {
+                spawn_enemy(enemy);
                 spawn_enemy(enemy2);
-            }
-            if (i < 2)
-            {
                 spawn_enemy(enemy3);
+                yield return new WaitForSeconds(1);
             }
-            yield return new WaitForSeconds(5);
-        }
-        yield return new WaitUntil(()=>restEnemy<=0);
-        waveDisplay.text = "Wave 3";
-        SetTotalEnemy(Wave3Enemy);
-        UpdateWaveText(restEnemy);
-        yield return new WaitForSeconds(10);
-        for (int i = Wave3Enemy; i > 0; i--)
-        {
-            spawn_enemy(enemy);
-            if (i < 7)
-            {
-                spawn_enemy(enemy2);
-            }
-            if (i < 4)
-            {
-                spawn_enemy(enemy3);
-            }
-            yield return new WaitForSeconds(3);
         }
         Victory();
     }
