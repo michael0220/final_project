@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lightmode: {fileID: 1578926492}
-  Darkmode: {fileID: 0}
+  Darkmode: {fileID: 1444655836}
   Maskmode: {fileID: 1837380521}
   createtype: hero3
   cdtime: 2
