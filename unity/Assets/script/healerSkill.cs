@@ -6,10 +6,12 @@ public class healerSkill : Hero_Base
     [SerializeField] private float addHp;
     [SerializeField] private float healInterval;
     private Dictionary<Hero_Base, float> healTimers = new Dictionary<Hero_Base, float>();
+    public HeroType herotype;
 
     void Start()
     {
-        currHp = maxHp;
+        int level = UpgradeManager.Instance.Getlevel(herotype);
+        addHp += (level - 1) * 30;
     }
 
     void Update()

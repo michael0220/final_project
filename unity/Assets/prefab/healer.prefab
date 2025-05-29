@@ -732,3 +732,4 @@ MonoBehaviour:
   isdead: 0
   addHp: 30
   healInterval: 3
+  herotype: 5
