@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 884c657a68044e646a3e813bd563bdb9
+guid: bd5808f31d98b274d9e95b340adbd8c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5367240490282262388
-    second: exhaust2_0
-  - first:
-      213: 292066920098415244
-    second: exhaust2_1
+      213: -970433833988889493
+    second: Ship2_Explosion_009_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,45 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: exhaust2_0
+      name: Ship2_Explosion_009_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 12
-        width: 14
-        height: 10
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c80e1a0063bb385b0800000000000000
-      internalID: -5367240490282262388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: exhaust2_1
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 9
-        width: 21
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c82cb1ff051ad0400800000000000000
-      internalID: 292066920098415244
+      spriteID: b64621fc1935882f0800000000000000
+      internalID: -970433833988889493
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 19dc546ff4f8c7146a48c49420995005
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      exhaust2_0: -5367240490282262388
-      exhaust2_1: 292066920098415244
+      Ship2_Explosion_009_0: -970433833988889493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
