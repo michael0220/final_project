@@ -2,15 +2,27 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using TMPro;
 public class Spike : MonoBehaviour
 {
     [SerializeField] private float SpikeDamage;
     [SerializeField] private float Interval;
     [SerializeField] private float speedEffect;
     [SerializeField] private float deadtime;
-    private float timer=0f;
+    public TextMeshProUGUI levelText;
+    public HeroType herotype;
+    private float timer = 0f;
     private Dictionary<Collider2D, float> enemyTimers = new Dictionary<Collider2D, float>();
     private Dictionary<Enemy_Base, float> originalSpeeds = new Dictionary<Enemy_Base, float>();
+    void Start()
+    {
+        int level = UpgradeManager.Instance.Getlevel(herotype);
+
+        SpikeDamage += (level - 1) * 20;
+        deadtime += (level - 1) * 5;
+
+        upgradeLevelText();
+    }
     void Update()
     {
         timer += Time.deltaTime;
@@ -67,5 +79,10 @@ public class Spike : MonoBehaviour
                 enemyTimers.Remove(collision);
             }
         }
+    }
+    void upgradeLevelText()
+    {
+        int level = UpgradeManager.Instance.Getlevel(herotype);
+        levelText.text = level.ToString();
     }
 }

@@ -194,3 +194,4 @@ MonoBehaviour:
   freezeDamagePerTime: 20
   duration: 3
   interval: 0.6
+  herotype: 2
