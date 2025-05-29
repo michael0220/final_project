@@ -15,6 +15,7 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     [SerializeField] private float damagePerHit = 50f;
     [SerializeField] public float speed = 1.0f;
     [SerializeField] public float currspeed;
+    private enemy_spawner spawner;
     public float hp;
     public GameObject hp_bar;
     private bool isdead = false;
@@ -28,6 +29,7 @@ public class Enemy_Base : MonoBehaviour, IDamageable
 
     void Start()
     {
+        spawner = FindAnyObjectByType<enemy_spawner>();
         hp = max_hp;
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -110,6 +112,7 @@ public class Enemy_Base : MonoBehaviour, IDamageable
 
     void Dead()
     {
+        spawner.EnemyDead();
         isdead = true;
         rb.simulated = false;
         col.enabled = false;
