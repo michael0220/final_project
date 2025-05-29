@@ -5,35 +5,60 @@ public class healerSkill : Hero_Base
 {
     [SerializeField] private float addHp;
     [SerializeField] private float healInterval;
-    Hero_Base heroScript;
-    public GameObject hp_bar;
-    Collider2D heroCollider;
-    Rigidbody2D rb;
-    public float timer;
+    private Dictionary<Hero_Base, float> healTimers = new Dictionary<Hero_Base, float>();
+
     void Start()
     {
         currHp = maxHp;
-        heroCollider = GetComponent<Collider2D>();
-        rb = GetComponent<Rigidbody2D>();
-
     }
+
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= healInterval && heroScript != null) Heal();
-        hp_bar.transform.localScale = new Vector3((float)(currHp / maxHp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
-    }
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("hero"))
+        UpdateHp();
+        List<Hero_Base> keys = new List<Hero_Base>(healTimers.Keys);
+        foreach (var hero in keys)
         {
-            heroScript = collision.GetComponent<Hero_Base>();
+            if (hero == null || hero.isdead)
+            {
+                healTimers.Remove(hero);
+                continue;
+            }
+
+            healTimers[hero] += Time.deltaTime;
+
+            if (healTimers[hero] >= healInterval)
+            {
+                hero.currHp += addHp;
+                if (hero.currHp > hero.maxHp) hero.currHp = hero.maxHp;
+                healTimers[hero] = 0f;
+            }
         }
     }
 
-    void Heal()
+    void OnTriggerStay2D(Collider2D collision)
     {
-        heroScript.currHp += addHp;
-        timer = 0;
+        if (!collision.CompareTag("hero")) return;
+
+        Hero_Base hero = collision.GetComponent<Hero_Base>();
+        if (hero != null && !healTimers.ContainsKey(hero))
+        {
+            healTimers.Add(hero, 0f);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("hero")) return;
+
+        Hero_Base hero = collision.GetComponent<Hero_Base>();
+        if (hero != null && healTimers.ContainsKey(hero))
+        {
+            healTimers.Remove(hero);
+        }
+    }
+
+    protected override void Dead()
+    {
+        isdead = true;
     }
 }

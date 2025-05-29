@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using Unity.PlasticSCM.Editor.WebApi;
 
-public class Hero_Melee_base : Hero_Base
+public class Hero_Melee_base : Hero_Base, IDamageable
 {
     [SerializeField] private float basedamage = 35f;
     [SerializeField] private float damageInterval = 1.5f;
@@ -17,7 +17,6 @@ public class Hero_Melee_base : Hero_Base
     Collider2D heroCollider;
     Rigidbody2D rb;
     Animator anim;
-    bool isdead = false;
     private float actualdamage;
 
     public TextMeshProUGUI levelText;
@@ -49,15 +48,7 @@ public class Hero_Melee_base : Hero_Base
                 damageTimer = 0f;
             }
         }
-        if (currHp >= maxHp)
-        {
-            currHp = maxHp;
-        }
-        if (currHp <= 0 && !isdead)
-        {
-            currHp = 0;
-            Dead();
-        }
+        UpdateHp();
         hp_bar.transform.localScale = new Vector3((float)(currHp / maxHp), hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -91,7 +82,7 @@ public class Hero_Melee_base : Hero_Base
         currHp -= amount;
     }
 
-    void Dead()
+    protected override void Dead()
     {
         isdead = true;
         rb.simulated = false;

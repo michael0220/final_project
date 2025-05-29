@@ -247,7 +247,8 @@ GameObject:
   - component: {fileID: 8020988731902210938}
   - component: {fileID: 6478439770013641867}
   - component: {fileID: 7774924663757803564}
-  - component: {fileID: 5087931528110548516}
+  - component: {fileID: 3933698871340783282}
+  - component: {fileID: 5971012466509810219}
   m_Layer: 0
   m_Name: healer
   m_TagString: hero
@@ -401,7 +402,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.651062, y: 0.8245377}
   m_EdgeRadius: 0
---- !u!114 &5087931528110548516
+--- !u!114 &3933698871340783282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -410,14 +411,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 7921524058364886615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76af7391f29a54141b6743f5a60a51f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c4e7b0a5e0225640ade74e9acb6df84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 200
   currHp: 0
-  addHp: 30
-  healInterval: 2
+  isdead: 0
+  basedamage: 0
+  damageInterval: 0
+  heroType: 5
   hp_bar: {fileID: 4061277830843456262}
+  levelText: {fileID: 7409967029730733829}
+--- !u!95 &5971012466509810219
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921524058364886615}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a416bc6a34387de47a2e3265d479ad19, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8388030149113384140
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +591,7 @@ GameObject:
   - component: {fileID: 4817692708946375860}
   - component: {fileID: 4684703869730006977}
   - component: {fileID: 5507453788405447783}
+  - component: {fileID: 6897884300890504812}
   m_Layer: 0
   m_Name: healRange
   m_TagString: Untagged
@@ -581,8 +608,8 @@ Transform:
   m_GameObject: {fileID: 9181970388306014938}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.033, y: 0.085, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.7142857, z: 1}
+  m_LocalPosition: {x: 0.0157, y: 0.0018, z: 0}
+  m_LocalScale: {x: 2.4579408, y: 2.6202657, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 904308312498325492}
@@ -676,7 +703,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.21649325, y: 0.20080519}
+  m_Offset: {x: 0.0056289434, y: -0.005879611}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -686,5 +713,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.3531883, y: 3.597921}
+  m_Size: {x: 1.0405049, y: 1.0174909}
   m_EdgeRadius: 0
+--- !u!114 &6897884300890504812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9181970388306014938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76af7391f29a54141b6743f5a60a51f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 100
+  currHp: 0
+  isdead: 0
+  addHp: 30
+  healInterval: 3
