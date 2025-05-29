@@ -74,6 +74,8 @@ public class enemy_spawner : MonoBehaviour
                 }
                 yield return new WaitForSeconds(3);
             }
+            yield return new WaitUntil(() => restEnemy <= 0);
+
         }
         else if (ChooseLevel == 2)
         {
@@ -136,6 +138,12 @@ public class enemy_spawner : MonoBehaviour
                 spawn_enemy(enemy3);
                 yield return new WaitForSeconds(1);
             }
+            yield return new WaitUntil(() => restEnemy <= 0);
+        }
+        else if (ChooseLevel == 3)
+        {
+            SetTotalEnemy(1);
+            yield return new WaitUntil(() => restEnemy <= 0);
         }
         Victory();
     }
