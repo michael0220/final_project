@@ -5,6 +5,14 @@ using Unity.VisualScripting;
 
 public class Hero_Ranged_base : Hero_Base, IDamageable
 {
+    private float bondRateMultiplier = 1f;
+    public void SetBondedAttackSpeedMultiplier(float multiplier)
+    {
+        bondRateMultiplier = multiplier;
+        int level = UpgradeManager.Instance.Getlevel(heroType);
+        actual_delaytime = (base_delaytime - (level - 1) * 0.5f) / bondRateMultiplier;
+    }
+
     [SerializeField] private float base_delaytime = 3.0f;
     [SerializeField] private float launchforce = 6f;
     public HeroType heroType;

@@ -1,20 +1,13 @@
-/* using UnityEngine;
+using UnityEngine;
 using TMPro;
-
-using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class BondManager : MonoBehaviour
 {
     public TextMeshProUGUI bondText;
     private float checkTimer = 0f;
     public float checkInterval = 1f;
-
     private string lastMessage = "";
-
-    void Start()
-    {
-        Debug.Log("BondText 連接狀態：" + (bondText != null ? "✅ 已連接" : "❌ 沒連接"));
-    }
 
     void Update()
     {
@@ -28,51 +21,68 @@ public class BondManager : MonoBehaviour
 
     void ApplyBonds()
     {
-        Hero[] heroes = Object.FindObjectsByType<Hero>(FindObjectsSortMode.None);
-        hero2[] archers = Object.FindObjectsByType<hero2>(FindObjectsSortMode.None);
+        // 找出所有角色
+        Hero_Melee_base[] heroes = FindObjectsByType<Hero_Melee_base>(FindObjectsSortMode.None);
+        Hero_Ranged_base[] rangers = FindObjectsByType<Hero_Ranged_base>(FindObjectsSortMode.None);
+        Hero_Tank_base[] tanks = FindObjectsByType<Hero_Tank_base>(FindObjectsSortMode.None);
 
-        int heroCount = heroes.Length;
-        int archerCount = archers.Length;
 
-        float heroHpMultiplier = 1.0f;
-        float archerRateMultiplier = 1.0f;
+        // 計算各角色是否存在
+        bool hasHero1 = false;
+        bool hasHero2 = false;
+        bool hasHero3 = false;
+        int tankCount = tanks.Length;
+
+        foreach (var h in heroes)
+        {
+            if (h.heroType == HeroType.hero1)
+                hasHero1 = true;
+        }
+
+        foreach (var r in rangers)
+        {
+            if (r.heroType == HeroType.hero2)
+                hasHero2 = true;
+            if (r.heroType == HeroType.hero3)
+                hasHero3 = true;
+        }
+
+        bool heroBondActive = hasHero1 && hasHero2 && hasHero3;
+        bool tankBondActive = tankCount >= 2;
+
         string message = "";
 
-        if (heroCount > 2)
+        // 英雄羈絆處理
+        foreach (var h in heroes)
         {
-            heroHpMultiplier = 1.5f;
-            message = "Hero Bond Activated: HP x1.5\n";
+            if (heroBondActive && h.heroType == HeroType.hero1)
+                h.SetBondedDamageMultiplier(1.5f);
+            else
+                h.SetBondedDamageMultiplier(1f);
         }
 
-        if (archerCount > 2)
+        foreach (var r in rangers)
         {
-            archerRateMultiplier = 1.5f;
-            message = "Archer Bond Activated: Attack Speed x1.5\n";
+            if (heroBondActive && (r.heroType == HeroType.hero2 || r.heroType == HeroType.hero3))
+                r.SetBondedAttackSpeedMultiplier(2f);
+            else
+                r.SetBondedAttackSpeedMultiplier(1f);
         }
 
-        if (heroCount > 3 && archerCount > 3)
+        // 坦克羈絆處理
+        foreach (var t in tanks)
         {
-            heroHpMultiplier *= 2f;
-            archerRateMultiplier *= 2f;
-            message = "Bond Boost: Effects Doubled!";
+            if (tankBondActive)
+                t.SetBondedHpMultiplier(2f);
+            else
+                t.SetBondedHpMultiplier(1f);
         }
 
-        foreach (Hero h in heroes)
-        {
-            int newMaxHp = Mathf.RoundToInt(400 * heroHpMultiplier);
+        if (heroBondActive)
+            message += "Hero Bond Activated:Hero1 ATK x1.5,\nHero2&3 ATK SPD x2\n";
 
-            if (h.max_hp != newMaxHp)
-            {
-                float hpPercent = (float)h.hp / h.max_hp;  // 先記住目前血量百分比
-                h.max_hp = newMaxHp;
-                h.hp = Mathf.RoundToInt(h.max_hp * hpPercent); // 調整為新 max_hp 的比例
-            }
-        }
-
-        foreach (hero2 h2 in archers)
-        {
-            h2.base_delaytime = 1.0f / archerRateMultiplier;
-        }
+        if (tankBondActive)
+            message += "Tank Bond Activated: Tank HP x2";
 
         if (message != lastMessage)
         {
@@ -94,11 +104,10 @@ public class BondManager : MonoBehaviour
     void ClearText()
     {
         if (bondText != null)
-        {
             bondText.text = "";
-        }
     }
 }
 
 
- */
+
+ 
