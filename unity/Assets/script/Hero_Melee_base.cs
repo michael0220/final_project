@@ -6,6 +6,15 @@ using Unity.PlasticSCM.Editor.WebApi;
 
 public class Hero_Melee_base : Hero_Base, IDamageable
 {
+    private float bondMultiplier = 1f;
+
+    public void SetBondedDamageMultiplier(float multiplier)
+    {
+    bondMultiplier = multiplier;
+    int level = UpgradeManager.Instance.Getlevel(heroType);
+    actualdamage = (basedamage + (level - 1) * 10) * bondMultiplier;
+    }
+
     [SerializeField] private float basedamage = 35f;
     [SerializeField] private float damageInterval = 1.5f;
 
