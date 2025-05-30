@@ -61,7 +61,7 @@ public class button_controller : MonoBehaviour
             case "hero4":
                 prefabtospawn = hero4_prefab;
                 break;
-            case "Healer":
+            case "healer":
                 prefabtospawn = Healer_prefab;
                 break;
             case "enemy":
