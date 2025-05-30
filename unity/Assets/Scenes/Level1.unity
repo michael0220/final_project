@@ -1174,7 +1174,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1023816154}
         m_TargetAssemblyTypeName: CloseHeroMenu, Assembly-CSharp
         m_MethodName: ShowPage1
         m_Mode: 1
@@ -1331,7 +1331,7 @@ Transform:
   m_GameObject: {fileID: 243870704}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0011097403, y: 0.00088182517, z: 0}
+  m_LocalPosition: {x: -0.168, y: 0.00088182517, z: 0}
   m_LocalScale: {x: 0.98627067, y: 0.8637513, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7866,7 +7866,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1023816154}
         m_TargetAssemblyTypeName: CloseHeroMenu, Assembly-CSharp
         m_MethodName: ShowPage2
         m_Mode: 1
@@ -8413,7 +8413,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587757650}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

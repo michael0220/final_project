@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour, IDamageable
 {
+    enemy_spawner enemySpawner;
     public GameObject hp_bar;
     public float max_hp = 1000f;
     public float curr_hp;
@@ -95,6 +96,7 @@ public class Boss : MonoBehaviour, IDamageable
         rb.simulated = false;
         colid.enabled = false;
         anim.SetTrigger("destory");
+        enemySpawner.EnemyDead();
     }
 
     public void OnBossAnimEnd()
