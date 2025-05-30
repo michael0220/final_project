@@ -61,12 +61,14 @@ public class Boss : MonoBehaviour, IDamageable
             }
             yield return new WaitForSeconds(3);
             SpawnEnemies();
+            anim.SetBool("spawn", false);
             yield return new WaitForSeconds(spawnInterval);
         }
     }
 
     public void SpawnEnemies()
     {
+        anim.SetBool("spawn", true);
         int enemyNum = Random.Range(spawnmin, spawnMAX + 1);
         for (int i = 0; i < enemyNum; i++)
         {
@@ -104,7 +106,6 @@ public class Boss : MonoBehaviour, IDamageable
     public void OnBossAnimEnd()
     {
         Destroy(gameObject);
-        
     }
     
 }
