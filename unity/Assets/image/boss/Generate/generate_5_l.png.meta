@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c2e965e05cd4ee144a7be1d587eecf11
+guid: df9bc95325868cb438257d6eef8353f2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4017081212909730839
-    second: hero1button-Photoroom_0
+      213: 3744246426649405371
+    second: generate_5_l_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,40 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hero1button-Photoroom_0
+      name: generate_5_l_0
       rect:
         serializedVersion: 2
-        x: 120
-        y: 167
-        width: 1055
-        height: 520
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e3ce969be57048c0800000000000000
-      internalID: -4017081212909730839
+      spriteID: bb7a6f3894c36f330800000000000000
+      internalID: 3744246426649405371
       vertices: []
       indices: 
       edges: []
@@ -138,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3797993e715052c49a8052b59744f34e
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hero1button-Photoroom_0: -4017081212909730839
+      generate_5_l_0: 3744246426649405371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

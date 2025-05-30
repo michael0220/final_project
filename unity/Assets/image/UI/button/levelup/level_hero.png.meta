@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 11d4fa2fa5d19534d9b4babfc430b248
+guid: 77afb24d57418e84391d5c1b33ff1ea4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9111482717969064178
-    second: ship2_detail2-2_0
+      213: -7692495904006423679
+    second: level_hero_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ship2_detail2-2_0
+      name: level_hero_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 30
-        height: 26
+        x: 100
+        y: 372
+        width: 879
+        height: 339
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e0fd7522eb28d8180800000000000000
-      internalID: -9111482717969064178
+      spriteID: 18bbc8d5bb3ce3590800000000000000
+      internalID: -7692495904006423679
       vertices: []
       indices: 
       edges: []
