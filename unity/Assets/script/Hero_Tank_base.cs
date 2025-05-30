@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using Unity.PlasticSCM.Editor.WebApi;
 
-public class Hero_Tank_base : Hero_Base
+public class Hero_Tank_base : Hero_Base, IDamageable
 {
 
     public HeroType heroType;
