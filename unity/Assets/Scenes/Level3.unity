@@ -8603,7 +8603,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966634685}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -8708,7 +8708,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995580105}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -9051,8 +9051,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 995580106}
   - {fileID: 966634686}
+  - {fileID: 995580106}
   m_Father: {fileID: 1068709341}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1023816154
@@ -14029,6 +14029,7 @@ GameObject:
   - component: {fileID: 1787855769}
   - component: {fileID: 1787855768}
   - component: {fileID: 1787855767}
+  - component: {fileID: 1787855772}
   m_Layer: 5
   m_Name: EnergyGeneratorMenuButton
   m_TagString: Untagged
@@ -14174,6 +14175,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787855765}
   m_CullTransparentMesh: 1
+--- !u!114 &1787855772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787855765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 204b2a1009ba2a0489eda5ffc3ea0a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 1787855769}
+  newSprite: {fileID: -636886922678613537, guid: e64b64373c020d04cae8cafefa98755e, type: 3}
 --- !u!1 &1822301707
 GameObject:
   m_ObjectHideFlags: 0

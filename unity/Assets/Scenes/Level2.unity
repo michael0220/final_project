@@ -3701,6 +3701,7 @@ GameObject:
   - component: {fileID: 398113526}
   - component: {fileID: 398113525}
   - component: {fileID: 398113529}
+  - component: {fileID: 398113530}
   m_Layer: 5
   m_Name: EnergyGeneratorMenuButton
   m_TagString: Untagged
@@ -3846,6 +3847,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeBtn: {fileID: 606045472}
   menu: {fileID: 32026716}
+--- !u!114 &398113530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398113523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 204b2a1009ba2a0489eda5ffc3ea0a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 398113526}
+  newSprite: {fileID: -636886922678613537, guid: e64b64373c020d04cae8cafefa98755e, type: 3}
 --- !u!1 &414175864
 GameObject:
   m_ObjectHideFlags: 0
@@ -4989,6 +5004,7 @@ MonoBehaviour:
   enemy2: {fileID: 6709818064153581405, guid: 1551bc0aa0be8434594e8e3d08908017, type: 3}
   enemy3: {fileID: 8621859685579082591, guid: 7b18f23953fa13a4aa4be9bac03a437a, type: 3}
   wavebar: {fileID: 1297071413}
+  boss: {fileID: 0}
   wavetext: {fileID: 337335901}
   waveDisplay: {fileID: 1892461489}
   wave1Enemy: 4
