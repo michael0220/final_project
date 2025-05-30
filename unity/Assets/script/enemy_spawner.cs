@@ -1,10 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class enemy_spawner : MonoBehaviour
 {
     public int ChooseLevel;
+    public float failx = -7.1f;
+    public Gameovermanager gameovermanager;
     public Transform[] spawnpoints;
     public GameObject victoryPanel;
     public GameObject enemy;
@@ -15,10 +18,14 @@ public class enemy_spawner : MonoBehaviour
 
     public int wave1Enemy, Wave2Enemy, Wave3Enemy, Wave4Enemy;
     int restEnemy, totalEnemy;
+    private List<GameObject> activeEnemy = new List<GameObject>();
+    private bool haveLost = false;
 
-    void spawn_enemy(GameObject enemyPrefab){
+    void spawn_enemy(GameObject enemyPrefab)
+    {
         int r = Random.Range(0, spawnpoints.Length);
-        Instantiate(enemyPrefab, spawnpoints[r].position, Quaternion.identity);
+        GameObject newenemy = Instantiate(enemyPrefab, spawnpoints[r].position, Quaternion.identity);
+        activeEnemy.Add(newenemy);
     }
 
     void Start()
@@ -26,7 +33,17 @@ public class enemy_spawner : MonoBehaviour
         StartCoroutine(SpawnEnemy());
     }
 
-    IEnumerator SpawnEnemy(){
+    void Update()
+    {
+        if (haveLost)
+        {
+            return;
+        }
+        CheckifOverEdge();
+    }
+
+    IEnumerator SpawnEnemy()
+    {
         if (ChooseLevel == 1)
         {
             SetTotalEnemy(wave1Enemy);
@@ -74,6 +91,7 @@ public class enemy_spawner : MonoBehaviour
                 }
                 yield return new WaitForSeconds(3);
             }
+            gameovermanager.OnAllEnemySpawn();
             yield return new WaitUntil(() => restEnemy <= 0);
 
         }
@@ -138,6 +156,7 @@ public class enemy_spawner : MonoBehaviour
                 spawn_enemy(enemy3);
                 yield return new WaitForSeconds(1);
             }
+            gameovermanager.OnAllEnemySpawn();
             yield return new WaitUntil(() => restEnemy <= 0);
         }
         else if (ChooseLevel == 3)
@@ -145,7 +164,7 @@ public class enemy_spawner : MonoBehaviour
             SetTotalEnemy(1);
             yield return new WaitUntil(() => restEnemy <= 0);
         }
-        Victory();
+        //Victory();
     }
     public void SetTotalEnemy(int total)
     {
@@ -166,8 +185,29 @@ public class enemy_spawner : MonoBehaviour
         wavebar.transform.localScale = new Vector3(ratio, wavebar.transform.localScale.y, wavebar.transform.localScale.z);
         wavetext.text = restEnemy + " / " + totalEnemy;
     }
-    void Victory(){
-        Time.timeScale = 0f;
-        victoryPanel.SetActive(true);
+
+    private void CheckifOverEdge()
+    {
+        for (int i = activeEnemy.Count - 1; i >= 0; i--)
+        {
+            GameObject enemy = activeEnemy[i];
+            if (enemy == null)
+            {
+                activeEnemy.RemoveAt(i);
+                continue;
+            }
+            if (enemy.transform.position.x < failx)
+            {
+                Debug.Log("敵人超過界線: " + enemy.transform.position.x);
+                haveLost = true;
+                Destroy(enemy);
+                gameovermanager.ShowLosePanel();
+                break;
+            }
+        }
     }
+    //void Victory(){
+    //    Time.timeScale = 0f;
+    //    victoryPanel.SetActive(true);
+    //}
 }

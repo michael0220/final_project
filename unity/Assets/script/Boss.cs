@@ -5,6 +5,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour, IDamageable
 {
     enemy_spawner enemySpawner;
+    public Gameovermanager gameovermanager;
     public GameObject hp_bar;
     public float max_hp = 1000f;
     public float curr_hp;
@@ -40,6 +41,7 @@ public class Boss : MonoBehaviour, IDamageable
         else if (curr_hp <= max_hp * 0.1f)
         {
             spawnEnabled = false;
+            gameovermanager.OnAllEnemySpawn();
         }
         hp_bar.transform.localScale = new Vector3((float)curr_hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
@@ -102,6 +104,7 @@ public class Boss : MonoBehaviour, IDamageable
     public void OnBossAnimEnd()
     {
         Destroy(gameObject);
+        
     }
     
 }
