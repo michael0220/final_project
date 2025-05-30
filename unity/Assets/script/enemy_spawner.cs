@@ -14,6 +14,7 @@ public class enemy_spawner : MonoBehaviour
     public GameObject enemy2;
     public GameObject enemy3;
     public GameObject wavebar;
+    public GameObject boss;
     public TextMeshProUGUI wavetext, waveDisplay;
 
     public int wave1Enemy, Wave2Enemy, Wave3Enemy, Wave4Enemy;
@@ -161,8 +162,8 @@ public class enemy_spawner : MonoBehaviour
         }
         else if (ChooseLevel == 3)
         {
-            SetTotalEnemy(1);
-            yield return new WaitUntil(() => restEnemy <= 0);
+            Boss bossScript = boss.GetComponent<Boss>();
+            yield return new WaitUntil(() => bossScript.curr_hp<=0);
         }
         //Victory();
     }
@@ -198,7 +199,7 @@ public class enemy_spawner : MonoBehaviour
             }
             if (enemy.transform.position.x < failx)
             {
-                Debug.Log("敵人超過界線: " + enemy.transform.position.x);
+                //Debug.Log("敵人超過界線: " + enemy.transform.position.x);
                 haveLost = true;
                 Destroy(enemy);
                 gameovermanager.ShowLosePanel();

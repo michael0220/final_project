@@ -11,7 +11,6 @@ public class moneygenerator : MonoBehaviour
     public int generateEnergy = 10;
     public int unlockCost = 200;
     public TextMeshProUGUI unlockText;
-    public TextMeshProUGUI unlockGenerator;
     public TextMeshProUGUI EffiLevel;
     private int upgradeCost = 150;
     private int currentLevel = 1;
@@ -48,7 +47,6 @@ public class moneygenerator : MonoBehaviour
             btn.onClick.AddListener(energy_menu);
             currency_manage.Instance.SubEnergy(unlockCost);
             isunlock = true;
-            unlockGenerator.text = "Starcore Link";
         }
     }
     void energy_menu()

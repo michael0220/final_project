@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour, IDamageable
     enemy_spawner enemySpawner;
     public Gameovermanager gameovermanager;
     public GameObject hp_bar;
+    public float failx = -7.1f;
     public float max_hp = 1000f;
     public float curr_hp;
     public Transform spawnplace;
@@ -14,6 +15,8 @@ public class Boss : MonoBehaviour, IDamageable
     public float spawnInterval = 8f;
     private int lastSpawnPoint = -1;
     private bool spawnEnabled = true;
+    private bool haveLost = false;
+    private List<GameObject> activeEnemy = new List<GameObject>();
     [SerializeField] private Transform[] spawnpoints;
     [SerializeField] private int spawnmin = 4;
     [SerializeField] private int spawnMAX = 6;
@@ -33,6 +36,11 @@ public class Boss : MonoBehaviour, IDamageable
 
     void Update()
     {
+        if (haveLost)
+        {
+            return;
+        }
+        CheckifOverEdge();
         if (curr_hp <= 0)
         {
             curr_hp = 0;
@@ -75,7 +83,7 @@ public class Boss : MonoBehaviour, IDamageable
             int enemytype = Random.Range(0, enemyPrefab.Length);
             GameObject enemytospawn = enemyPrefab[enemytype];
             Instantiate(enemytospawn, spawnplace.position, Quaternion.identity);
-
+            activeEnemy.Add(enemytospawn);
         }
     }
 
@@ -90,6 +98,27 @@ public class Boss : MonoBehaviour, IDamageable
         return nextp;
     }
 
+    private void CheckifOverEdge()
+    {
+        for (int i = activeEnemy.Count - 1; i >= 0; i--)
+        {
+            GameObject enemy = activeEnemy[i];
+            if (enemy == null)
+            {
+                activeEnemy.RemoveAt(i);
+                continue;
+            }
+            if (enemy.transform.position.x < failx)
+            {
+                Debug.Log("敵人超過界線: " + enemy.transform.position.x);
+                haveLost = true;
+                Destroy(enemy);
+                gameovermanager.ShowLosePanel();
+                break;
+            }
+        }
+    }
+
     public void takeDamage(float amount)
     {
         curr_hp -= amount;
@@ -100,7 +129,7 @@ public class Boss : MonoBehaviour, IDamageable
         rb.simulated = false;
         colid.enabled = false;
         anim.SetTrigger("destory");
-        enemySpawner.EnemyDead();
+        //enemySpawner.EnemyDead();
     }
 
     public void OnBossAnimEnd()
