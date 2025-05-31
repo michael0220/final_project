@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 
 public class enemy_spawner : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class enemy_spawner : MonoBehaviour
     public GameObject enemy2;
     public GameObject enemy3;
     public GameObject wavebar;
-    public GameObject boss;
     public TextMeshProUGUI wavetext, waveDisplay;
 
     public int wave1Enemy, Wave2Enemy, Wave3Enemy, Wave4Enemy;
@@ -172,8 +172,6 @@ public class enemy_spawner : MonoBehaviour
         }
         else if (ChooseLevel == 3)
         {
-            Boss bossScript = boss.GetComponent<Boss>();
-            yield return new WaitUntil(() => bossScript.curr_hp<=0);
         }
         //Victory();
     }
