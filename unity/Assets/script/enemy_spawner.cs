@@ -9,7 +9,7 @@ public class enemy_spawner : MonoBehaviour
     public float failx = -7.1f;
     public Gameovermanager gameovermanager;
     public Transform[] spawnpoints;
-    public GameObject victoryPanel;
+    //public GameObject victoryPanel;
     public GameObject enemy;
     public GameObject enemy2;
     public GameObject enemy3;
@@ -199,7 +199,7 @@ public class enemy_spawner : MonoBehaviour
             }
             if (enemy.transform.position.x < failx)
             {
-                Debug.Log("敵人超過界線: " + enemy.transform.position.x);
+                //Debug.Log("敵人超過界線: " + enemy.transform.position.x);
                 haveLost = true;
                 Destroy(enemy);
                 gameovermanager.ShowLosePanel();
