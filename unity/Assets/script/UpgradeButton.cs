@@ -20,6 +20,6 @@ public class UpgradeButton : MonoBehaviour
     }
     void Update() {
         int level = UpgradeManager.Instance.Getlevel(heroType);
-        levelText.text = "Upgrade\nLv. " + level.ToString();
+        levelText.text = "Lv. " + level.ToString();
     }
 }
