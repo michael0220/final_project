@@ -3,13 +3,18 @@ using UnityEngine;
 
 public class hero3Skill : MonoBehaviour
 {
-    //color = 255 150 120 255
-    private IDamageable targetenemy;
-    private SpriteRenderer Sr;
     public float freezeDamagePerTime = 20f;
     public float duration = 3f;
     public float interval = 0.6f;
+    public HeroType herotype;
     Enemy_Base enemyScript;
+    void Start()
+    {
+        int level = UpgradeManager.Instance.Getlevel(herotype);
+
+        freezeDamagePerTime += (level - 1) * 5;
+        duration += (level - 1) * 0.5f;
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("enemy"))

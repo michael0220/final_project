@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8288426215254106694, guid: c91850544d08e4c4a876eacf1d9a795f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -533,7 +533,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -181485876952098698, guid: 67d563540d12e0b4ba3ab695a4ba8497, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -628,7 +628,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -8157529274441160004, guid: 153cf804f2a21494485316c83fb284ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -725,16 +725,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d101f41348cb705418b1d0be90fb97cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_hp: 250
+  maxHp: 300
+  currHp: 0
+  isdead: 0
   base_delaytime: 4
   launchforce: 8
-  heroType: 1
+  heroType: 2
   arrowPrefab: {fileID: 8196433065092814720, guid: bd69ef44b7fc9cd4aaa848c8bb1b55a2, type: 3}
   hands: {fileID: 292349437819278899}
   gun: {fileID: 8126511654227967976}
   hp_bar: {fileID: 7132842920328109379}
   launchpoint: {fileID: 9030303781790268768}
-  hp: 0
   timer: 0
   levelText: {fileID: 8527277473693167914}
 --- !u!95 &6794425733089826190

@@ -1,4 +1,4 @@
 public enum HeroType
 {
-    Melee, Ranged, Tank
+    hero1, hero2, hero3, tank, spike, healer
 }
