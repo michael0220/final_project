@@ -2,9 +2,11 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 
 public class enemy_spawner : MonoBehaviour
 {
+    private int RealEnemyNum;
     public int ChooseLevel;
     public float failx = -7.1f;
     public Gameovermanager gameovermanager;
@@ -14,7 +16,6 @@ public class enemy_spawner : MonoBehaviour
     public GameObject enemy2;
     public GameObject enemy3;
     public GameObject wavebar;
-    public GameObject boss;
     public TextMeshProUGUI wavetext, waveDisplay;
 
     public int wave1Enemy, Wave2Enemy, Wave3Enemy, Wave4Enemy;
@@ -54,11 +55,12 @@ public class enemy_spawner : MonoBehaviour
             for (int i = wave1Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(1);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
             waveDisplay.text = "Wave 2";
-            SetTotalEnemy(Wave2Enemy);
+            RealEnemyNum = Wave2Enemy + 3;
+            SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
             for (int i = Wave2Enemy; i > 0; i--)
@@ -67,15 +69,17 @@ public class enemy_spawner : MonoBehaviour
                 if (i < 3)
                 {
                     spawn_enemy(enemy2);
+                    yield return new WaitForSeconds(0.5f);
                 }
                 if (i < 2)
                 {
                     spawn_enemy(enemy3);
                 }
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(1);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
             waveDisplay.text = "Wave 3";
+            RealEnemyNum = Wave3Enemy + 9;
             SetTotalEnemy(Wave3Enemy);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
@@ -85,6 +89,7 @@ public class enemy_spawner : MonoBehaviour
                 if (i < 7)
                 {
                     spawn_enemy(enemy2);
+                    yield return new WaitForSeconds(0.5f);
                 }
                 if (i < 4)
                 {
@@ -109,7 +114,8 @@ public class enemy_spawner : MonoBehaviour
             }
             yield return new WaitUntil(() => restEnemy <= 0);
             waveDisplay.text = "Wave 2";
-            SetTotalEnemy(Wave2Enemy);
+            RealEnemyNum = Wave2Enemy + 3;
+            SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
             for (int i = Wave2Enemy; i > 0; i--)
@@ -122,13 +128,15 @@ public class enemy_spawner : MonoBehaviour
                 if (i == (Wave2Enemy - 3))
                 {
                     spawn_enemy(enemy2);
+                    yield return new WaitForSeconds(0.5f);
                     spawn_enemy(enemy3);
                 }
                 yield return new WaitForSeconds(5);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
             waveDisplay.text = "Wave 3";
-            SetTotalEnemy(Wave3Enemy);
+            RealEnemyNum = Wave3Enemy + 4;
+            SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
             for (int i = Wave3Enemy; i > 0; i--)
@@ -139,6 +147,7 @@ public class enemy_spawner : MonoBehaviour
                     for (int j = 0; j < 2; j++)
                     {
                         spawn_enemy(enemy3);
+                        yield return new WaitForSeconds(0.5f);
                         spawn_enemy(enemy2);
                         yield return new WaitForSeconds(3);
                     }
@@ -147,7 +156,8 @@ public class enemy_spawner : MonoBehaviour
             }
             yield return new WaitUntil(() => restEnemy <= 0);
             waveDisplay.text = "Wave 4";
-            SetTotalEnemy(Wave4Enemy);
+            RealEnemyNum = Wave4Enemy * 3;
+            SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
             for (int i = Wave4Enemy; i > 0; i--)
@@ -162,8 +172,6 @@ public class enemy_spawner : MonoBehaviour
         }
         else if (ChooseLevel == 3)
         {
-            Boss bossScript = boss.GetComponent<Boss>();
-            yield return new WaitUntil(() => bossScript.curr_hp<=0);
         }
         //Victory();
     }
