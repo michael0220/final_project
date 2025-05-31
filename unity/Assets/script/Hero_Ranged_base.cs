@@ -27,6 +27,10 @@ public class Hero_Ranged_base : Hero_Base, IDamageable
         rb = GetComponent<Rigidbody2D>();
 
         int level = UpgradeManager.Instance.Getlevel(heroType);
+        if (RandomEventManager.isHero3Stronger && heroType == HeroType.hero3)
+        {
+            applyRandomEvent();
+        }
 
         actual_delaytime = base_delaytime - (level - 1) * 0.5f;
 
@@ -79,5 +83,11 @@ public class Hero_Ranged_base : Hero_Base, IDamageable
     {
         int level = UpgradeManager.Instance.Getlevel(heroType);
         levelText.text = level.ToString();
+    }
+
+    void applyRandomEvent()
+    {
+        maxHp *= 1.5f;
+        base_delaytime *= 0.8f;
     }
 }

@@ -19,8 +19,11 @@ public class arrow_controller : MonoBehaviour
                 Physics2D.IgnoreCollision(heroCol, arrowCol);
         }
         int level = UpgradeManager.Instance.Getlevel(heroType);
-        actualDamage = basedDamage *(1+ (level - 1) * 1.5f);
-
+        if (RandomEventManager.isHero2WithPowerfulBullet && heroType==HeroType.hero2)
+        {
+            applyRandomEvent();
+        }
+        actualDamage = basedDamage * (1 + (level - 1) * 0.8f);
     }
 
     void Update()
@@ -44,5 +47,10 @@ public class arrow_controller : MonoBehaviour
     {
         targetEnemy.takeDamage(actualDamage);
         Destroy(gameObject);
+    }
+
+    void applyRandomEvent()
+    {
+        basedDamage += 10f;
     }
 }
