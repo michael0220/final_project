@@ -34,6 +34,8 @@ public class enemy_spawner : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
+        ChooseLevel = PlayerPrefs.GetInt("ChooseLevel", 0);
         StartCoroutine(SpawnEnemy());
     }
 
@@ -48,7 +50,7 @@ public class enemy_spawner : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
-        if (ChooseLevel == 1)
+        if (ChooseLevel == 0)
         {
             SetTotalEnemy(wave1Enemy);
             UpdateWaveText(restEnemy);
@@ -106,7 +108,7 @@ public class enemy_spawner : MonoBehaviour
             yield return new WaitUntil(() => restEnemy <= 0);
 
         }
-        else if (ChooseLevel == 2)
+        else if (ChooseLevel == 1)
         {
             SetTotalEnemy(wave1Enemy);
             UpdateWaveText(restEnemy);
@@ -179,7 +181,7 @@ public class enemy_spawner : MonoBehaviour
             gameovermanager.OnAllEnemySpawn();
             yield return new WaitUntil(() => restEnemy <= 0);
         }
-        else if (ChooseLevel == 3)
+        else if (ChooseLevel == 2)
         {
         }
         //Victory();
