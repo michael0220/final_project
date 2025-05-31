@@ -34,7 +34,7 @@ public class currency_manage : MonoBehaviour
         }
     }
 
-    private void UpdateEnergytext(){
+    public void UpdateEnergytext(){
         textOFcurrency.text = EnergyValue.ToString();
     }
 

@@ -34,6 +34,10 @@ public class Enemy_Base : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
+        if (RandomEventManager.isEnemySpeedUp)
+        {
+            applyRandomEvent();
+        }
         currspeed = speed;
     }
 
@@ -144,6 +148,11 @@ public class Enemy_Base : MonoBehaviour, IDamageable
             sr.color = originalColor;
         }
         currspeed = originalSpeed;
+    }
+
+    void applyRandomEvent()
+    {
+        speed *= 1.5f;
     }
 }
 

@@ -34,7 +34,7 @@ public class moneygenerator : MonoBehaviour
             if (timer >= generateIntegral)
             {
                 timer = 0f;
-                currency_manage.Instance.AddEnergy(generateEnergy * currentLevel);
+                currency_manage.Instance.AddEnergy(generateEnergy + (currentLevel-1)*20);
             }
         }
         EffiLevel.text = "Spend 150E to upgrade Generate Efficientcy. Level " + currentLevel + "/10";

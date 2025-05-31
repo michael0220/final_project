@@ -26,6 +26,10 @@ public class Hero_Melee_base : Hero_Base, IDamageable
         heroCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        if (RandomEventManager.isHeroVeryStrong)
+        {
+            applyRandomEvent();
+        }
 
         int level = UpgradeManager.Instance.Getlevel(heroType);
         actualdamage = basedamage + (level - 1) * 10;
@@ -99,5 +103,11 @@ public class Hero_Melee_base : Hero_Base, IDamageable
     {
         int level = UpgradeManager.Instance.Getlevel(heroType);
         levelText.text = level.ToString();
+    }
+
+    void applyRandomEvent()
+    {
+        basedamage += 20f;
+        maxHp *= 1.5f;
     }
 }
