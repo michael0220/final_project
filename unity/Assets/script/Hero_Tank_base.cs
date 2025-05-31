@@ -36,7 +36,11 @@ public class Hero_Tank_base : Hero_Base, IDamageable
     }
     public void takeDamage(float amount)
     {
-        currHp -= amount;
+        if (RandomEventManager.isTankVeryStrong)
+        {
+            currHp -= amount * 0.8f;
+        }
+        else currHp -= amount;
     }
 
     protected override void Dead()

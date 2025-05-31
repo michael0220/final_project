@@ -37,6 +37,18 @@ public class enemy_spawner : MonoBehaviour
         Time.timeScale = 1f;
         ChooseLevel = PlayerPrefs.GetInt("ChooseLevel", 0);
         StartCoroutine(SpawnEnemy());
+        if (RandomEventManager.isMoreEnemy)
+        {
+            applyRandomEvent();
+        }
+    }
+
+    void applyRandomEvent()
+    {
+        wave1Enemy += 2;
+        Wave2Enemy += 2;
+        Wave3Enemy += 2;
+        Wave4Enemy += 2;
     }
 
     void Update()
@@ -63,6 +75,7 @@ public class enemy_spawner : MonoBehaviour
                 yield return new WaitForSeconds(1);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
+
             waveDisplay.text = "WAVE 2";
             StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave2Enemy + 3;
@@ -84,10 +97,11 @@ public class enemy_spawner : MonoBehaviour
                 yield return new WaitForSeconds(1);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
+
             waveDisplay.text = "WAVE 3";
             StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave3Enemy + 9;
-            SetTotalEnemy(Wave3Enemy);
+            SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
             for (int i = Wave3Enemy; i > 0; i--)
@@ -121,6 +135,7 @@ public class enemy_spawner : MonoBehaviour
                 yield return new WaitForSeconds(5);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
+
             waveDisplay.text = "WAVE 2";
             StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave2Enemy + 3;
@@ -143,6 +158,7 @@ public class enemy_spawner : MonoBehaviour
                 yield return new WaitForSeconds(5);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
+
             waveDisplay.text = "WAVE 3";
             StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave3Enemy + 4;
@@ -165,6 +181,7 @@ public class enemy_spawner : MonoBehaviour
                 yield return new WaitForSeconds(3);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
+
             waveDisplay.text = "WAVE 4";
             StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave4Enemy * 3;
@@ -183,6 +200,16 @@ public class enemy_spawner : MonoBehaviour
         }
         else if (ChooseLevel == 2)
         {
+            yield return new WaitForSeconds(8);
+            for (int i = wave1Enemy; i > 0; i--)
+            {
+                spawn_enemy(enemy);
+                yield return new WaitForSeconds(0.5f);
+                spawn_enemy(enemy2);
+                yield return new WaitForSeconds(0.5f);
+                spawn_enemy(enemy3);
+                yield return new WaitForSeconds(3.5f);
+            }
         }
         //Victory();
     }
