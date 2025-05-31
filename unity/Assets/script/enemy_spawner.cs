@@ -8,6 +8,8 @@ public class enemy_spawner : MonoBehaviour
 {
     private int RealEnemyNum;
     public int ChooseLevel;
+    public int repeat = 3;
+    public float fadetime = 0.3f;
     public float failx = -7.1f;
     public Gameovermanager gameovermanager;
     public Transform[] spawnpoints;
@@ -50,7 +52,8 @@ public class enemy_spawner : MonoBehaviour
         {
             SetTotalEnemy(wave1Enemy);
             UpdateWaveText(restEnemy);
-            waveDisplay.text = "Wave 1";
+            waveDisplay.text = "WAVE 1";
+            StartCoroutine(ColorChangeRoutine());
             yield return new WaitForSeconds(15);
             for (int i = wave1Enemy; i > 0; i--)
             {
@@ -58,7 +61,8 @@ public class enemy_spawner : MonoBehaviour
                 yield return new WaitForSeconds(1);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
-            waveDisplay.text = "Wave 2";
+            waveDisplay.text = "WAVE 2";
+            StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave2Enemy + 3;
             SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
@@ -78,7 +82,8 @@ public class enemy_spawner : MonoBehaviour
                 yield return new WaitForSeconds(1);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
-            waveDisplay.text = "Wave 3";
+            waveDisplay.text = "WAVE 3";
+            StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave3Enemy + 9;
             SetTotalEnemy(Wave3Enemy);
             UpdateWaveText(restEnemy);
@@ -105,7 +110,8 @@ public class enemy_spawner : MonoBehaviour
         {
             SetTotalEnemy(wave1Enemy);
             UpdateWaveText(restEnemy);
-            waveDisplay.text = "Wave 1";
+            waveDisplay.text = "WAVE 1";
+            StartCoroutine(ColorChangeRoutine());
             yield return new WaitForSeconds(15);
             for (int i = wave1Enemy; i > 0; i--)
             {
@@ -113,7 +119,8 @@ public class enemy_spawner : MonoBehaviour
                 yield return new WaitForSeconds(5);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
-            waveDisplay.text = "Wave 2";
+            waveDisplay.text = "WAVE 2";
+            StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave2Enemy + 3;
             SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
@@ -134,7 +141,8 @@ public class enemy_spawner : MonoBehaviour
                 yield return new WaitForSeconds(5);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
-            waveDisplay.text = "Wave 3";
+            waveDisplay.text = "WAVE 3";
+            StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave3Enemy + 4;
             SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
@@ -155,7 +163,8 @@ public class enemy_spawner : MonoBehaviour
                 yield return new WaitForSeconds(3);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
-            waveDisplay.text = "Wave 4";
+            waveDisplay.text = "WAVE 4";
+            StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave4Enemy * 3;
             SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
@@ -214,6 +223,30 @@ public class enemy_spawner : MonoBehaviour
                 break;
             }
         }
+    }
+
+    IEnumerator ColorChangeRoutine()
+    {
+        Color red = new Color(1f, 0f, 0f, 0.7961f);
+        Color black = new Color(0f, 0f, 0f, 0.7961f) ;
+        for (int i = 0; i < repeat; i++)
+        {
+            yield return StartCoroutine(ColorChange(red, black, fadetime));
+            yield return StartCoroutine(ColorChange(black, red, fadetime));
+        }
+    }
+
+    IEnumerator ColorChange(Color fromcolor, Color tocolor, float duration)
+    {
+        float timer = 0f;
+        while (timer < duration)
+        {
+            float t = timer / duration;
+            waveDisplay.color = Color.Lerp(fromcolor, tocolor, t);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        waveDisplay.color = tocolor;
     }
     //void Victory(){
     //    Time.timeScale = 0f;
