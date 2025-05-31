@@ -873,7 +873,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customCursor: {fileID: 2800000, guid: 60fdba48c8bae2d4dbf60520cfada7c0, type: 3}
-  hotspot: {x: 0, y: 0}
   cursorMode: 0
 --- !u!4 &1063730473
 Transform:
