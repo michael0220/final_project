@@ -45,6 +45,13 @@ public class Gameovermanager : MonoBehaviour
     {
         Time.timeScale = 0f;
         winPanel.SetActive(true);
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 2);
+        if (unlockedLevel <= currentIndex)
+        {
+            PlayerPrefs.SetInt("UnlockedLevel", currentIndex + 1);
+            PlayerPrefs.Save();
+        }
     }
 
     public void ShowLosePanel()
