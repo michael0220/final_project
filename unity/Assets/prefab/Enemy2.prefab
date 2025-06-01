@@ -375,11 +375,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attype: 0
-  max_hp: 90
+  max_hp: 60
   damageInterval: 0.8
-  damagePerHit: 50
-  speed: 0.8
+  damagePerHit: 60
+  speed: 1.5
   currspeed: 0
+  enemytype: 0
   hp: 0
   hp_bar: {fileID: 6345974328298070308}
   hasattacked: 0

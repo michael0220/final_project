@@ -11,7 +11,7 @@ public class moneygenerator : MonoBehaviour
     public int unlockCost = 200;
     public TextMeshProUGUI unlockText;
     public TextMeshProUGUI EffiLevel;
-    private int upgradeCost = 150;
+    public int upgradeCost = 100;
     private int currentLevel = 1;
     private int maxLevel = 10;
 
@@ -28,7 +28,7 @@ public class moneygenerator : MonoBehaviour
     {
         if (isunlock)
         {
-            unlockText.text = "+" + generateEnergy * currentLevel + "E/" + generateIntegral + "s";
+            unlockText.text = "+" + (generateEnergy + (currentLevel-1)*20) + "E/" + generateIntegral + "s";
             timer += Time.deltaTime;
             if (timer >= generateIntegral)
             {
@@ -36,7 +36,7 @@ public class moneygenerator : MonoBehaviour
                 currency_manage.Instance.AddEnergy(generateEnergy + (currentLevel-1)*20);
             }
         }
-        EffiLevel.text = "Spend 150E to upgrade Generate Efficientcy. Level " + currentLevel + "/10";
+        EffiLevel.text = "Spend " + upgradeCost + " E to upgrade Generate Efficientcy. Level " + currentLevel + "/10";
     }
     void Unlock()
     {

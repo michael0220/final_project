@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4e7b0a5e0225640ade74e9acb6df84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 200
+  maxHp: 600
   currHp: 0
   isdead: 0
   basedamage: 0
@@ -731,5 +731,5 @@ MonoBehaviour:
   currHp: 0
   isdead: 0
   addHp: 30
-  healInterval: 3
+  healInterval: 2
   herotype: 5
