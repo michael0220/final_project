@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using TMPro;
 public class moneygenerator : MonoBehaviour
 {
-
     public Button btn;
     public Button UpgradeEffi;
     public CanvasGroup menu;
@@ -46,6 +45,8 @@ public class moneygenerator : MonoBehaviour
             btn.onClick.RemoveAllListeners();
             btn.onClick.AddListener(energy_menu);
             currency_manage.Instance.SubEnergy(unlockCost);
+            GetComponent<ButtonTooltip>().hidePanel();
+            GetComponent<ButtonTooltip>().enabled = false;
             isunlock = true;
         }
     }
