@@ -16,6 +16,7 @@ public class Musicmanager : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.loop = true;
             audioSource.playOnAwake = false;
+            audioSource = AudioManager.Instance != null ? AudioManager.Instance.musicsource : gameObject.AddComponent<AudioSource>();
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
@@ -34,12 +35,14 @@ public class Musicmanager : MonoBehaviour
             if (clip != null)
             {
                 audioSource.clip = clip;
+                //audioSource.volume = AudioManager.Instance != null ? AudioManager.Instance.musicsource.volume : 1f;
                 audioSource.Play();
             }
         }
     }
 
-    string GetMusicName(int index) {
+    string GetMusicName(int index)
+    {
         if (index == 0 || index == 1)
         {
             return "backgroundmusic";
