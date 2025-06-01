@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attype: 0
   max_hp: 150
-  damageInterval: 0.8
+  damageInterval: 1
   damagePerHit: 50
   speed: 0.6
   currspeed: 0

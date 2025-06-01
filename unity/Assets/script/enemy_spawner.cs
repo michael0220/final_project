@@ -146,7 +146,7 @@ public class enemy_spawner : MonoBehaviour
             for (int i = wave1Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(0.5f);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
 
@@ -169,7 +169,7 @@ public class enemy_spawner : MonoBehaviour
                     yield return new WaitForSeconds(0.5f);
                     spawn_enemy(enemy3);
                 }
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(2f);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
 
@@ -189,10 +189,10 @@ public class enemy_spawner : MonoBehaviour
                         spawn_enemy(enemy3);
                         yield return new WaitForSeconds(0.5f);
                         spawn_enemy(enemy2);
-                        yield return new WaitForSeconds(3);
+                        yield return new WaitForSeconds(2f);
                     }
                 }
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(1f);
             }
             yield return new WaitUntil(() => restEnemy <= 0);
 
@@ -223,7 +223,7 @@ public class enemy_spawner : MonoBehaviour
                 spawn_enemy(enemy2);
                 yield return new WaitForSeconds(0.5f);
                 spawn_enemy(enemy3);
-                yield return new WaitForSeconds(3.5f);
+                yield return new WaitForSeconds(5f);
             }
         }
         //Victory();

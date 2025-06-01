@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905be90ec235f8c419a6afff1da4806e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeDamagePerTime: 20
-  duration: 3
+  freezeDamagePerTime: 15
+  duration: 2.4
   interval: 0.6
   herotype: 2

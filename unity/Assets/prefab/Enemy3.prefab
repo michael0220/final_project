@@ -354,11 +354,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attype: 1
-  max_hp: 180
+  max_hp: 300
   damageInterval: 0.8
   damagePerHit: 0
-  speed: 0.5
+  speed: 0.3
   currspeed: 0
+  enemytype: 0
   hp: 0
   hp_bar: {fileID: 1950879934524299374}
   hasattacked: 0
