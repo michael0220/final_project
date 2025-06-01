@@ -932,7 +932,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe10d44f7da1d743bc9c480aea8f491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level2
 --- !u!114 &1229747101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,7 +978,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1229747100}
         m_TargetAssemblyTypeName: LevelSceneBtn, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: StartLevel2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1530,7 +1529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe10d44f7da1d743bc9c480aea8f491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level3
 --- !u!114 &1596153115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1577,7 +1575,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1596153114}
         m_TargetAssemblyTypeName: LevelSceneBtn, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: StartLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1710,7 +1708,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1722587174}
         m_TargetAssemblyTypeName: LevelSceneBtn, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: StartLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1770,7 +1768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe10d44f7da1d743bc9c480aea8f491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level1
 --- !u!1 &1764427334
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class Gameovermanager : MonoBehaviour
 
     void Start()
     {
-
+        Time.timeScale = 1f;
     }
 
     void Update()
@@ -78,6 +78,8 @@ public class Gameovermanager : MonoBehaviour
         Time.timeScale = 1f;
         int currindex = SceneManager.GetActiveScene().buildIndex;
         int nextindex = currindex + 1;
+        PlayerPrefs.SetInt("ChooseLevel", nextindex - 2);
+        PlayerPrefs.Save();
         if (nextindex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(nextindex);
