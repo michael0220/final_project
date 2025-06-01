@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 3152705796034359814}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3729, y: 1.6653, z: 0}
-  m_LocalScale: {x: 3.9680092, y: 3.0952275, z: 1}
+  m_LocalPosition: {x: 0.05, y: 1.9, z: 0}
+  m_LocalScale: {x: 4.785419, y: 3.926061, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8035745078326629366}
@@ -118,8 +118,8 @@ Transform:
   m_GameObject: {fileID: 5984522946766452645}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.7322, y: -1.5376, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.4, z: 0.92929}
+  m_LocalPosition: {x: 4.6264, y: -1.6989, z: 0}
+  m_LocalScale: {x: 0.41535, y: 0.32628, z: 0.92929}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8517633353978143735}
@@ -169,7 +169,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 2492063137762351953, guid: 2fe72938100e982408cae3c54962a79d, type: 3}
+  m_Sprite: {fileID: -1882347247711912902, guid: 91347536927735f41b9aedfa08792a14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -241,17 +241,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.13815552, y: 0.23286766}
+  m_Offset: {x: -0.18470705, y: -0.30748653}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.84, y: 3.1}
+    oldSize: {x: 2.5, y: 4.375}
     newSize: {x: 1.77, y: 2.76}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.493689, y: 1.96449}
+  m_Size: {x: 2.1394134, y: 3.0451984}
   m_EdgeRadius: 0
 --- !u!114 &9126180764834753940
 MonoBehaviour:
@@ -267,8 +267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attype: 0
   max_hp: 150
-  damageInterval: 1
-  damagePerHit: 50
+  damageInterval: 2
+  damagePerHit: 130
   speed: 0.6
   currspeed: 0
   enemytype: 0
