@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemytype: 1
   spawnplace: {fileID: 6544920647053330348}
-  max_hp: 1000
+  max_hp: 2000
   curr_hp: 0
 --- !u!50 &-8968554780442859721
 Rigidbody2D:

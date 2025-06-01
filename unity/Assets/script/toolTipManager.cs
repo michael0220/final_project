@@ -14,4 +14,9 @@ public class ButtonTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         tooltipPanel.SetActive(false);
     }
+
+    public void hidePanel()
+    {
+        tooltipPanel.SetActive(false);
+    }
 }

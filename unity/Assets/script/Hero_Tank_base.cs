@@ -38,9 +38,9 @@ public class Hero_Tank_base : Hero_Base, IDamageable
     {
         if (RandomEventManager.isTankVeryStrong)
         {
-            currHp -= amount * 0.8f;
+            currHp -= amount * 0.5f;
         }
-        else currHp -= amount;
+        else currHp -= amount*0.8f;
     }
 
     protected override void Dead()
