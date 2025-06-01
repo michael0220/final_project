@@ -5617,7 +5617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -628, y: 489}
+  m_AnchoredPosition: {x: 890, y: 489}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &567187378
@@ -16404,6 +16404,7 @@ MonoBehaviour:
   unlockCost: 200
   unlockText: {fileID: 1713704371}
   EffiLevel: {fileID: 1820231005}
+  upgradeCost: 100
   isunlock: 0
 --- !u!114 &1637700036
 MonoBehaviour:
