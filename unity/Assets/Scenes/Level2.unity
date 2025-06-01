@@ -2691,7 +2691,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Spend 200 Energy to upgrade \u2014 he\u2019ll become so powerful, you
-    won\u2019t believe he ever cost just 125."
+    won\u2019t believe he ever cost just 75."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4934,7 +4934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '  125'
+  m_text: '  75'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 246090d2a6ce37342ac5903ad092a4a3, type: 2}
   m_sharedMaterial: {fileID: 4561498529447205195, guid: 246090d2a6ce37342ac5903ad092a4a3, type: 2}
@@ -8148,7 +8148,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "This hero fires bullets that slow and poison enemies \u2014 for 150 gold,
+  m_text: "This hero fires bullets that slow and poison enemies \u2014 for 200 gold,
     upgrade to a more powerful ranged unit."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8830,8 +8830,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Spend 200 Energy to upgrade \u2014 he\u2019ll become so powerful, you
-    won\u2019t believe he ever cost just 100."
+  m_text: "Spend 200 Energy to upgrade \u2014 she\u2019ll become so powerful, you
+    won\u2019t believe she ever cost just 125."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10789,13 +10789,18 @@ RectTransform:
   - {fileID: 227801221}
   - {fileID: 1386337702}
   - {fileID: 1637700031}
+  - {fileID: 2043758467}
   - {fileID: 1023816153}
   - {fileID: 817094639}
   - {fileID: 366550072}
   - {fileID: 1249622881}
   - {fileID: 1172092536}
+<<<<<<< HEAD
   - {fileID: 567187377}
   - {fileID: 1432590946}
+=======
+  - {fileID: 1107496974}
+>>>>>>> f448be724384e9ddf655e9c94acf5fc2d0935c61
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11077,8 +11082,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 399.77112, y: -12}
-  m_SizeDelta: {x: 249.57788, y: 101.3306}
+  m_AnchoredPosition: {x: 399.77112, y: -38.076965}
+  m_SizeDelta: {x: 249.5779, y: 153.4845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103406932
 MonoBehaviour:
@@ -11118,6 +11123,142 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103406930}
   m_CullTransparentMesh: 1
+--- !u!1 &1107496971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1107496974}
+  - component: {fileID: 1107496973}
+  - component: {fileID: 1107496972}
+  m_Layer: 5
+  m_Name: randomeventText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1107496972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107496971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 3.124878}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1107496973
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107496971}
+  m_CullTransparentMesh: 1
+--- !u!224 &1107496974
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107496971}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068709341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -29.06372, y: 471.50024}
+  m_SizeDelta: {x: 1232.1223, y: 76.9994}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1109244004
 GameObject:
   m_ObjectHideFlags: 0
@@ -11598,7 +11739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55.4888, y: 15}
+  m_AnchoredPosition: {x: -55.4888, y: 28}
   m_SizeDelta: {x: 340.9399, y: 133.9362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168551873
@@ -11622,7 +11763,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "This is a trap just like the ones your grandpa used when hunting \u2014
-    when enemies step on it, they\u2019ll be slowed and take damage over time."
+    when enemies step on it, they\u2019ll be slowed and take damage over time. Disapear
+    after seconds."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12448,9 +12590,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778490ae17143384b922a4df1f0f82c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 2
   panel: {fileID: 1172092535}
   eventText: {fileID: 719246587}
   eventDetailText: {fileID: 454877001}
+  randomEventText: {fileID: 1107496972}
   fadeDuration: 1.5
   showDuration: 2
   BounsEnergy: 500
@@ -12462,12 +12606,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292121876}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5013598, y: 1.6610523, z: -9.9957075}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -245.95918, y: -544.78107, z: -8.5962105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1631048563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1297014524
 GameObject:
@@ -13866,6 +14010,7 @@ MonoBehaviour:
   Darkmode: {fileID: 1516044009}
   Maskmode: {fileID: 1191793892}
   createtype: potato
+<<<<<<< HEAD
   cdtime: 2
   needEnergy: 125
 --- !u!1 &1432590945
@@ -13948,6 +14093,10 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432590945}
   m_CullTransparentMesh: 1
+=======
+  cdtime: 3
+  needEnergy: 75
+>>>>>>> f448be724384e9ddf655e9c94acf5fc2d0935c61
 --- !u!1 &1433630499
 GameObject:
   m_ObjectHideFlags: 0
@@ -14674,7 +14823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '  100'
+  m_text: '  125'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 246090d2a6ce37342ac5903ad092a4a3, type: 2}
   m_sharedMaterial: {fileID: 4561498529447205195, guid: 246090d2a6ce37342ac5903ad092a4a3, type: 2}
@@ -15246,7 +15395,7 @@ MonoBehaviour:
   Darkmode: {fileID: 2064972223}
   Maskmode: {fileID: 1487137190}
   createtype: hero3
-  cdtime: 2
+  cdtime: 6
   needEnergy: 200
 --- !u!1 &1560634285
 GameObject:
@@ -15961,7 +16110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc20f72685ceb6146bf9159460172bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeCost: 50
+  upgradeCost: 200
   maxlevel: 3
 --- !u!4 &1607343120
 Transform:
@@ -15972,11 +16121,11 @@ Transform:
   m_GameObject: {fileID: 1607343118}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 139.26456, y: 883.9496, z: -0.050004363}
+  m_LocalPosition: {x: -107.195984, y: 337.50745, z: 1.3494924}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1631048563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613041133
 GameObject:
@@ -16099,8 +16248,13 @@ Transform:
   - {fileID: 229832237}
   - {fileID: 528533120}
   - {fileID: 973334169}
+<<<<<<< HEAD
   - {fileID: 1894789504}
   - {fileID: 791821256}
+=======
+  - {fileID: 1292121878}
+  - {fileID: 1607343120}
+>>>>>>> f448be724384e9ddf655e9c94acf5fc2d0935c61
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1631908490
@@ -16225,7 +16379,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2043758467}
   - {fileID: 1713704370}
   - {fileID: 1455405469}
   m_Father: {fileID: 1068709341}
@@ -16291,8 +16444,8 @@ MonoBehaviour:
   btn: {fileID: 1637700036}
   UpgradeEffi: {fileID: 1212618969}
   menu: {fileID: 2043758468}
-  generateIntegral: 5
-  generateEnergy: 10
+  generateIntegral: 8
+  generateEnergy: 25
   unlockCost: 200
   unlockText: {fileID: 1713704371}
   EffiLevel: {fileID: 1820231005}
@@ -17366,8 +17519,8 @@ MonoBehaviour:
   Darkmode: {fileID: 2043259013}
   Maskmode: {fileID: 1688845442}
   createtype: hero2
-  cdtime: 2
-  needEnergy: 100
+  cdtime: 8
+  needEnergy: 125
 --- !u!1 &1820231003
 GameObject:
   m_ObjectHideFlags: 0
@@ -19087,7 +19240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "This is a modified hero \u2014 for 125 gold, he\u2019ll raise his shield
+  m_text: "This is a modified hero \u2014 for 75 gold, he\u2019ll raise his shield
     and block everything for you."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19224,7 +19377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "This is the most basic ranged hero \u2014 for only 100 gold, experience
+  m_text: "This is the most basic ranged hero \u2014 for only 125 gold, experience
     the thrill of striking enemies from afar."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19405,12 +19558,12 @@ Transform:
   m_GameObject: {fileID: 2043758466}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -81.08246, y: -15.48877, z: 4.805915}
+  m_LocalPosition: {x: 728.4175, y: 272.01123, z: 4.805915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 153122770}
-  m_Father: {fileID: 1637700031}
+  m_Father: {fileID: 1068709341}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!225 &2043758468
 CanvasGroup:
@@ -20181,9 +20334,7 @@ SceneRoots:
   - {fileID: 1037167106}
   - {fileID: 1068709341}
   - {fileID: 2127183587}
-  - {fileID: 1607343120}
   - {fileID: 1631048563}
   - {fileID: 175528808}
   - {fileID: 1339901892}
   - {fileID: 1068768675}
-  - {fileID: 1292121878}

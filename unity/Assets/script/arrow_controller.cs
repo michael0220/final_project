@@ -23,7 +23,7 @@ public class arrow_controller : MonoBehaviour
         {
             applyRandomEvent();
         }
-        actualDamage = basedDamage * (1 + (level - 1) * 0.8f);
+        actualDamage = basedDamage + ((level - 1) * 10f);
     }
 
     void Update()

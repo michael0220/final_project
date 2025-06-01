@@ -16,7 +16,6 @@ public class UpgradeManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
 
             foreach (HeroType type in System.Enum.GetValues(typeof(HeroType)))
             {

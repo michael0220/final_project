@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fc49266dcc1d0a6488f00b1a423b3444
+guid: a5ced5c20679f3d419df75a39c4415d2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5385546487362694786
-    second: hero4_0
+      213: 2458856459959176443
+    second: "\u6ED1\u8ECC\u8ECA_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -53,7 +53,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -113,42 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hero4_0
+      name: "\u6ED1\u8ECC\u8ECA_0"
       rect:
         serializedVersion: 2
-        x: 330
-        y: 217
-        width: 331
-        height: 242
-      alignment: 9
+        x: 0
+        y: 6
+        width: 64
+        height: 49
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 165.5, y: 79}
-        - {x: 108.5, y: 79}
-        - {x: 94.5, y: 121}
-        - {x: 81.5, y: 78}
-        - {x: 51.5, y: 78}
-        - {x: 35.5, y: 121}
-        - {x: 23.5, y: 78}
-        - {x: -7.5, y: 78}
-        - {x: -22.5, y: 121}
-        - {x: -35.5, y: 79}
-        - {x: -64.5, y: 79}
-        - {x: -80.5, y: 121}
-        - {x: -92.5, y: 79}
-        - {x: -121.5, y: 79}
-        - {x: -136.5, y: 121}
-        - {x: -149.5, y: 79}
-        - {x: -165.5, y: 79}
-        - {x: -165.5, y: -121}
-        - {x: 165.5, y: -121}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 28e2b941ffd4dba40800000000000000
-      internalID: 5385546487362694786
+      spriteID: bfc8a893cec9f1220800000000000000
+      internalID: 2458856459959176443
       vertices: []
       indices: 
       edges: []
@@ -157,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 17f577aabdcc6ff4082fbc432964ecd2
+    spriteID: cf66f4ef9699a544785cf4936226e9d8
     internalID: 0
     vertices: []
     indices: 
@@ -167,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hero4_0: 5385546487362694786
+      "\u6ED1\u8ECC\u8ECA_0": 2458856459959176443
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

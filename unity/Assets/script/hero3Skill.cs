@@ -8,6 +8,7 @@ public class hero3Skill : MonoBehaviour
     public float interval = 0.6f;
     public HeroType herotype;
     Enemy_Base enemyScript;
+    Boss bossScript;
     void Start()
     {
         int level = UpgradeManager.Instance.Getlevel(herotype);
@@ -20,9 +21,14 @@ public class hero3Skill : MonoBehaviour
         if (collision.CompareTag("enemy"))
         {
             enemyScript = collision.GetComponent<Enemy_Base>();
-            if (enemyScript != null)
+            bossScript = collision.GetComponent<Boss>();
+            if (enemyScript != null && enemyScript.enemytype == EnemyType.enemy)
             {
                 enemyScript.ApplyFreeze(freezeDamagePerTime, duration, interval);
+            }
+            else if(bossScript != null && bossScript.enemytype == EnemyType.boss)
+            {
+                bossScript.ApplyFreeze(freezeDamagePerTime, duration, interval);
             }
         }
     }

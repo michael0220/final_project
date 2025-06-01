@@ -136,9 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2bd5ba0bd2f84468cab84013131614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp_bar: {fileID: 0}
+  enemytype: 1
   spawnplace: {fileID: 6544920647053330348}
-  max_hp: 1000
+  max_hp: 2000
   curr_hp: 0
 --- !u!50 &-8968554780442859721
 Rigidbody2D:

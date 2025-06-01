@@ -333,7 +333,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.35, y: 2.14}
+    oldSize: {x: 1.33, y: 2.12}
     newSize: {x: 1.61, y: 1.21}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9bb88646ac33148913cf4f1339f55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 500
+  maxHp: 600
   currHp: 0
   isdead: 0
   heroType: 3
@@ -439,7 +439,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &9088989525693887294
 GameObject:

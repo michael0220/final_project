@@ -489,10 +489,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4e7b0a5e0225640ade74e9acb6df84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 400
+  maxHp: 500
   currHp: 0
+  isdead: 0
   basedamage: 35
-  damageInterval: 1.5
+  damageInterval: 1
   heroType: 0
   hp_bar: {fileID: 5209701456074379325}
   levelText: {fileID: 4592716487093027756}
@@ -576,5 +577,5 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
