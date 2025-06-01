@@ -62,12 +62,14 @@ public class Gameovermanager : MonoBehaviour
 
     public void ExitToMap()
     {
+        SoundEffectManager.Instance.PressPanelButton();
         Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
 
     public void RestartLevel()
     {
+        SoundEffectManager.Instance.PressPanelButton();
         Time.timeScale = 1f;
         Scene currscene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currscene.name);
@@ -75,6 +77,7 @@ public class Gameovermanager : MonoBehaviour
 
     public void GoToNextLevel()
     {
+        SoundEffectManager.Instance.PressPanelButton();
         Time.timeScale = 1f;
         int currindex = SceneManager.GetActiveScene().buildIndex;
         int nextindex = currindex + 1;
