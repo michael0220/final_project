@@ -112,7 +112,7 @@ public class enemy_spawner : MonoBehaviour
             }
             yield return new WaitUntil(() => restEnemy <= 0);
 
-            waveDisplay.text = "WAVE 3";
+            waveDisplay.text = "Final Wave";
             StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave3Enemy + 9;
             SetTotalEnemy(RealEnemyNum);
@@ -196,7 +196,7 @@ public class enemy_spawner : MonoBehaviour
             }
             yield return new WaitUntil(() => restEnemy <= 0);
 
-            waveDisplay.text = "WAVE 4";
+            waveDisplay.text = "Final Wave";
             StartCoroutine(ColorChangeRoutine());
             RealEnemyNum = Wave4Enemy * 3;
             SetTotalEnemy(RealEnemyNum);
