@@ -14,6 +14,7 @@ public class CloseMenuBtn : MonoBehaviour
     // Update is called once per frame
     void closeMenu()
     {
+        SoundEffectManager.Instance.PressBuyHero();
         SetCanvasGroup(menu, false);
     }
     void SetCanvasGroup(CanvasGroup group, bool visible)

@@ -107,6 +107,10 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     {
         if (targetHero != null)
         {
+            // if (enemytype == EnemyType.enemy1)
+            // {
+            //     SoundEffectManager.Instance.enemy1Attack();
+            // }
             targetHero.takeDamage(damagePerHit);
         }
     }
