@@ -22,7 +22,7 @@ public class hero3Skill : MonoBehaviour
         {
             enemyScript = collision.GetComponent<Enemy_Base>();
             bossScript = collision.GetComponent<Boss>();
-            if (enemyScript != null && enemyScript.enemytype == EnemyType.enemy)
+            if (enemyScript != null && enemyScript.enemytype != EnemyType.boss)
             {
                 enemyScript.ApplyFreeze(freezeDamagePerTime, duration, interval);
             }

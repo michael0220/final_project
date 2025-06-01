@@ -42,6 +42,7 @@ public class moneygenerator : MonoBehaviour
     {
         if (!isunlock && currency_manage.Instance.EnergyValue >= unlockCost)
         {
+            SoundEffectManager.Instance.PressBuyHero();
             btn.onClick.RemoveAllListeners();
             btn.onClick.AddListener(energy_menu);
             currency_manage.Instance.SubEnergy(unlockCost);
@@ -55,6 +56,7 @@ public class moneygenerator : MonoBehaviour
         if (isunlock)
         {
             SetCanvasGroup(menu, true);
+            SoundEffectManager.Instance.PressBuyHero();
         }
         else return;
     }
@@ -65,6 +67,7 @@ public class moneygenerator : MonoBehaviour
         {
             if (currentLevel < maxLevel)
             {
+                SoundEffectManager.Instance.PressBuyHero();
                 currency_manage.Instance.SubEnergy(upgradeCost);
                 currentLevel++;
             }

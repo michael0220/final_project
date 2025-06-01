@@ -296,6 +296,8 @@ MonoBehaviour:
   levelbutton: {fileID: 8300000, guid: 33f87b6e4b5de964f81d574a9c7431b0, type: 3}
   entrybutton: {fileID: 8300000, guid: 6b112dcce52eb6e4a9aeacc225a4e1d9, type: 3}
   panelbutton: {fileID: 8300000, guid: a54dc224557295948a3947574a5072f3, type: 3}
+  BuyHeroButton: {fileID: 8300000, guid: badddba30a39a774fb2665517321a2e7, type: 3}
+  enemy1attack: {fileID: 8300000, guid: 1ae785e80da597142a09d121459e1596, type: 3}
 --- !u!4 &59454805
 Transform:
   m_ObjectHideFlags: 0
