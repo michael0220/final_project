@@ -29,18 +29,31 @@ public class enemy_spawner : MonoBehaviour
     {
         int r = Random.Range(0, spawnpoints.Length);
         GameObject newenemy = Instantiate(enemyPrefab, spawnpoints[r].position, Quaternion.identity);
+        Debug.Log("spawn_enemy 呼叫！產生了 " + enemyPrefab.name);
         activeEnemy.Add(newenemy);
     }
 
     void Start()
     {
+        //PlayerPrefs.DeleteAll();
         Time.timeScale = 1f;
         ChooseLevel = PlayerPrefs.GetInt("ChooseLevel", 0);
-        StartCoroutine(SpawnEnemy());
+        StartCoroutine(WaitRandomEndThenSpawn());
+        RandomEventManager.isShowing = false;
+        Debug.Log("enemy_spawner Start 被呼叫了！");
+    }
+
+    IEnumerator WaitRandomEndThenSpawn()
+    {
+        while (RandomEventManager.isShowing)
+        {
+            yield return null;
+        }
         if (RandomEventManager.isMoreEnemy)
         {
             applyRandomEvent();
         }
+        StartCoroutine(SpawnEnemy());
     }
 
     void applyRandomEvent()
@@ -62,6 +75,7 @@ public class enemy_spawner : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
+        Debug.Log("SpawnEnemy 開始執行了！");
         if (ChooseLevel == 0)
         {
             SetTotalEnemy(wave1Enemy);
@@ -203,6 +217,7 @@ public class enemy_spawner : MonoBehaviour
             yield return new WaitForSeconds(8);
             for (int i = wave1Enemy; i > 0; i--)
             {
+                Debug.Log("ChooseLevel==2 開始執行了！");
                 spawn_enemy(enemy);
                 yield return new WaitForSeconds(0.5f);
                 spawn_enemy(enemy2);

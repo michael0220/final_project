@@ -12,6 +12,7 @@ public class RandomEventManager : MonoBehaviour
     private CanvasGroup canvasGroup;
     public float fadeDuration;
     public float showDuration;
+    public static bool isShowing=true;
     public static bool isEnemySpeedUp = false;
     public static bool isTankVeryStrong = false;
     public static bool isHeroVeryStrong = false;
@@ -31,6 +32,7 @@ public class RandomEventManager : MonoBehaviour
 
     void ChooseRandomEvent()
     {
+        isShowing = true;
         randomEvent eventType = (randomEvent)UnityEngine.Random.Range(0, System.Enum.GetValues(typeof(randomEvent)).Length);
 
         switch (eventType)
@@ -110,6 +112,7 @@ public class RandomEventManager : MonoBehaviour
 
         canvasGroup.alpha = 0f;
         panel.SetActive(false);
+        isShowing = false;
     }
 
 }
