@@ -15,6 +15,7 @@ public class Enemy_Base : MonoBehaviour, IDamageable
     [SerializeField] private float damagePerHit = 50f;
     [SerializeField] public float speed = 1.0f;
     [SerializeField] public float currspeed;
+    public EnemyType enemytype;
     private enemy_spawner spawner;
     public float hp;
     public GameObject hp_bar;

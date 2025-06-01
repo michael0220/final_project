@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour, IDamageable
 {
+    public EnemyType enemytype;
     enemy_spawner enemySpawner;
     public Transform spawnplace;
     public float max_hp = 1000f;
@@ -33,6 +34,24 @@ public class Boss : MonoBehaviour, IDamageable
             Dead();
         }
     }
+    public void ApplyFreeze(float FreezeDamage, float Duration, float Interval)
+    {
+        StartCoroutine(FreezeEffect(FreezeDamage, Duration, Interval));
+    }
+    IEnumerator FreezeEffect(float FreezeDamage, float Duration, float Interval)
+    {
+        Color originalColor = GetComponent<SpriteRenderer>().color;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        int count = Mathf.FloorToInt(Duration / Interval);
+
+        for (int i = 0; i < count; i++)
+        {
+            takeDamage(FreezeDamage);
+            sr.color = new Color(1f, 0.588f, 0.471f, 1f);
+            yield return new WaitForSeconds(0.5f);
+            sr.color = originalColor;
+        }
+    }
 
     public void OnGenerateEnd()
     {
@@ -43,6 +62,7 @@ public class Boss : MonoBehaviour, IDamageable
     {
         curr_hp -= amount;
     }
+    
 
     void Dead()
     {

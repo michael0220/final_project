@@ -31,7 +31,7 @@ public abstract class Hero_Base : MonoBehaviour
         attachPoint = point;
         currentUFO = UFO;
         transform.position = point.position;
-        transform.SetParent(point);
+        transform.SetParent(point, worldPositionStays: true);
     }
 
     protected abstract void Dead();
