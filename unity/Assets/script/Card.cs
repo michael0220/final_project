@@ -97,6 +97,7 @@ public class Card : MonoBehaviour
     {
         if (needEnergy > currency_manage.Instance.EnergyValue) return;
 
+        SoundEffectManager.Instance.PressBuyHero();
         CurrentCard = this;
         button_controller.Instance.PreparetoSpawn(createtype);
     }

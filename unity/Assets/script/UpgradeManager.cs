@@ -37,6 +37,7 @@ public class UpgradeManager : MonoBehaviour
 
         if (currency_manage.Instance.EnergyValue < upgradeCost) return false;
 
+        SoundEffectManager.Instance.PressBuyHero();
         currency_manage.Instance.SubEnergy(upgradeCost);
         herolevels[type]++;
         return true;
