@@ -15,7 +15,6 @@ public class Bossmanager : MonoBehaviour
     private int lastSpawnPoint = -1;
     private bool spawnEnabled = true;
     private bool haveLost = false;
-    private bool isReturning = false;
     private Boss boss;
     private List<GameObject> activeEnemy = new List<GameObject>();
     [SerializeField] private Transform[] spawnpoints;
@@ -49,11 +48,6 @@ public class Bossmanager : MonoBehaviour
         {
             spawnEnabled = false;
             gameovermanager.OnAllEnemySpawn();
-            if (!isReturning)
-            {
-                MoveBackToStart();
-                isReturning = true;
-            }
         }
         hp_bar.transform.localScale = new Vector3((float)boss.curr_hp / boss.max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
@@ -118,16 +112,6 @@ public class Bossmanager : MonoBehaviour
                 gameovermanager.ShowLosePanel();
                 break;
             }
-        }
-    }
-
-    IEnumerator MoveBackToStart()
-    {
-        Vector3 targetpos = bossspawnpoint.position;
-        while (Vector2.Distance(boss.transform.position, targetpos) > 0.1f)
-        {
-            boss.transform.position = Vector2.MoveTowards(boss.transform.position, targetpos, speed * Time.deltaTime);
-            yield return null;
         }
     }
     

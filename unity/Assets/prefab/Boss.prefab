@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2bd5ba0bd2f84468cab84013131614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemytype: 1
+  enemytype: 3
   spawnplace: {fileID: 6544920647053330348}
   max_hp: 2000
   curr_hp: 0
