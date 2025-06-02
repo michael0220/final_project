@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpikeDamage: 20
-  Interval: 0.8
+  Interval: 1
   speedEffect: 0.6
   deadtime: 20
   levelText: {fileID: 739294715360582067}
