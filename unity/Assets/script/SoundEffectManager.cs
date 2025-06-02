@@ -9,6 +9,7 @@ public class SoundEffectManager : MonoBehaviour
     public AudioClip panelbutton;
     public AudioClip BuyHeroButton;
     public AudioClip enemy1attack;
+    public AudioClip bossexplode;
 
     void Awake()
     {
@@ -55,5 +56,10 @@ public class SoundEffectManager : MonoBehaviour
     public void enemy1Attack()
     {
         PlaySound(enemy1attack);
+    }
+
+    public void BossExplode()
+    {
+        PlaySound(bossexplode);
     }
 }
