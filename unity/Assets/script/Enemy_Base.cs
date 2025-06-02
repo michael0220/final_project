@@ -149,8 +149,9 @@ public class Enemy_Base : MonoBehaviour, IDamageable
         {
             takeDamage(FreezeDamage);
             sr.color = new Color(1f, 0.588f, 0.471f, 1f);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
             sr.color = originalColor;
+            yield return new WaitForSeconds(0.1f);
         }
         currspeed = originalSpeed;
     }

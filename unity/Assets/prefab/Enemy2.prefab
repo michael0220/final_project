@@ -380,7 +380,7 @@ MonoBehaviour:
   damagePerHit: 60
   speed: 1.5
   currspeed: 0
-  enemytype: 0
+  enemytype: 1
   hp: 0
   hp_bar: {fileID: 6345974328298070308}
   hasattacked: 0
