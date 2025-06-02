@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 
 public class enemy_spawner : MonoBehaviour
 {
@@ -90,7 +89,7 @@ public class enemy_spawner : MonoBehaviour
             waveDisplay.text = "WAVE 1";
             StartCoroutine(ColorChangeRoutine());
             yield return new WaitForSeconds(15);
-            showPlotText("Oh... am I dreaming? Why is it so noisy...?\nOh my gosh, a bunch of ugly freaks just stormed into the spaceship! Who are you guys!? Stop right there!");
+            showPlotText("Oh... am I dreaming? Why is it so noisy...? Oh my gosh, a bunch of ugly freaks just stormed into the spaceship! Who are you guys!? Stop right there!");
             for (int i = wave1Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);
@@ -127,7 +126,7 @@ public class enemy_spawner : MonoBehaviour
             SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
-            showPlotText("Why are there more and more of them?\nIt looks like they're coming from the cockpit!\nHurry, take them down! We can’t let them take over the cockpit!");
+            showPlotText("Why are there more and more of them?\nIt looks like they're coming from the cockpit!Hurry, take them down! We can’t let them take over the cockpit!");
             for (int i = Wave3Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);

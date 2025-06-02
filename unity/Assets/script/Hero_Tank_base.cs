@@ -2,7 +2,6 @@ using Unity.VisualScripting;
 using UnityEditor.Analytics;
 using UnityEngine;
 using TMPro;
-using Unity.PlasticSCM.Editor.WebApi;
 
 public class Hero_Tank_base : Hero_Base, IDamageable
 {
