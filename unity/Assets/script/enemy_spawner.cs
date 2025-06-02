@@ -6,6 +6,13 @@ using UnityEditor.ShaderGraph.Internal;
 
 public class enemy_spawner : MonoBehaviour
 {
+    public GameObject PlotPanel;
+    public float typingSpeed = 0.05f;
+
+    public TextMeshProUGUI PlotText;
+    private string currentText;
+
+
     private int RealEnemyNum;
     public int ChooseLevel;
     public int repeat = 3;
@@ -83,6 +90,7 @@ public class enemy_spawner : MonoBehaviour
             waveDisplay.text = "WAVE 1";
             StartCoroutine(ColorChangeRoutine());
             yield return new WaitForSeconds(15);
+            showPlotText("Oh... am I dreaming? Why is it so noisy...?\nOh my gosh, a bunch of ugly freaks just stormed into the spaceship! Who are you guys!? Stop right there!");
             for (int i = wave1Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);
@@ -96,6 +104,7 @@ public class enemy_spawner : MonoBehaviour
             SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
+            showPlotText("Wait, who are you...? Never mind, there’s no time to ask—more strange creatures are rushing in!");
             for (int i = Wave2Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);
@@ -118,6 +127,7 @@ public class enemy_spawner : MonoBehaviour
             SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
+            showPlotText("Why are there more and more of them?\nIt looks like they're coming from the cockpit!\nHurry, take them down! We can’t let them take over the cockpit!");
             for (int i = Wave3Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);
@@ -143,6 +153,7 @@ public class enemy_spawner : MonoBehaviour
             waveDisplay.text = "WAVE 1";
             StartCoroutine(ColorChangeRoutine());
             yield return new WaitForSeconds(15);
+            showPlotText("Damn it, they’ve taken the cockpit too... The mothership warned us—someone opened a space-time rift. There’s no time. We have to stop them, now!");
             for (int i = wave1Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);
@@ -156,6 +167,7 @@ public class enemy_spawner : MonoBehaviour
             SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
+            showPlotText("Good, we’re still in control for now. Maybe we can defeat them!");
             for (int i = Wave2Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);
@@ -179,6 +191,7 @@ public class enemy_spawner : MonoBehaviour
             SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
+            showPlotText("(A flash of light appears outside the cockpit window.)");
             for (int i = Wave3Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);
@@ -202,6 +215,7 @@ public class enemy_spawner : MonoBehaviour
             SetTotalEnemy(RealEnemyNum);
             UpdateWaveText(restEnemy);
             yield return new WaitForSeconds(10);
+            showPlotText("That light outside is blinding... It feels like... I don’t know.\nTake care of them quickly so we can go check it out!");
             for (int i = Wave4Enemy; i > 0; i--)
             {
                 spawn_enemy(enemy);
@@ -215,6 +229,7 @@ public class enemy_spawner : MonoBehaviour
         else if (ChooseLevel == 2)
         {
             yield return new WaitForSeconds(8);
+            showPlotText("Oh my god, what is that hideous giant spaceship!?\nThat must be their leader! Let’s take them down and save the world!!");
             for (int i = wave1Enemy; i > 0; i--)
             {
                 Debug.Log("ChooseLevel==2 開始執行了！");
@@ -272,7 +287,7 @@ public class enemy_spawner : MonoBehaviour
     IEnumerator ColorChangeRoutine()
     {
         Color red = new Color(1f, 0f, 0f, 0.7961f);
-        Color black = new Color(0f, 0f, 0f, 0.7961f) ;
+        Color black = new Color(0f, 0f, 0f, 0.7961f);
         for (int i = 0; i < repeat; i++)
         {
             yield return StartCoroutine(ColorChange(red, black, fadetime));
@@ -292,8 +307,28 @@ public class enemy_spawner : MonoBehaviour
         }
         waveDisplay.color = tocolor;
     }
-    //void Victory(){
-    //    Time.timeScale = 0f;
-    //    victoryPanel.SetActive(true);
-    //}
+
+    void showPlotText(string text)
+    {
+        PlotPanel.SetActive(true);
+        StartCoroutine(showText(text));
+    }
+    IEnumerator showText(string text)
+    {
+        PlotText.text = "";
+        currentText = "";
+
+        for (int i = 0; i < text.Length; i++)
+        {
+            currentText += text[i];
+            PlotText.text = currentText;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        yield return new WaitForSeconds(3f);
+        PlotPanel.SetActive(false);
+    }
+
+
+
+
 }
