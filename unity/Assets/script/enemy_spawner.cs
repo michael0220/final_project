@@ -239,6 +239,14 @@ public class enemy_spawner : MonoBehaviour
                 spawn_enemy(enemy3);
                 yield return new WaitForSeconds(5f);
             }
+
+            yield return new WaitForSeconds(5f);
+            
+            for (int i = Wave2Enemy; i > 0; i--)
+            {
+                spawn_enemy(enemy2);
+                spawn_enemy(enemy2);
+            }
         }
         //Victory();
     }

@@ -36,7 +36,7 @@ public class moneygenerator : MonoBehaviour
                 currency_manage.Instance.AddEnergy(generateEnergy + (currentLevel-1)*20);
             }
         }
-        EffiLevel.text = "Spend " + upgradeCost + " E to upgrade Generate Efficientcy. Level " + currentLevel + "/10";
+        EffiLevel.text = "Spend " + upgradeCost + " E to upgrade. Level " + currentLevel + "/10";
     }
     void Unlock()
     {
