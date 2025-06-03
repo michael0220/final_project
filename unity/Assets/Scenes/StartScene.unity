@@ -348,8 +348,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: -258}
-  m_SizeDelta: {x: -1070.3615, y: -738.4376}
+  m_AnchoredPosition: {x: 4, y: -320}
+  m_SizeDelta: {x: -137.0417, y: -447.8756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292046144
 MonoBehaviour:
@@ -398,8 +398,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65
-  m_fontSizeBase: 65
+  m_fontSize: 150
+  m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -489,8 +489,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180.00726, y: 149.68573}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: 186.98407, y: 153.17401}
+  m_SizeDelta: {x: 3943.2944, y: 2231.1846}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330845724
 MonoBehaviour:
@@ -851,8 +851,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 228, y: 263}
-  m_SizeDelta: {x: 875.001, y: 298.6846}
+  m_AnchoredPosition: {x: 247, y: 520}
+  m_SizeDelta: {x: 2583.9814, y: 1116.9625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &934720094
 MonoBehaviour:
@@ -901,15 +901,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 250
+  m_fontSizeBase: 250
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1505,6 +1505,14 @@ PrefabInstance:
     - target: {fileID: 5534576366167697232, guid: f5a658b711e050b489efb3e06b6baaa0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428607083028553498, guid: f5a658b711e050b489efb3e06b6baaa0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428607083028553498, guid: f5a658b711e050b489efb3e06b6baaa0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -306
       objectReference: {fileID: 0}
     - target: {fileID: 8501648588571830654, guid: f5a658b711e050b489efb3e06b6baaa0, type: 3}
       propertyPath: m_Name
