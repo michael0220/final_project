@@ -51,6 +51,7 @@ public class Gameovermanager : MonoBehaviour
         {
             PlayerPrefs.SetInt("UnlockedLevel", currentIndex + 1);
             PlayerPrefs.Save();
+            FileIOManager.SaveProgressToFile();
         }
     }
 

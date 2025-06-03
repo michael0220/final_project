@@ -9,6 +9,7 @@ public class levelmanager : MonoBehaviour
 
     void Start()
     {
+        FileIOManager.LoadProgressFromFile();
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 2);
         bool isUnlocked = levelindex <= unlockedLevel;
         unlocked.SetActive(isUnlocked);
