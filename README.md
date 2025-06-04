@@ -10,6 +10,7 @@ Work Division:
   8.Implementing random events
   9.Designing tooltips
   10.Writing the game plot
+  11.Making final presentation trailer video
 413410060:
   1.Designing enemies and boss
   2.Creating all art assets
@@ -20,13 +21,14 @@ Work Division:
   7.Setting up the lobby scene
   8.Implementing win/lose judgment logic
   9.Handling file input/output
+  10.Making final presentation slides
 413410018:
-  1.Unfinished scene transition animations
-  2.Unfinished characters
+  1.An unfinished scene transition animations(we eventually redid them from scratch)
+  2.A character that came with many bugs and had a high degree of redundancy with an existing character
 413410083:
-  1.Tank prototype
-  2.(Bonding system)
+  1.The original version of the tank (the "potato" shown in the midterm video)
+  2.(The bonding system full of GPT flavor, which we decided not to use after discussion)
 413410085:
-  1.Hero2 collision logic
+  1.The original collision logic of Hero2
 413410066:
   Nothing
